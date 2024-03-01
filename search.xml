@@ -315,7 +315,7 @@
 <h3 id="9-mail-服务"><a href="#9-mail-服务" class="headerlink" title="9. mail 服务"></a>9. mail 服务</h3><p>任务描述：请采用 postfix 邮件服务器，实现安全的邮件服务。</p>
 <ol>
 <li>配置 linux5 为 mail 服务器，安装 postfix 和 dovecot。</li>
-<li>仅支持 smtps 和 pop3s 连接。 3.创建用户 mail1 和 mail2，向 <a href="mailto:&#x61;&#108;&#x6c;&#x40;&#x73;&#x6b;&#105;&#x6c;&#x6c;&#115;&#46;&#x63;&#111;&#x6d;">&#x61;&#108;&#x6c;&#x40;&#x73;&#x6b;&#105;&#x6c;&#x6c;&#115;&#46;&#x63;&#111;&#x6d;</a> 发送的邮件，每个用户都 会收到。</li>
+<li>仅支持 smtps 和 pop3s 连接。 3.创建用户 mail1 和 mail2，向 <a href="mailto:&#x61;&#108;&#x6c;&#64;&#x73;&#x6b;&#105;&#x6c;&#108;&#115;&#46;&#99;&#x6f;&#x6d;">&#x61;&#108;&#x6c;&#64;&#x73;&#x6b;&#105;&#x6c;&#108;&#115;&#46;&#99;&#x6f;&#x6d;</a> 发送的邮件，每个用户都 会收到。</li>
 <li>使用本机测试。</li>
 </ol>
 <h3 id="10．shell-脚本"><a href="#10．shell-脚本" class="headerlink" title="10．shell 脚本"></a>10．shell 脚本</h3><p>任务描述：请采用 shell 脚本,实现快速批量的操作。</p>
@@ -332,34 +332,6 @@
       <tags>
         <tag>题目</tag>
         <tag>职业技能大赛</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Shell教程-中等院校职业技能大赛</title>
-    <url>/2024/01/21/2024-01-21-Competition-sample-questions-Shell/undefined/undefined.html</url>
-    <content><![CDATA[<hr>
-<h1 id="Shell脚本"><a href="#Shell脚本" class="headerlink" title="Shell脚本"></a>Shell脚本</h1><hr>
-<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>任务描述：请采用 shell 脚本,实现快速批量的操作。</p>
-<ol>
-<li>在 linux4 上编写&#x2F;root&#x2F;createfile.sh的shell脚本，创建20个文件&#x2F;root&#x2F;shell&#x2F;file00至&#x2F;root&#x2F;shell&#x2F;file19，如果文件存在，则删除再创建； 每个文件的内容同文件名， 如file00文件的内容为“file00”。</li>
-<li>用&#x2F;root&#x2F;createfile.sh命令测试。</li>
-</ol>
-<h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><p>1.创建createfile.sh脚本文件</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vim /root/createfile.sh</span><br></pre></td></tr></table></figure>
-
-<p>2.写入脚本代码</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建目录</span></span><br><span class="line">mkdir -p /root/shell</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建文件</span></span><br><span class="line">for i in $(seq -f &quot;%02g&quot; 0 19)</span><br><span class="line">do</span><br><span class="line">    file=&quot;/root/shell/file$i&quot;</span><br><span class="line">    # 如果文件存在，则删除</span><br><span class="line">    if [ -e $file ]; then</span><br><span class="line">        rm $file</span><br><span class="line">    fi</span><br><span class="line">    # 创建文件并设置内容</span><br><span class="line">    echo &quot;file$i&quot; &gt; $file</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
-
-<p>3.运行脚本</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sh /root/createfile.sh</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>博客</category>
-        <category>教程</category>
-        <category>职业技能大赛</category>
-      </categories>
-      <tags>
-        <tag>职业技能大赛</tag>
-        <tag>教程</tag>
       </tags>
   </entry>
   <entry>
@@ -417,6 +389,70 @@ function myFunction2() {
       </tags>
   </entry>
   <entry>
+    <title>Shell教程-中等院校职业技能大赛</title>
+    <url>/2024/01/21/2024-01-21-Competition-sample-questions-Shell/undefined/undefined.html</url>
+    <content><![CDATA[<hr>
+<h1 id="Shell脚本"><a href="#Shell脚本" class="headerlink" title="Shell脚本"></a>Shell脚本</h1><hr>
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>任务描述：请采用 shell 脚本,实现快速批量的操作。</p>
+<ol>
+<li>在 linux4 上编写&#x2F;root&#x2F;createfile.sh的shell脚本，创建20个文件&#x2F;root&#x2F;shell&#x2F;file00至&#x2F;root&#x2F;shell&#x2F;file19，如果文件存在，则删除再创建； 每个文件的内容同文件名， 如file00文件的内容为“file00”。</li>
+<li>用&#x2F;root&#x2F;createfile.sh命令测试。</li>
+</ol>
+<h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><p>1.创建createfile.sh脚本文件</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vim /root/createfile.sh</span><br></pre></td></tr></table></figure>
+
+<p>2.写入脚本代码</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建目录</span></span><br><span class="line">mkdir -p /root/shell</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建文件</span></span><br><span class="line">for i in $(seq -f &quot;%02g&quot; 0 19)</span><br><span class="line">do</span><br><span class="line">    file=&quot;/root/shell/file$i&quot;</span><br><span class="line">    # 如果文件存在，则删除</span><br><span class="line">    if [ -e $file ]; then</span><br><span class="line">        rm $file</span><br><span class="line">    fi</span><br><span class="line">    # 创建文件并设置内容</span><br><span class="line">    echo &quot;file$i&quot; &gt; $file</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+
+<p>3.运行脚本</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sh /root/createfile.sh</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>博客</category>
+        <category>教程</category>
+        <category>职业技能大赛</category>
+      </categories>
+      <tags>
+        <tag>职业技能大赛</tag>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>github star数量统计</title>
+    <url>/2024/02/20/2024-1-20-github_star_counter/undefined/undefined.html</url>
+    <content><![CDATA[<p>一个统计某个账号下 github 的 star 数量的在线小应用。<br>作者：<a href="https://github.com/guofei9987/">guofei9987</a></p>
+<h2 id="试试吧："><a href="#试试吧：" class="headerlink" title="试试吧："></a>试试吧：</h2><p>输入账号，然后点击<code>Calculate</code> 按钮<br><strong>如果点击按钮没反应，刷新一次就好了（网站框架的锅，以后有时间再修复）</strong>  </p>
+<script src="https://www.guofei.site/star_counter/star_counter.js"></script> <!--引用js代码-->
+
+
+<script>
+    function func_1() {
+        document.getElementById("star_counter").innerHTML = 'If not print for seconds, please refresh';
+        github_id = document.getElementById("user").value;
+        document.getElementById("star_counter").innerHTML = cal_github_star(github_id);
+    }
+</script>
+
+
+<p>Input github id: <input name="user" value="guofei9987" type="text" id="user"><br><input name="Button" type="button" value="Calculate" onClick="func_1()"></p>
+<p id="star_counter"></p>
+
+<h2 id="如何部署到你的网站"><a href="#如何部署到你的网站" class="headerlink" title="如何部署到你的网站"></a>如何部署到你的网站</h2><p>把这个copy到你的网页里</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;http://www.guofei.site/star_counter/star_counter.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span> <span class="comment">&lt;!--引用js代码--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">function</span> <span class="title function_">func_1</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;star_counter&quot;</span>).<span class="property">innerHTML</span> = <span class="string">&#x27;If not print for seconds, please refresh&#x27;</span>;</span></span><br><span class="line"><span class="language-javascript">        github_id = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;user&quot;</span>).<span class="property">value</span>;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;star_counter&quot;</span>).<span class="property">innerHTML</span> = <span class="title function_">cal_github_star</span>(github_id);</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Input github id: <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">&quot;user&quot;</span> <span class="attr">value</span>=<span class="string">&quot;guofei9987&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">id</span>=<span class="string">&quot;user&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">&quot;Button&quot;</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">value</span>=<span class="string">&quot;Calculate&quot;</span> <span class="attr">onClick</span>=<span class="string">&quot;func_1()&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">&quot;star_counter&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><a href="https://github.com/guofei9987/star_counter">源代码地址</a>，star一下，我就很开心啦  </p>
+]]></content>
+      <categories>
+        <category>开源</category>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+        <tag>开源</tag>
+        <tag>统计</tag>
+        <tag>github</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>恶俗古风诗歌生成器</title>
     <url>/2024/02/20/2024-1-20-vulgar_poet/undefined/undefined.html</url>
     <content><![CDATA[<h2 id="demo"><a href="#demo" class="headerlink" title="demo"></a>demo</h2><p>作者：<a href="https://github.com/guofei9987/">guofei9987</a></p>
@@ -464,42 +500,6 @@ function myFunction2() {
         <tag>工具</tag>
         <tag>开源</tag>
         <tag>转换</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>github star数量统计</title>
-    <url>/2024/02/20/2024-1-20-github_star_counter/undefined/undefined.html</url>
-    <content><![CDATA[<p>一个统计某个账号下 github 的 star 数量的在线小应用。<br>作者：<a href="https://github.com/guofei9987/">guofei9987</a></p>
-<h2 id="试试吧："><a href="#试试吧：" class="headerlink" title="试试吧："></a>试试吧：</h2><p>输入账号，然后点击<code>Calculate</code> 按钮<br><strong>如果点击按钮没反应，刷新一次就好了（网站框架的锅，以后有时间再修复）</strong>  </p>
-<script src="https://www.guofei.site/star_counter/star_counter.js"></script> <!--引用js代码-->
-
-
-<script>
-    function func_1() {
-        document.getElementById("star_counter").innerHTML = 'If not print for seconds, please refresh';
-        github_id = document.getElementById("user").value;
-        document.getElementById("star_counter").innerHTML = cal_github_star(github_id);
-    }
-</script>
-
-
-<p>Input github id: <input name="user" value="guofei9987" type="text" id="user"><br><input name="Button" type="button" value="Calculate" onClick="func_1()"></p>
-<p id="star_counter"></p>
-
-<h2 id="如何部署到你的网站"><a href="#如何部署到你的网站" class="headerlink" title="如何部署到你的网站"></a>如何部署到你的网站</h2><p>把这个copy到你的网页里</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;http://www.guofei.site/star_counter/star_counter.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span> <span class="comment">&lt;!--引用js代码--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">function</span> <span class="title function_">func_1</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;star_counter&quot;</span>).<span class="property">innerHTML</span> = <span class="string">&#x27;If not print for seconds, please refresh&#x27;</span>;</span></span><br><span class="line"><span class="language-javascript">        github_id = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;user&quot;</span>).<span class="property">value</span>;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;star_counter&quot;</span>).<span class="property">innerHTML</span> = <span class="title function_">cal_github_star</span>(github_id);</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Input github id: <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">&quot;user&quot;</span> <span class="attr">value</span>=<span class="string">&quot;guofei9987&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">id</span>=<span class="string">&quot;user&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">&quot;Button&quot;</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">value</span>=<span class="string">&quot;Calculate&quot;</span> <span class="attr">onClick</span>=<span class="string">&quot;func_1()&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">&quot;star_counter&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><a href="https://github.com/guofei9987/star_counter">源代码地址</a>，star一下，我就很开心啦  </p>
-]]></content>
-      <categories>
-        <category>开源</category>
-        <category>工具</category>
-      </categories>
-      <tags>
-        <tag>工具</tag>
-        <tag>开源</tag>
-        <tag>统计</tag>
-        <tag>github</tag>
       </tags>
   </entry>
   <entry>
@@ -903,6 +903,97 @@ function myFunction2() {
 <p><img src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/hexo-theme-butterfly-docs-error404.png"></p>
 <a class="btn-beautify block pink right larger" href="/posts/4aa8abbe/" 
   title="📌 Butterfly 安裝文檔(三) 主題配置"><i class="far fa-hand-point-right"></i><span>📌 Butterfly 安裝文檔(三) 主題配置</span></a>]]></content>
+      <categories>
+        <category>Docs文檔</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+        <tag>Hexo</tag>
+        <tag>主題</tag>
+        <tag>butterfly</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Butterfly 安裝文檔(五) 主題問答</title>
+    <url>/2020/05/29/Butterfly-%E5%AE%89%E8%A3%9D%E6%96%87%E6%AA%94-%E4%BA%94-%E4%B8%BB%E9%A1%8C%E5%95%8F%E7%AD%94/undefined/98d20436.html</url>
+    <content><![CDATA[<div class="note green icon-padding flat"><i class="note-icon fas fa-rocket"></i><p> 📚  文檔目錄</p>
+<p><a href="/2020/05/29/Butterfly-%E5%AE%89%E8%A3%9D%E6%96%87%E6%AA%94-%E4%B8%80-%E5%BF%AB%E9%80%9F%E9%96%8B%E5%A7%8B/undefined/21cfbf15.html" title="Butterfly 安裝文檔(一) 快速開始">🚀 快速開始</a> - <a href="/2020/05/29/Butterfly-%E5%AE%89%E8%A3%9D%E6%96%87%E6%AA%94-%E4%BA%8C-%E4%B8%BB%E9%A1%8C%E9%A0%81%E9%9D%A2/undefined/dc584b87.html" title="Butterfly 安裝文檔(二) 主題頁面">📑 主題頁面</a> - <a href="/2020/05/29/Butterfly-%E5%AE%89%E8%A3%9D%E6%96%87%E6%AA%94-%E4%B8%89-%E4%B8%BB%E9%A1%8C%E9%85%8D%E7%BD%AE-1/undefined/4aa8abbe.html" title="Butterfly 安裝文檔(三) 主題配置-1">📌 主題配置-1</a> - <a href="/2020/05/29/Butterfly-%E5%AE%89%E8%A3%9D%E6%96%87%E6%AA%94-%E5%9B%9B-%E4%B8%BB%E9%A1%8C%E9%85%8D%E7%BD%AE-2/undefined/ceeb73f.html" title="Butterfly 安裝文檔(四) 主題配置-2">⚔️ 主題配置-2</a> - <a href="/2020/05/29/Butterfly-%E5%AE%89%E8%A3%9D%E6%96%87%E6%AA%94-%E4%BA%94-%E4%B8%BB%E9%A1%8C%E5%95%8F%E7%AD%94/undefined/98d20436.html" title="Butterfly 安裝文檔(五) 主題問答">❓ 主題問答</a> - <a href="/2020/05/29/Butterfly-%E5%AE%89%E8%A3%9D%E6%96%87%E6%AA%94-%E5%85%AD-%E9%80%B2%E9%9A%8E%E6%95%99%E7%A8%8B/undefined/4073eda.html" title="Butterfly 安裝文檔(六) 進階教程">⚡️ 進階教程</a></p>
+</div>
+
+<div class="note orange icon-padding flat"><i class="note-icon fas fa-magic"></i><p>你可以通過右下角的 <strong>簡</strong> 按鈕切換為簡體顯示 </p>
+</div>
+
+<hr>
+<p>以下是一些網友在安裝的過程中出現的問題。在提問題之前，先看有沒有解決方法。</p>
+<h3 id="運行後網頁顯示代碼"><a href="#運行後網頁顯示代碼" class="headerlink" title="運行後網頁顯示代碼"></a>運行後網頁顯示代碼</h3><p>頁面只顯示 <code>extends includes/layout.pug block content #recent-posts.recent-posts include includes/recent-posts.pug include includes/pagination.pug #aside_content.aside_content include includes/aside.pug</code></p>
+<blockquote>
+<p>請下載安裝：<code>npm install hexo-renderer-pug hexo-renderer-stylus --save</code> or <code>yarn add hexo-renderer-pug hexo-renderer-stylus</code></p>
+</blockquote>
+<h3 id="配置友情鏈接報錯"><a href="#配置友情鏈接報錯" class="headerlink" title="配置友情鏈接報錯"></a>配置友情鏈接報錯</h3><p>配置友情鏈接頁面時出現報錯</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ERROR D:\Desktop\orxing-blog\themes\Butterfly\layout\flink.pug:2</span><br><span class="line">    1| .flink</span><br><span class="line">  &gt; 2|   each i in site.data.link</span><br><span class="line">    3|     p.comment-word= i.class_name</span><br><span class="line">    4|     .post-cards</span><br><span class="line">    5|       ul.md-links</span><br><span class="line"></span><br><span class="line">Cannot read property &amp;#39;length&amp;#39; of undefined</span><br><span class="line">TypeError: D:\Desktop\orxing-blog\themes\Butterfly\layout\flink.pug:2</span><br><span class="line">    1| .flink</span><br><span class="line">  &gt; 2|   each i in site.data.link</span><br><span class="line">    3|     p.comment-word= i.class_name</span><br><span class="line">    4|     .post-cards</span><br><span class="line">    5|       ul.md-links</span><br><span class="line"></span><br><span class="line">Cannot read property &amp;#39;length&amp;#39; of undefined</span><br><span class="line">    at eval (eval at wrap (D:\Desktop\orxing-blog\node_modules\pug-runtime\wrap.js:6:10), &lt;anonymous&gt;:1890:32)</span><br><span class="line">    at eval (eval at wrap (D:\Desktop\orxing-blog\node_modules\pug-runtime\wrap.js:6:10), &lt;anonymous&gt;:2017:4)</span><br><span class="line">    at template (eval at wrap (D:\Desktop\orxing-blog\node_modules\pug-runtime\wrap.js:6:10), &lt;anonymous&gt;:10152:72)</span><br><span class="line">    at Theme._View.View._compiled (D:\Desktop\orxing-blog\node_modules\hexo\lib\theme\view.js:123:48)</span><br><span class="line">    at Theme._View.View.View.render (D:\Desktop\orxing-blog\node_modules\hexo\lib\theme\view.js:29:15)</span><br><span class="line">    at D:\Desktop\orxing-blog\node_modules\hexo\lib\hexo\index.js:349:21</span><br><span class="line">    at tryCatcher (D:\Desktop\orxing-blog\node_modules\bluebird\js\release\util.js:16:23)</span><br><span class="line">    at D:\Desktop\orxing-blog\node_modules\bluebird\js\release\method.js:15:34</span><br><span class="line">    at RouteStream._read (D:\Desktop\orxing-blog\node_modules\hexo\lib\hexo\router.js:123:3)</span><br><span class="line">    at RouteStream.Readable.read (_stream_readable.js:457:10)</span><br><span class="line">    at resume_ (_stream_readable.js:936:12)</span><br><span class="line">    at processTicksAndRejections (internal/process/task_queues.js:84:9)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>請檢查 <code>link.yml</code>文檔內代碼的空格</p>
+</blockquote>
+<h3 id="升級最新版後運行報錯"><a href="#升級最新版後運行報錯" class="headerlink" title="升級最新版後運行報錯"></a>升級最新版後運行報錯</h3><p>升級最新版本hexo g後報錯</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">INFO  Deleted database.</span><br><span class="line">INFO  Start processing</span><br><span class="line">FATAL Something&amp;#39;s wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.html</span><br><span class="line">TypeError: Cannot read property &amp;#39;enable&amp;#39; of undefined</span><br><span class="line">    at Hexo.&lt;anonymous&gt; (/Users/qinkangdeid/Nextcloud/work/codes/personal/github/personal/qinkangdeid.github.io/themes/Butterfly/scripts/post-lazyload.js:5:23)</span><br><span class="line">    at Hexo.tryCatcher (/Users/qinkangdeid/Nextcloud/work/codes/personal/github/personal/qinkangdeid.github.io/node_modules/bluebird/js/release/util.js:16:23)</span><br><span class="line">    at Hexo.&lt;anonymous&gt; (/Users/qinkangdeid/Nextcloud/work/codes/personal/github/personal/qinkangdeid.github.io/node_modules/bluebird/js/release/method.js:15:34)</span><br><span class="line">    at /Users/qinkangdeid/Nextcloud/work/codes/personal/github/personal/qinkangdeid.github.io/node_modules/hexo/lib/extend/filter.js:60:50</span><br><span class="line">    at tryCatcher (/Users/qinkangdeid/Nextcloud/work/codes/personal/github/personal/qinkangdeid.github.io/node_modules/bluebird/js/release/util.js:16:23)</span><br><span class="line">    at Object.gotValue (/Users/qinkangdeid/Nextcloud/work/codes/personal/github/personal/qinkangdeid.github.io/node_modules/bluebird/js/release/reduce.js:155:18)</span><br><span class="line">    at Object.gotAccum (/Users/qinkangdeid/Nextcloud/work/codes/personal/github/personal/qinkangdeid.github.io/node_modules/bluebird/js/release/reduce.js:144:25)</span><br><span class="line">    at Object.tryCatcher (/Users/qinkangdeid/Nextcloud/work/codes/personal/github/personal/qinkangdeid.github.io/node_modules/bluebird/js/release/util.js:16:23)</span><br><span class="line">    at Promise._settlePromiseFromHandler (/Users/qinkangdeid/Nextcloud/work/codes/personal/github/personal/qinkangdeid.github.io/node_modules/bluebird/js/release/promise.js:517:31)</span><br><span class="line">    at Promise._settlePromise (/Users/qinkangdeid/Nextcloud/work/codes/personal/github/personal/qinkangdeid.github.io/node_modules/bluebird/js/release/promise.js:574:18)</span><br><span class="line">    at Promise._settlePromiseCtx (/Users/qinkangdeid/Nextcloud/work/codes/personal/github/personal/qinkangdeid.github.io/node_modules/bluebird/js/release/promise.js:611:10)</span><br><span class="line">    at _drainQueueStep (/Users/qinkangdeid/Nextcloud/work/codes/personal/github/personal/qinkangdeid.github.io/node_modules/bluebird/js/release/async.js:142:12)</span><br><span class="line">    at _drainQueue (/Users/qinkangdeid/Nextcloud/work/codes/personal/github/personal/qinkangdeid.github.io/node_modules/bluebird/js/release/async.js:131:9)</span><br><span class="line">    at Async._drainQueues (/Users/qinkangdeid/Nextcloud/work/codes/personal/github/personal/qinkangdeid.github.io/node_modules/bluebird/js/release/async.js:147:5)</span><br><span class="line">    at Immediate.Async.drainQueues [as _onImmediate] (/Users/qinkangdeid/Nextcloud/work/codes/personal/github/personal/qinkangdeid.github.io/node_modules/bluebird/js/release/async.js:17:14)</span><br><span class="line">    at processImmediate (internal/timers.js:439:21)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>請參照最新版的_config.yml, 比對後，把缺的配置複製到主題配置文件中去</p>
+</blockquote>
+<h3 id="wordcount-is-not-a-function-totalcount-is-not-a-function"><a href="#wordcount-is-not-a-function-totalcount-is-not-a-function" class="headerlink" title="wordcount is not a function &#x2F; totalcount is not a function"></a>wordcount is not a function &#x2F; totalcount is not a function</h3><p>報錯<code>wordcount is not a function</code></p>
+<blockquote>
+<p>請檢查是否安裝了wordcount插件 <code>npm i --save hexo-wordcount</code></p>
+</blockquote>
+<h3 id="升級2-0-0後運行報錯"><a href="#升級2-0-0後運行報錯" class="headerlink" title="升級2.0.0後運行報錯"></a>升級2.0.0後運行報錯</h3><p>舊版本升級到2.0.0後報錯</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">INFO Start processing</span><br><span class="line">FATAL Something’s wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.html</span><br><span class="line">Template render error: (unknown path)</span><br><span class="line">unexpected end of file</span><br><span class="line">at Object.prettifyError (F:\hexo\nodemodules\nunjucks\src\lib.js:36:11)</span><br><span class="line">at Template.render (F:\hexo\node_modules\nunjucks\src\environment.js:542:21)</span><br><span class="line">at Environment.renderString (F:\hexo\node_modules\nunjucks\src\environment.js:380:17)</span><br><span class="line">at Promise.fromCallback.cb (F:\hexo\node_modules\hexo\lib\extend\tag.js:123:48)</span><br><span class="line">at tryCatcher (F:\hexo\node_modules\bluebird\js\release\util.js:16:23)</span><br><span class="line">at Function.Promise.fromNode.Promise.fromCallback (F:\hexo\node_modules\bluebird\js\release\promise.js:185:30)</span><br><span class="line">at Tag.render (F:\hexo\node_modules\hexo\lib\extend\tag.js:123:18)</span><br><span class="line">at Object.onRenderEnd (F:\hexo\node_modules\hexo\lib\hexo\post.js:280:20)</span><br><span class="line">at Promise.then.then.result (F:\hexo\node_modules\hexo\lib\hexo\render.js:64:19)</span><br><span class="line">at tryCatcher (F:\hexo\node_modules\bluebird\js\release\util.js:16:23)</span><br><span class="line">at Promise.settlePromiseFromHandler (F:\hexo\nodemodules\bluebird\js\release\promise.js:517:31)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>2.0.0版本以上刪掉了gallery，而引入新的gallery。所以如果有使用舊版，需刪掉或者更改寫法。</p>
+</blockquote>
+<h3 id="代碼渲染與實際不同"><a href="#代碼渲染與實際不同" class="headerlink" title="代碼渲染與實際不同"></a>代碼渲染與實際不同</h3><p>2.1.0 以下版本會出現的問題</p>
+<p>代碼渲染與實際不同</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;div&gt;aaa&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>渲染結果:</p>
+<p><img src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/73515338-e6874d80-442f-11ea-9d07-725d37002985.png"></p>
+<blockquote>
+<p>cheerio版本錯誤，請安裝0.22.0版本</p>
+<p>npm install <a href="mailto:&#x63;&#104;&#x65;&#x65;&#x72;&#x69;&#x6f;&#x40;&#48;&#x2e;&#50;&#50;&#x2e;&#x30;">&#x63;&#104;&#x65;&#x65;&#x72;&#x69;&#x6f;&#x40;&#48;&#x2e;&#50;&#50;&#x2e;&#x30;</a> –save</p>
+</blockquote>
+<h3 id="搜索欄在底部"><a href="#搜索欄在底部" class="headerlink" title="搜索欄在底部"></a>搜索欄在底部</h3><p>hexo deploy後搜索欄在頁面底部</p>
+<blockquote>
+<p>生成前先hexo clean</p>
+</blockquote>
+<h3 id="本地可以正常運行，但是push上去後出錯-缺失-無效"><a href="#本地可以正常運行，但是push上去後出錯-缺失-無效" class="headerlink" title="本地可以正常運行，但是push上去後出錯&#x2F;缺失&#x2F;無效"></a>本地可以正常運行，但是push上去後出錯&#x2F;缺失&#x2F;無效</h3><blockquote>
+<ol>
+<li>清理瀏覽器緩存</li>
+<li>如果1無效，請確認上傳時是否有運行 hexo clean</li>
+</ol>
+</blockquote>
+<h3 id="已在Hexo的配置文件設置了語言，為什麼導航欄仍然是英文"><a href="#已在Hexo的配置文件設置了語言，為什麼導航欄仍然是英文" class="headerlink" title="已在Hexo的配置文件設置了語言，為什麼導航欄仍然是英文"></a>已在Hexo的配置文件設置了語言，為什麼導航欄仍然是英文</h3><blockquote>
+<p>請在導航的配置裏，自己修改成想要的中文</p>
+</blockquote>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">首頁:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-home</span></span><br><span class="line"><span class="string">時間軸:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-archive</span></span><br><span class="line"><span class="string">標籤:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-tags</span></span><br><span class="line"><span class="string">分類:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-folder-open</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="運行報錯-Cannot-read-property-‘bind’-of-undefined-full-url-for-is-not-function"><a href="#運行報錯-Cannot-read-property-‘bind’-of-undefined-full-url-for-is-not-function" class="headerlink" title="運行報錯 Cannot read property ‘bind’ of undefined&#x2F;full_url_for is not function"></a>運行報錯 Cannot read property ‘bind’ of undefined&#x2F;full_url_for is not function</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">TypeError: Cannot read property <span class="string">&#x27;bind&#x27;</span> of undefined</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>把Hexo升級到4.0以上版本</p>
+</blockquote>
+<h3 id="Cannot-read-property-‘appId’-of-undefined"><a href="#Cannot-read-property-‘appId’-of-undefined" class="headerlink" title="Cannot read property ‘appId’ of undefined"></a>Cannot read property ‘appId’ of undefined</h3><p>報錯</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">  &gt; <span class="number">1</span>| -</span><br><span class="line">    <span class="number">2</span>|   var algolia = <span class="string">&#x27;undefined&#x27;</span>;</span><br><span class="line">    <span class="number">3</span>|   var env = process.env;</span><br><span class="line">    <span class="number">4</span>|   <span class="keyword">if</span> (theme.algolia_search.enable) &#123;</span><br><span class="line"></span><br><span class="line">Cannot read property <span class="string">&#x27;appId&#x27;</span> of undefined</span><br><span class="line">    at eval (eval at wrap (F:\github\Blog\blog\node_modules\pug<span class="literal">-runtime</span>\wrap.js:<span class="number">6</span>:<span class="number">10</span>), &lt;anonymous&gt;:<span class="number">8</span>:<span class="number">49</span>)</span><br><span class="line">    at template (eval at wrap (F:\github\Blog\blog\node_modules\pug<span class="literal">-runtime</span>\wrap.js:<span class="number">6</span>:<span class="number">10</span>), &lt;anonymous&gt;:<span class="number">329</span>:<span class="number">53</span>)</span><br><span class="line">    at _View._compiledSync (F:\github\Blog\blog\node_modules\hexo\lib\theme\view.js:<span class="number">132</span>:<span class="number">24</span>)</span><br><span class="line">    at _View.renderSync (F:\github\Blog\blog\node_modules\hexo\lib\theme\view.js:<span class="number">59</span>:<span class="number">25</span>)</span><br><span class="line">    at F:\github\Blog\blog\node_modules\hexo\lib\plugins\helper\partial.js:<span class="number">31</span>:<span class="number">52</span></span><br><span class="line">    at Cache.apply (F:\github\Blog\blog\node_modules\hexo\node_modules\hexo<span class="literal">-util</span>\lib\cache.js:<span class="number">27</span>:<span class="number">46</span>)</span><br><span class="line">    at Object.fragmentCache (F:\github\Blog\blog\node_modules\hexo\lib\plugins\helper\fragment_cache.js:<span class="number">11</span>:<span class="number">34</span>)</span><br><span class="line">    at Object.partial (F:\github\Blog\blog\node_modules\hexo\lib\plugins\helper\partial.js:<span class="number">31</span>:<span class="number">17</span>)</span><br><span class="line">    at eval (eval at wrap (F:\github\Blog\blog\node_modules\pug<span class="literal">-runtime</span>\wrap.js:<span class="number">6</span>:<span class="number">10</span>), &lt;anonymous&gt;:<span class="number">149</span>:<span class="number">46</span>)</span><br><span class="line">    at template (eval at wrap (F:\github\Blog\blog\node_modules\pug<span class="literal">-runtime</span>\wrap.js:<span class="number">6</span>:<span class="number">10</span>), &lt;anonymous&gt;:<span class="number">5213</span>:<span class="number">93</span>)</span><br><span class="line">    at _View._compiled (F:\github\Blog\blog\node_modules\hexo\lib\theme\view.js:<span class="number">136</span>:<span class="number">50</span>)</span><br><span class="line">    at _View.render (F:\github\Blog\blog\node_modules\hexo\lib\theme\view.js:<span class="number">39</span>:<span class="number">17</span>)</span><br><span class="line">    at F:\github\Blog\blog\node_modules\hexo\lib\hexo\index.js:<span class="number">64</span>:<span class="number">21</span></span><br><span class="line">    at tryCatcher (F:\github\Blog\blog\node_modules\hexo\node_modules\bluebird\js\release\util.js:<span class="number">16</span>:<span class="number">23</span>)</span><br><span class="line">    at F:\github\Blog\blog\node_modules\hexo\node_modules\bluebird\js\release\method.js:<span class="number">15</span>:<span class="number">34</span></span><br><span class="line">    at RouteStream._read (F:\github\Blog\blog\node_modules\hexo\lib\hexo\router.js:<span class="number">30</span>:<span class="number">5</span>)</span><br><span class="line">    at RouteStream.Readable.read (_stream_readable.js:<span class="number">490</span>:<span class="number">10</span>)</span><br><span class="line">    at resume_ (_stream_readable.js:<span class="number">975</span>:<span class="number">12</span>)</span><br><span class="line">    at processTicksAndRejections (internal/<span class="keyword">process</span>/task_queues.js:<span class="number">80</span>:<span class="number">21</span>) &#123;</span><br><span class="line">  path: <span class="string">&#x27;F:\\github\\Blog\\blog\\themes\\Butterfly\\layout\\includes\\head.pug&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>algolia 插件安裝後還需要配置<br>查看插件文檔配置</p>
+</blockquote>
+<h3 id="頂部出現-Loading"><a href="#頂部出現-Loading" class="headerlink" title="頂部出現 Loading"></a>頂部出現 Loading</h3><blockquote>
+<p>生成前先 hexo clean</p>
+</blockquote>
+<h3 id="點擊中文目錄報錯的問題"><a href="#點擊中文目錄報錯的問題" class="headerlink" title="點擊中文目錄報錯的問題"></a>點擊中文目錄報錯的問題</h3><p>這種情況出現在主題為 <code>3.0.0</code>以下版本，升級主題就行</p>
+<h3 id="Uncaught-ReferenceError-regeneratorRuntime-is-not-defined"><a href="#Uncaught-ReferenceError-regeneratorRuntime-is-not-defined" class="headerlink" title="Uncaught ReferenceError: regeneratorRuntime is not defined"></a>Uncaught ReferenceError: regeneratorRuntime is not defined</h3><p>這是因為使用 babel 壓縮代碼而出現的報錯，具體解決方法查看 <a href="https://github.com/babel/gulp-babel#runtime">babel&#x2F;gulp-babel</a></p>
+<a class="btn-beautify block orange right larger" href="/posts/4073eda/" 
+  title="⚡️ Butterfly 安裝文檔(六) 進階教程"><i class="far fa-hand-point-right"></i><span>⚡️ Butterfly 安裝文檔(六) 進階教程</span></a>]]></content>
       <categories>
         <category>Docs文檔</category>
       </categories>
@@ -2370,97 +2461,6 @@ w:Rock-y did-nt like that</div>
       </tags>
   </entry>
   <entry>
-    <title>Butterfly 安裝文檔(五) 主題問答</title>
-    <url>/2020/05/29/Butterfly-%E5%AE%89%E8%A3%9D%E6%96%87%E6%AA%94-%E4%BA%94-%E4%B8%BB%E9%A1%8C%E5%95%8F%E7%AD%94/undefined/98d20436.html</url>
-    <content><![CDATA[<div class="note green icon-padding flat"><i class="note-icon fas fa-rocket"></i><p> 📚  文檔目錄</p>
-<p><a href="/2020/05/29/Butterfly-%E5%AE%89%E8%A3%9D%E6%96%87%E6%AA%94-%E4%B8%80-%E5%BF%AB%E9%80%9F%E9%96%8B%E5%A7%8B/undefined/21cfbf15.html" title="Butterfly 安裝文檔(一) 快速開始">🚀 快速開始</a> - <a href="/2020/05/29/Butterfly-%E5%AE%89%E8%A3%9D%E6%96%87%E6%AA%94-%E4%BA%8C-%E4%B8%BB%E9%A1%8C%E9%A0%81%E9%9D%A2/undefined/dc584b87.html" title="Butterfly 安裝文檔(二) 主題頁面">📑 主題頁面</a> - <a href="/2020/05/29/Butterfly-%E5%AE%89%E8%A3%9D%E6%96%87%E6%AA%94-%E4%B8%89-%E4%B8%BB%E9%A1%8C%E9%85%8D%E7%BD%AE-1/undefined/4aa8abbe.html" title="Butterfly 安裝文檔(三) 主題配置-1">📌 主題配置-1</a> - <a href="/2020/05/29/Butterfly-%E5%AE%89%E8%A3%9D%E6%96%87%E6%AA%94-%E5%9B%9B-%E4%B8%BB%E9%A1%8C%E9%85%8D%E7%BD%AE-2/undefined/ceeb73f.html" title="Butterfly 安裝文檔(四) 主題配置-2">⚔️ 主題配置-2</a> - <a href="/2020/05/29/Butterfly-%E5%AE%89%E8%A3%9D%E6%96%87%E6%AA%94-%E4%BA%94-%E4%B8%BB%E9%A1%8C%E5%95%8F%E7%AD%94/undefined/98d20436.html" title="Butterfly 安裝文檔(五) 主題問答">❓ 主題問答</a> - <a href="/2020/05/29/Butterfly-%E5%AE%89%E8%A3%9D%E6%96%87%E6%AA%94-%E5%85%AD-%E9%80%B2%E9%9A%8E%E6%95%99%E7%A8%8B/undefined/4073eda.html" title="Butterfly 安裝文檔(六) 進階教程">⚡️ 進階教程</a></p>
-</div>
-
-<div class="note orange icon-padding flat"><i class="note-icon fas fa-magic"></i><p>你可以通過右下角的 <strong>簡</strong> 按鈕切換為簡體顯示 </p>
-</div>
-
-<hr>
-<p>以下是一些網友在安裝的過程中出現的問題。在提問題之前，先看有沒有解決方法。</p>
-<h3 id="運行後網頁顯示代碼"><a href="#運行後網頁顯示代碼" class="headerlink" title="運行後網頁顯示代碼"></a>運行後網頁顯示代碼</h3><p>頁面只顯示 <code>extends includes/layout.pug block content #recent-posts.recent-posts include includes/recent-posts.pug include includes/pagination.pug #aside_content.aside_content include includes/aside.pug</code></p>
-<blockquote>
-<p>請下載安裝：<code>npm install hexo-renderer-pug hexo-renderer-stylus --save</code> or <code>yarn add hexo-renderer-pug hexo-renderer-stylus</code></p>
-</blockquote>
-<h3 id="配置友情鏈接報錯"><a href="#配置友情鏈接報錯" class="headerlink" title="配置友情鏈接報錯"></a>配置友情鏈接報錯</h3><p>配置友情鏈接頁面時出現報錯</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ERROR D:\Desktop\orxing-blog\themes\Butterfly\layout\flink.pug:2</span><br><span class="line">    1| .flink</span><br><span class="line">  &gt; 2|   each i in site.data.link</span><br><span class="line">    3|     p.comment-word= i.class_name</span><br><span class="line">    4|     .post-cards</span><br><span class="line">    5|       ul.md-links</span><br><span class="line"></span><br><span class="line">Cannot read property &amp;#39;length&amp;#39; of undefined</span><br><span class="line">TypeError: D:\Desktop\orxing-blog\themes\Butterfly\layout\flink.pug:2</span><br><span class="line">    1| .flink</span><br><span class="line">  &gt; 2|   each i in site.data.link</span><br><span class="line">    3|     p.comment-word= i.class_name</span><br><span class="line">    4|     .post-cards</span><br><span class="line">    5|       ul.md-links</span><br><span class="line"></span><br><span class="line">Cannot read property &amp;#39;length&amp;#39; of undefined</span><br><span class="line">    at eval (eval at wrap (D:\Desktop\orxing-blog\node_modules\pug-runtime\wrap.js:6:10), &lt;anonymous&gt;:1890:32)</span><br><span class="line">    at eval (eval at wrap (D:\Desktop\orxing-blog\node_modules\pug-runtime\wrap.js:6:10), &lt;anonymous&gt;:2017:4)</span><br><span class="line">    at template (eval at wrap (D:\Desktop\orxing-blog\node_modules\pug-runtime\wrap.js:6:10), &lt;anonymous&gt;:10152:72)</span><br><span class="line">    at Theme._View.View._compiled (D:\Desktop\orxing-blog\node_modules\hexo\lib\theme\view.js:123:48)</span><br><span class="line">    at Theme._View.View.View.render (D:\Desktop\orxing-blog\node_modules\hexo\lib\theme\view.js:29:15)</span><br><span class="line">    at D:\Desktop\orxing-blog\node_modules\hexo\lib\hexo\index.js:349:21</span><br><span class="line">    at tryCatcher (D:\Desktop\orxing-blog\node_modules\bluebird\js\release\util.js:16:23)</span><br><span class="line">    at D:\Desktop\orxing-blog\node_modules\bluebird\js\release\method.js:15:34</span><br><span class="line">    at RouteStream._read (D:\Desktop\orxing-blog\node_modules\hexo\lib\hexo\router.js:123:3)</span><br><span class="line">    at RouteStream.Readable.read (_stream_readable.js:457:10)</span><br><span class="line">    at resume_ (_stream_readable.js:936:12)</span><br><span class="line">    at processTicksAndRejections (internal/process/task_queues.js:84:9)</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>請檢查 <code>link.yml</code>文檔內代碼的空格</p>
-</blockquote>
-<h3 id="升級最新版後運行報錯"><a href="#升級最新版後運行報錯" class="headerlink" title="升級最新版後運行報錯"></a>升級最新版後運行報錯</h3><p>升級最新版本hexo g後報錯</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">INFO  Deleted database.</span><br><span class="line">INFO  Start processing</span><br><span class="line">FATAL Something&amp;#39;s wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.html</span><br><span class="line">TypeError: Cannot read property &amp;#39;enable&amp;#39; of undefined</span><br><span class="line">    at Hexo.&lt;anonymous&gt; (/Users/qinkangdeid/Nextcloud/work/codes/personal/github/personal/qinkangdeid.github.io/themes/Butterfly/scripts/post-lazyload.js:5:23)</span><br><span class="line">    at Hexo.tryCatcher (/Users/qinkangdeid/Nextcloud/work/codes/personal/github/personal/qinkangdeid.github.io/node_modules/bluebird/js/release/util.js:16:23)</span><br><span class="line">    at Hexo.&lt;anonymous&gt; (/Users/qinkangdeid/Nextcloud/work/codes/personal/github/personal/qinkangdeid.github.io/node_modules/bluebird/js/release/method.js:15:34)</span><br><span class="line">    at /Users/qinkangdeid/Nextcloud/work/codes/personal/github/personal/qinkangdeid.github.io/node_modules/hexo/lib/extend/filter.js:60:50</span><br><span class="line">    at tryCatcher (/Users/qinkangdeid/Nextcloud/work/codes/personal/github/personal/qinkangdeid.github.io/node_modules/bluebird/js/release/util.js:16:23)</span><br><span class="line">    at Object.gotValue (/Users/qinkangdeid/Nextcloud/work/codes/personal/github/personal/qinkangdeid.github.io/node_modules/bluebird/js/release/reduce.js:155:18)</span><br><span class="line">    at Object.gotAccum (/Users/qinkangdeid/Nextcloud/work/codes/personal/github/personal/qinkangdeid.github.io/node_modules/bluebird/js/release/reduce.js:144:25)</span><br><span class="line">    at Object.tryCatcher (/Users/qinkangdeid/Nextcloud/work/codes/personal/github/personal/qinkangdeid.github.io/node_modules/bluebird/js/release/util.js:16:23)</span><br><span class="line">    at Promise._settlePromiseFromHandler (/Users/qinkangdeid/Nextcloud/work/codes/personal/github/personal/qinkangdeid.github.io/node_modules/bluebird/js/release/promise.js:517:31)</span><br><span class="line">    at Promise._settlePromise (/Users/qinkangdeid/Nextcloud/work/codes/personal/github/personal/qinkangdeid.github.io/node_modules/bluebird/js/release/promise.js:574:18)</span><br><span class="line">    at Promise._settlePromiseCtx (/Users/qinkangdeid/Nextcloud/work/codes/personal/github/personal/qinkangdeid.github.io/node_modules/bluebird/js/release/promise.js:611:10)</span><br><span class="line">    at _drainQueueStep (/Users/qinkangdeid/Nextcloud/work/codes/personal/github/personal/qinkangdeid.github.io/node_modules/bluebird/js/release/async.js:142:12)</span><br><span class="line">    at _drainQueue (/Users/qinkangdeid/Nextcloud/work/codes/personal/github/personal/qinkangdeid.github.io/node_modules/bluebird/js/release/async.js:131:9)</span><br><span class="line">    at Async._drainQueues (/Users/qinkangdeid/Nextcloud/work/codes/personal/github/personal/qinkangdeid.github.io/node_modules/bluebird/js/release/async.js:147:5)</span><br><span class="line">    at Immediate.Async.drainQueues [as _onImmediate] (/Users/qinkangdeid/Nextcloud/work/codes/personal/github/personal/qinkangdeid.github.io/node_modules/bluebird/js/release/async.js:17:14)</span><br><span class="line">    at processImmediate (internal/timers.js:439:21)</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>請參照最新版的_config.yml, 比對後，把缺的配置複製到主題配置文件中去</p>
-</blockquote>
-<h3 id="wordcount-is-not-a-function-totalcount-is-not-a-function"><a href="#wordcount-is-not-a-function-totalcount-is-not-a-function" class="headerlink" title="wordcount is not a function &#x2F; totalcount is not a function"></a>wordcount is not a function &#x2F; totalcount is not a function</h3><p>報錯<code>wordcount is not a function</code></p>
-<blockquote>
-<p>請檢查是否安裝了wordcount插件 <code>npm i --save hexo-wordcount</code></p>
-</blockquote>
-<h3 id="升級2-0-0後運行報錯"><a href="#升級2-0-0後運行報錯" class="headerlink" title="升級2.0.0後運行報錯"></a>升級2.0.0後運行報錯</h3><p>舊版本升級到2.0.0後報錯</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">INFO Start processing</span><br><span class="line">FATAL Something’s wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.html</span><br><span class="line">Template render error: (unknown path)</span><br><span class="line">unexpected end of file</span><br><span class="line">at Object.prettifyError (F:\hexo\nodemodules\nunjucks\src\lib.js:36:11)</span><br><span class="line">at Template.render (F:\hexo\node_modules\nunjucks\src\environment.js:542:21)</span><br><span class="line">at Environment.renderString (F:\hexo\node_modules\nunjucks\src\environment.js:380:17)</span><br><span class="line">at Promise.fromCallback.cb (F:\hexo\node_modules\hexo\lib\extend\tag.js:123:48)</span><br><span class="line">at tryCatcher (F:\hexo\node_modules\bluebird\js\release\util.js:16:23)</span><br><span class="line">at Function.Promise.fromNode.Promise.fromCallback (F:\hexo\node_modules\bluebird\js\release\promise.js:185:30)</span><br><span class="line">at Tag.render (F:\hexo\node_modules\hexo\lib\extend\tag.js:123:18)</span><br><span class="line">at Object.onRenderEnd (F:\hexo\node_modules\hexo\lib\hexo\post.js:280:20)</span><br><span class="line">at Promise.then.then.result (F:\hexo\node_modules\hexo\lib\hexo\render.js:64:19)</span><br><span class="line">at tryCatcher (F:\hexo\node_modules\bluebird\js\release\util.js:16:23)</span><br><span class="line">at Promise.settlePromiseFromHandler (F:\hexo\nodemodules\bluebird\js\release\promise.js:517:31)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>2.0.0版本以上刪掉了gallery，而引入新的gallery。所以如果有使用舊版，需刪掉或者更改寫法。</p>
-</blockquote>
-<h3 id="代碼渲染與實際不同"><a href="#代碼渲染與實際不同" class="headerlink" title="代碼渲染與實際不同"></a>代碼渲染與實際不同</h3><p>2.1.0 以下版本會出現的問題</p>
-<p>代碼渲染與實際不同</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;div&gt;aaa&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-
-<p>渲染結果:</p>
-<p><img src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/73515338-e6874d80-442f-11ea-9d07-725d37002985.png"></p>
-<blockquote>
-<p>cheerio版本錯誤，請安裝0.22.0版本</p>
-<p>npm install <a href="mailto:&#99;&#x68;&#101;&#101;&#x72;&#105;&#x6f;&#x40;&#48;&#46;&#x32;&#x32;&#x2e;&#x30;">&#99;&#x68;&#101;&#101;&#x72;&#105;&#x6f;&#x40;&#48;&#46;&#x32;&#x32;&#x2e;&#x30;</a> –save</p>
-</blockquote>
-<h3 id="搜索欄在底部"><a href="#搜索欄在底部" class="headerlink" title="搜索欄在底部"></a>搜索欄在底部</h3><p>hexo deploy後搜索欄在頁面底部</p>
-<blockquote>
-<p>生成前先hexo clean</p>
-</blockquote>
-<h3 id="本地可以正常運行，但是push上去後出錯-缺失-無效"><a href="#本地可以正常運行，但是push上去後出錯-缺失-無效" class="headerlink" title="本地可以正常運行，但是push上去後出錯&#x2F;缺失&#x2F;無效"></a>本地可以正常運行，但是push上去後出錯&#x2F;缺失&#x2F;無效</h3><blockquote>
-<ol>
-<li>清理瀏覽器緩存</li>
-<li>如果1無效，請確認上傳時是否有運行 hexo clean</li>
-</ol>
-</blockquote>
-<h3 id="已在Hexo的配置文件設置了語言，為什麼導航欄仍然是英文"><a href="#已在Hexo的配置文件設置了語言，為什麼導航欄仍然是英文" class="headerlink" title="已在Hexo的配置文件設置了語言，為什麼導航欄仍然是英文"></a>已在Hexo的配置文件設置了語言，為什麼導航欄仍然是英文</h3><blockquote>
-<p>請在導航的配置裏，自己修改成想要的中文</p>
-</blockquote>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">首頁:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-home</span></span><br><span class="line"><span class="string">時間軸:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-archive</span></span><br><span class="line"><span class="string">標籤:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-tags</span></span><br><span class="line"><span class="string">分類:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-folder-open</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="運行報錯-Cannot-read-property-‘bind’-of-undefined-full-url-for-is-not-function"><a href="#運行報錯-Cannot-read-property-‘bind’-of-undefined-full-url-for-is-not-function" class="headerlink" title="運行報錯 Cannot read property ‘bind’ of undefined&#x2F;full_url_for is not function"></a>運行報錯 Cannot read property ‘bind’ of undefined&#x2F;full_url_for is not function</h3><figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">TypeError: Cannot read property <span class="string">&#x27;bind&#x27;</span> of undefined</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>把Hexo升級到4.0以上版本</p>
-</blockquote>
-<h3 id="Cannot-read-property-‘appId’-of-undefined"><a href="#Cannot-read-property-‘appId’-of-undefined" class="headerlink" title="Cannot read property ‘appId’ of undefined"></a>Cannot read property ‘appId’ of undefined</h3><p>報錯</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">  &gt; <span class="number">1</span>| -</span><br><span class="line">    <span class="number">2</span>|   var algolia = <span class="string">&#x27;undefined&#x27;</span>;</span><br><span class="line">    <span class="number">3</span>|   var env = process.env;</span><br><span class="line">    <span class="number">4</span>|   <span class="keyword">if</span> (theme.algolia_search.enable) &#123;</span><br><span class="line"></span><br><span class="line">Cannot read property <span class="string">&#x27;appId&#x27;</span> of undefined</span><br><span class="line">    at eval (eval at wrap (F:\github\Blog\blog\node_modules\pug<span class="literal">-runtime</span>\wrap.js:<span class="number">6</span>:<span class="number">10</span>), &lt;anonymous&gt;:<span class="number">8</span>:<span class="number">49</span>)</span><br><span class="line">    at template (eval at wrap (F:\github\Blog\blog\node_modules\pug<span class="literal">-runtime</span>\wrap.js:<span class="number">6</span>:<span class="number">10</span>), &lt;anonymous&gt;:<span class="number">329</span>:<span class="number">53</span>)</span><br><span class="line">    at _View._compiledSync (F:\github\Blog\blog\node_modules\hexo\lib\theme\view.js:<span class="number">132</span>:<span class="number">24</span>)</span><br><span class="line">    at _View.renderSync (F:\github\Blog\blog\node_modules\hexo\lib\theme\view.js:<span class="number">59</span>:<span class="number">25</span>)</span><br><span class="line">    at F:\github\Blog\blog\node_modules\hexo\lib\plugins\helper\partial.js:<span class="number">31</span>:<span class="number">52</span></span><br><span class="line">    at Cache.apply (F:\github\Blog\blog\node_modules\hexo\node_modules\hexo<span class="literal">-util</span>\lib\cache.js:<span class="number">27</span>:<span class="number">46</span>)</span><br><span class="line">    at Object.fragmentCache (F:\github\Blog\blog\node_modules\hexo\lib\plugins\helper\fragment_cache.js:<span class="number">11</span>:<span class="number">34</span>)</span><br><span class="line">    at Object.partial (F:\github\Blog\blog\node_modules\hexo\lib\plugins\helper\partial.js:<span class="number">31</span>:<span class="number">17</span>)</span><br><span class="line">    at eval (eval at wrap (F:\github\Blog\blog\node_modules\pug<span class="literal">-runtime</span>\wrap.js:<span class="number">6</span>:<span class="number">10</span>), &lt;anonymous&gt;:<span class="number">149</span>:<span class="number">46</span>)</span><br><span class="line">    at template (eval at wrap (F:\github\Blog\blog\node_modules\pug<span class="literal">-runtime</span>\wrap.js:<span class="number">6</span>:<span class="number">10</span>), &lt;anonymous&gt;:<span class="number">5213</span>:<span class="number">93</span>)</span><br><span class="line">    at _View._compiled (F:\github\Blog\blog\node_modules\hexo\lib\theme\view.js:<span class="number">136</span>:<span class="number">50</span>)</span><br><span class="line">    at _View.render (F:\github\Blog\blog\node_modules\hexo\lib\theme\view.js:<span class="number">39</span>:<span class="number">17</span>)</span><br><span class="line">    at F:\github\Blog\blog\node_modules\hexo\lib\hexo\index.js:<span class="number">64</span>:<span class="number">21</span></span><br><span class="line">    at tryCatcher (F:\github\Blog\blog\node_modules\hexo\node_modules\bluebird\js\release\util.js:<span class="number">16</span>:<span class="number">23</span>)</span><br><span class="line">    at F:\github\Blog\blog\node_modules\hexo\node_modules\bluebird\js\release\method.js:<span class="number">15</span>:<span class="number">34</span></span><br><span class="line">    at RouteStream._read (F:\github\Blog\blog\node_modules\hexo\lib\hexo\router.js:<span class="number">30</span>:<span class="number">5</span>)</span><br><span class="line">    at RouteStream.Readable.read (_stream_readable.js:<span class="number">490</span>:<span class="number">10</span>)</span><br><span class="line">    at resume_ (_stream_readable.js:<span class="number">975</span>:<span class="number">12</span>)</span><br><span class="line">    at processTicksAndRejections (internal/<span class="keyword">process</span>/task_queues.js:<span class="number">80</span>:<span class="number">21</span>) &#123;</span><br><span class="line">  path: <span class="string">&#x27;F:\\github\\Blog\\blog\\themes\\Butterfly\\layout\\includes\\head.pug&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>algolia 插件安裝後還需要配置<br>查看插件文檔配置</p>
-</blockquote>
-<h3 id="頂部出現-Loading"><a href="#頂部出現-Loading" class="headerlink" title="頂部出現 Loading"></a>頂部出現 Loading</h3><blockquote>
-<p>生成前先 hexo clean</p>
-</blockquote>
-<h3 id="點擊中文目錄報錯的問題"><a href="#點擊中文目錄報錯的問題" class="headerlink" title="點擊中文目錄報錯的問題"></a>點擊中文目錄報錯的問題</h3><p>這種情況出現在主題為 <code>3.0.0</code>以下版本，升級主題就行</p>
-<h3 id="Uncaught-ReferenceError-regeneratorRuntime-is-not-defined"><a href="#Uncaught-ReferenceError-regeneratorRuntime-is-not-defined" class="headerlink" title="Uncaught ReferenceError: regeneratorRuntime is not defined"></a>Uncaught ReferenceError: regeneratorRuntime is not defined</h3><p>這是因為使用 babel 壓縮代碼而出現的報錯，具體解決方法查看 <a href="https://github.com/babel/gulp-babel#runtime">babel&#x2F;gulp-babel</a></p>
-<a class="btn-beautify block orange right larger" href="/posts/4073eda/" 
-  title="⚡️ Butterfly 安裝文檔(六) 進階教程"><i class="far fa-hand-point-right"></i><span>⚡️ Butterfly 安裝文檔(六) 進階教程</span></a>]]></content>
-      <categories>
-        <category>Docs文檔</category>
-      </categories>
-      <tags>
-        <tag>教程</tag>
-        <tag>Hexo</tag>
-        <tag>主題</tag>
-        <tag>butterfly</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Markdown Style test</title>
     <url>/2018/07/25/markdown/undefined/89757140.html</url>
     <content><![CDATA[<p>This post is originated from <a href="https://gist.github.com/apackeer/4159268">here</a> and is used for testing markdown style. This post contains nearly every markdown usage. Make sure all the markdown elements below show up correctly.</p>
@@ -2678,6 +2678,18 @@ alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a></p>
       </tags>
   </entry>
   <entry>
+    <title>沒有封面</title>
+    <url>/2020/03/10/no-cover/undefined/913b2502.html</url>
+    <content><![CDATA[<p>這篇文章沒有封面</p>
+]]></content>
+      <categories>
+        <category>Demo</category>
+      </categories>
+      <tags>
+        <tag>demo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Butterfly 安裝文檔(六) 進階教程</title>
     <url>/2020/05/29/Butterfly-%E5%AE%89%E8%A3%9D%E6%96%87%E6%AA%94-%E5%85%AD-%E9%80%B2%E9%9A%8E%E6%95%99%E7%A8%8B/undefined/4073eda.html</url>
     <content><![CDATA[<div class="note green icon-padding flat"><i class="note-icon fas fa-rocket"></i><p> 📚  文檔目錄</p>
@@ -2794,18 +2806,6 @@ alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a></p>
         <tag>Hexo</tag>
         <tag>主題</tag>
         <tag>butterfly</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>沒有封面</title>
-    <url>/2020/03/10/no-cover/undefined/913b2502.html</url>
-    <content><![CDATA[<p>這篇文章沒有封面</p>
-]]></content>
-      <categories>
-        <category>Demo</category>
-      </categories>
-      <tags>
-        <tag>demo</tag>
       </tags>
   </entry>
   <entry>
@@ -3662,86 +3662,6 @@ alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a></p>
       </tags>
   </entry>
   <entry>
-    <title>自定义侧边栏</title>
-    <url>/2020/12/31/%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BE%A7%E8%BE%B9%E6%A0%8F/undefined/ea33ab97.html</url>
-    <content><![CDATA[<div class="note info flat"><p>適用於 &gt;&#x3D; 3.8.0</p>
-</div>
-
-<p>側邊欄現在支持自定義了，可以添加自己喜歡的 widget。</p>
-<p>可添加自己的 widget，也可以對現有的 widget 進行排序（<code>博客資料</code>和 <code>公告</code>這兩個固定，其它的能排序）</p>
-<h2 id="widget-排序"><a href="#widget-排序" class="headerlink" title="widget 排序"></a>widget 排序</h2><p>只需要配置 <code>sort_order</code>就行。（使用了 <code>Flex</code> 佈局的 <code>order</code> 屬性，具體可查看 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Ordering_Flex_Items">mozilla 文檔</a>。簡單來講，就是配置<strong>數字</strong>來實現排序，如果不配置，則默認為 0。數字越小，排序越靠前。</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">aside:</span></span><br><span class="line"> <span class="string">...</span></span><br><span class="line">  <span class="attr">card_recent_post:</span></span><br><span class="line">    <span class="attr">sort_order:</span> <span class="comment"># Don&#x27;t modify the setting unless you know how it works</span></span><br><span class="line">  <span class="attr">card_categories:</span></span><br><span class="line">    <span class="attr">sort_order:</span> <span class="comment"># Don&#x27;t modify the setting unless you know how it works</span></span><br><span class="line">  <span class="attr">card_tags:</span></span><br><span class="line">    <span class="attr">sort_order:</span> <span class="comment"># Don&#x27;t modify the setting unless you know how it works</span></span><br><span class="line">  <span class="attr">card_archives:</span></span><br><span class="line">    <span class="attr">sort_order:</span> <span class="comment"># Don&#x27;t modify the setting unless you know how it works</span></span><br><span class="line">  <span class="attr">card_webinfo:</span></span><br><span class="line">    <span class="attr">sort_order:</span> <span class="comment"># Don&#x27;t modify the setting unless you know how it works</span></span><br><span class="line"></span><br><span class="line"><span class="attr">newest_comments:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">sort_order:</span> <span class="comment"># Don&#x27;t modify the setting unless you know how it works</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="自定義-widget"><a href="#自定義-widget" class="headerlink" title="自定義 widget"></a>自定義 widget</h2><p>如果你想添加自己的內容到側邊欄去，你可以自定義。</p>
-<h3 id="創建-widget-yml"><a href="#創建-widget-yml" class="headerlink" title="創建 widget.yml"></a>創建 widget.yml</h3><p>在Hexo博客目錄中的<code>source/_data</code>（如果沒有 _data 文件夾，請自行創建），創建一個文件 <code>widget.yml</code></p>
-<h3 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">top:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">class_name:</span></span><br><span class="line">    <span class="attr">id_name:</span></span><br><span class="line">    <span class="attr">name:</span></span><br><span class="line">    <span class="attr">icon:</span></span><br><span class="line">    <span class="attr">html:</span></span><br><span class="line"></span><br><span class="line"><span class="attr">bottom:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">class_name:</span></span><br><span class="line">    <span class="attr">id_name:</span></span><br><span class="line">    <span class="attr">name:</span></span><br><span class="line">    <span class="attr">icon:</span></span><br><span class="line">    <span class="attr">order:</span></span><br><span class="line">    <span class="attr">html:</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>參數詳解</p>
-</blockquote>
-<p><strong>top</strong>:  創建的 widget 會出現在非 sticky 區域（即所有頁面都會顯示)</p>
-<p><strong>bottom</strong>:  創建的 widget 會出現在 sticky 區域（除了文章頁都會顯示)</p>
-<table>
-<thead>
-<tr>
-<th>參數</th>
-<th>解釋</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>class_name</td>
-<td>所創建的 widget  父類 class 名 （可選）</td>
-</tr>
-<tr>
-<td>id_name</td>
-<td>所創建的 widget  父類 id 名（可選）</td>
-</tr>
-<tr>
-<td>name</td>
-<td>所創建的 widget 標題</td>
-</tr>
-<tr>
-<td>icon</td>
-<td>所創建的 widget 圖標</td>
-</tr>
-<tr>
-<td>order</td>
-<td>所創建的 widget 排序 （可選）</td>
-</tr>
-<tr>
-<td>html</td>
-<td>所創建的 widget 相關代碼</td>
-</tr>
-</tbody></table>
-<p><img src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/adside-diy-parameter.png" alt="image-20201230223506507"></p>
-<p>生成的 代碼 為</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card-widget 所寫的 class_name&quot;</span> <span class="attr">id</span>=<span class="string">&quot;所寫的 id_name&quot;</span> <span class="attr">style</span>=<span class="string">&quot;order: 所寫的 order&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item-headline&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&quot;所寫的 icon&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span>所寫的 name<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item-content&quot;</span>&gt;</span></span><br><span class="line">        所寫的 html</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>如果你需要對添加的 widget 進行 UI 調整，請自行添加 css 到 inject 去。</p>
-<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><p>以  <a href="https://clustrmaps.com/profile/1b7ep/widget/code/globe">訪客地圖</a> 為例子</p>
-<ol>
-<li><p>獲取訪客地圖的 html 代碼</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">id</span>=<span class="string">&quot;clstr_globe&quot;</span> <span class="attr">src</span>=<span class="string">&quot;//clustrmaps.com/globe.js?d=5V2tOKp8qAdRM-i8eu7ETTO9ugt5uKbbG-U7Yj8uMl8&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>創建 widget.yml</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">bottom:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">class_name:</span> <span class="string">user-map</span></span><br><span class="line">      <span class="attr">id_name:</span> <span class="string">user-map</span></span><br><span class="line">      <span class="attr">name:</span> <span class="string">訪客地圖</span></span><br><span class="line">      <span class="attr">icon:</span> <span class="string">fas</span> <span class="string">fa-heartbeat</span></span><br><span class="line">      <span class="attr">order:</span></span><br><span class="line">      <span class="attr">html:</span> <span class="string">&#x27;&lt;script type=&quot;text/javascript&quot; id=&quot;clstr_globe&quot; src=&quot;//clustrmaps.com/globe.js?d=5V2tOKp8qAdRM-i8eu7ETTO9ugt5uKbbG-U7Yj8uMl8&quot;&gt;&lt;/script&gt;&#x27;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>運行 hexo</p>
-<p><img src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/aside-diy-sample.png" alt="image-20201230224442356"></p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>進階教程</category>
-      </categories>
-      <tags>
-        <tag>教程</tag>
-        <tag>Hexo</tag>
-        <tag>主題</tag>
-        <tag>butterfly</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>標籤外掛(Tag Plugins)</title>
     <url>/2020/01/06/%E6%A8%99%E7%B1%A4%E5%A4%96%E6%8E%9B-Tag-Plugins/undefined/2df239ce.html</url>
     <content><![CDATA[<h2 id="Tabs"><a href="#Tabs" class="headerlink" title="Tabs"></a>Tabs</h2><div class="tabs" id="tags"><ul class="nav-tabs"><button type="button" class="tab  active" data-href="tags-1">出師表</button><button type="button" class="tab " data-href="tags-2">圖庫</button><button type="button" class="tab " data-href="tags-3">李白</button></ul><div class="tab-contents"><div class="tab-item-content active" id="tags-1"><p>臣亮言：先帝創業未半而中道崩殂，今天下三分，益州疲弊，此誠危急存亡之秋也。然侍衞之臣不懈於內，忠志之士忘身於外者，蓋追先帝之殊遇，欲報之於陛下也。誠宜開張聖聽，以光先帝遺德，恢弘志士之氣，不宜妄自菲薄，引喻失義，以塞忠諫之路也。<br>宮中府中，俱為一體；陟罰臧否，不宜異同：若有作奸犯科及為忠善者，宜付有司論其刑賞，以昭陛下平明之理；不宜偏私，使內外異法也。<br>侍中、侍郎郭攸之、費禕、董允等，此皆良實，志慮忠純，是以先帝簡拔以遺陛下：愚以為宮中之事，事無大小，悉以諮之，然後施行，必能裨補闕漏，有所廣益。<br>將軍向寵，性行淑均，曉暢軍事，試用於昔日，先帝稱之曰“能”，是以眾議舉寵為督：愚以為營中之事，悉以諮之，必能使行陣和睦，優劣得所。<br>親賢臣，遠小人，此先漢所以興隆也；親小人，遠賢臣，此後漢所以傾頹也。先帝在時，每與臣論此事，未嘗不歎息痛恨於桓、靈也。侍中、尚書、長史、參軍，此悉貞良死節之臣，願陛下親之、信之，則漢室之隆，可計日而待也。<br>臣本布衣，躬耕於南陽，苟全性命於亂世，不求聞達於諸侯。先帝不以臣卑鄙，猥自枉屈，三顧臣於草廬之中，諮臣以當世之事，由是感激，遂許先帝以驅馳。後值傾覆，受任於敗軍之際，奉命於危難之間：爾來二十有一年矣。<br>先帝知臣謹慎，故臨崩寄臣以大事也。受命以來，夙夜憂歎，恐託付不效，以傷先帝之明；故五月渡瀘，深入不毛。今南方已定，兵甲已足，當獎率三軍，北定中原，庶竭駑鈍，攘除奸兇，興復漢室，還於舊都。此臣所以報先帝而忠陛下之職分也。至於斟酌損益，進盡忠言，則攸之、禕、允之任也。<br>願陛下託臣以討賊興復之效，不效，則治臣之罪，以告先帝之靈。若無興德之言，則責攸之、禕、允等之慢，以彰其咎；陛下亦宜自謀，以諮諏善道，察納雅言，深追先帝遺詔。臣不勝受恩感激。<br>今當遠離，臨表涕零，不知所言。</p></div><div class="tab-item-content" id="tags-2"><div class="gallery-container" data-type="data" data-button="">
@@ -4137,6 +4057,86 @@ alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a></p>
       </categories>
       <tags>
         <tag>標籤外掛</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>自定义侧边栏</title>
+    <url>/2020/12/31/%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BE%A7%E8%BE%B9%E6%A0%8F/undefined/ea33ab97.html</url>
+    <content><![CDATA[<div class="note info flat"><p>適用於 &gt;&#x3D; 3.8.0</p>
+</div>
+
+<p>側邊欄現在支持自定義了，可以添加自己喜歡的 widget。</p>
+<p>可添加自己的 widget，也可以對現有的 widget 進行排序（<code>博客資料</code>和 <code>公告</code>這兩個固定，其它的能排序）</p>
+<h2 id="widget-排序"><a href="#widget-排序" class="headerlink" title="widget 排序"></a>widget 排序</h2><p>只需要配置 <code>sort_order</code>就行。（使用了 <code>Flex</code> 佈局的 <code>order</code> 屬性，具體可查看 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Ordering_Flex_Items">mozilla 文檔</a>。簡單來講，就是配置<strong>數字</strong>來實現排序，如果不配置，則默認為 0。數字越小，排序越靠前。</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">aside:</span></span><br><span class="line"> <span class="string">...</span></span><br><span class="line">  <span class="attr">card_recent_post:</span></span><br><span class="line">    <span class="attr">sort_order:</span> <span class="comment"># Don&#x27;t modify the setting unless you know how it works</span></span><br><span class="line">  <span class="attr">card_categories:</span></span><br><span class="line">    <span class="attr">sort_order:</span> <span class="comment"># Don&#x27;t modify the setting unless you know how it works</span></span><br><span class="line">  <span class="attr">card_tags:</span></span><br><span class="line">    <span class="attr">sort_order:</span> <span class="comment"># Don&#x27;t modify the setting unless you know how it works</span></span><br><span class="line">  <span class="attr">card_archives:</span></span><br><span class="line">    <span class="attr">sort_order:</span> <span class="comment"># Don&#x27;t modify the setting unless you know how it works</span></span><br><span class="line">  <span class="attr">card_webinfo:</span></span><br><span class="line">    <span class="attr">sort_order:</span> <span class="comment"># Don&#x27;t modify the setting unless you know how it works</span></span><br><span class="line"></span><br><span class="line"><span class="attr">newest_comments:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">sort_order:</span> <span class="comment"># Don&#x27;t modify the setting unless you know how it works</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="自定義-widget"><a href="#自定義-widget" class="headerlink" title="自定義 widget"></a>自定義 widget</h2><p>如果你想添加自己的內容到側邊欄去，你可以自定義。</p>
+<h3 id="創建-widget-yml"><a href="#創建-widget-yml" class="headerlink" title="創建 widget.yml"></a>創建 widget.yml</h3><p>在Hexo博客目錄中的<code>source/_data</code>（如果沒有 _data 文件夾，請自行創建），創建一個文件 <code>widget.yml</code></p>
+<h3 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">top:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">class_name:</span></span><br><span class="line">    <span class="attr">id_name:</span></span><br><span class="line">    <span class="attr">name:</span></span><br><span class="line">    <span class="attr">icon:</span></span><br><span class="line">    <span class="attr">html:</span></span><br><span class="line"></span><br><span class="line"><span class="attr">bottom:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">class_name:</span></span><br><span class="line">    <span class="attr">id_name:</span></span><br><span class="line">    <span class="attr">name:</span></span><br><span class="line">    <span class="attr">icon:</span></span><br><span class="line">    <span class="attr">order:</span></span><br><span class="line">    <span class="attr">html:</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>參數詳解</p>
+</blockquote>
+<p><strong>top</strong>:  創建的 widget 會出現在非 sticky 區域（即所有頁面都會顯示)</p>
+<p><strong>bottom</strong>:  創建的 widget 會出現在 sticky 區域（除了文章頁都會顯示)</p>
+<table>
+<thead>
+<tr>
+<th>參數</th>
+<th>解釋</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>class_name</td>
+<td>所創建的 widget  父類 class 名 （可選）</td>
+</tr>
+<tr>
+<td>id_name</td>
+<td>所創建的 widget  父類 id 名（可選）</td>
+</tr>
+<tr>
+<td>name</td>
+<td>所創建的 widget 標題</td>
+</tr>
+<tr>
+<td>icon</td>
+<td>所創建的 widget 圖標</td>
+</tr>
+<tr>
+<td>order</td>
+<td>所創建的 widget 排序 （可選）</td>
+</tr>
+<tr>
+<td>html</td>
+<td>所創建的 widget 相關代碼</td>
+</tr>
+</tbody></table>
+<p><img src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/adside-diy-parameter.png" alt="image-20201230223506507"></p>
+<p>生成的 代碼 為</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card-widget 所寫的 class_name&quot;</span> <span class="attr">id</span>=<span class="string">&quot;所寫的 id_name&quot;</span> <span class="attr">style</span>=<span class="string">&quot;order: 所寫的 order&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item-headline&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&quot;所寫的 icon&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span>所寫的 name<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item-content&quot;</span>&gt;</span></span><br><span class="line">        所寫的 html</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>如果你需要對添加的 widget 進行 UI 調整，請自行添加 css 到 inject 去。</p>
+<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><p>以  <a href="https://clustrmaps.com/profile/1b7ep/widget/code/globe">訪客地圖</a> 為例子</p>
+<ol>
+<li><p>獲取訪客地圖的 html 代碼</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">id</span>=<span class="string">&quot;clstr_globe&quot;</span> <span class="attr">src</span>=<span class="string">&quot;//clustrmaps.com/globe.js?d=5V2tOKp8qAdRM-i8eu7ETTO9ugt5uKbbG-U7Yj8uMl8&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>創建 widget.yml</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">bottom:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">class_name:</span> <span class="string">user-map</span></span><br><span class="line">      <span class="attr">id_name:</span> <span class="string">user-map</span></span><br><span class="line">      <span class="attr">name:</span> <span class="string">訪客地圖</span></span><br><span class="line">      <span class="attr">icon:</span> <span class="string">fas</span> <span class="string">fa-heartbeat</span></span><br><span class="line">      <span class="attr">order:</span></span><br><span class="line">      <span class="attr">html:</span> <span class="string">&#x27;&lt;script type=&quot;text/javascript&quot; id=&quot;clstr_globe&quot; src=&quot;//clustrmaps.com/globe.js?d=5V2tOKp8qAdRM-i8eu7ETTO9ugt5uKbbG-U7Yj8uMl8&quot;&gt;&lt;/script&gt;&#x27;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>運行 hexo</p>
+<p><img src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/aside-diy-sample.png" alt="image-20201230224442356"></p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>進階教程</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+        <tag>Hexo</tag>
+        <tag>主題</tag>
+        <tag>butterfly</tag>
       </tags>
   </entry>
   <entry>
