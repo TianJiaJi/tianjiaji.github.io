@@ -1,2 +1,6 @@
 User-agent: *
 Disallow: /
+Disallow: /photos/
+Disallow: /js/
+Disallow: /css/
+Disallow: /image/
