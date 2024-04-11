@@ -1,163 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Shell 脚本 教程</title>
-    <url>/2024/01/21/2024-01-21-Competition-sample-questions-Shell/undefined/undefined.html</url>
-    <content><![CDATA[<hr>
-<h2 id="Shell脚本"><a href="#Shell脚本" class="headerlink" title="Shell脚本"></a>Shell脚本</h2><hr>
-<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>任务描述：请采用 shell 脚本,实现快速批量的操作。</p>
-<ol>
-<li>在 linux4 上编写&#x2F;root&#x2F;createfile.sh的shell脚本，创建20个文件&#x2F;root&#x2F;shell&#x2F;file00至&#x2F;root&#x2F;shell&#x2F;file19，如果文件存在，则删除再创建； 每个文件的内容同文件名， 如file00文件的内容为“file00”。</li>
-<li>用&#x2F;root&#x2F;createfile.sh命令测试。</li>
-</ol>
-<h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><hr>
-<h3 id="第一小题"><a href="#第一小题" class="headerlink" title="第一小题"></a>第一小题</h3><ol>
-<li>在 linux4 上编写&#x2F;root&#x2F;createfile.sh的shell脚本，创建20个文件&#x2F;root&#x2F;shell&#x2F;file00至&#x2F;root&#x2F;shell&#x2F;file19，如果文件存在，则删除再创建； 每个文件的内容同文件名， 如file00文件的内容为“file00”。</li>
-</ol>
-<hr>
-<h4 id="1-创建createfile-sh脚本文件"><a href="#1-创建createfile-sh脚本文件" class="headerlink" title="1.创建createfile.sh脚本文件"></a>1.创建createfile.sh脚本文件</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vim /root/createfile.sh</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-写入脚本代码"><a href="#2-写入脚本代码" class="headerlink" title="2.写入脚本代码"></a>2.写入脚本代码</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建目录</span></span><br><span class="line">mkdir -p /root/shell</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建文件</span></span><br><span class="line">for i in $(seq -f &quot;%02g&quot; 0 19)</span><br><span class="line">do</span><br><span class="line">    file=&quot;/root/shell/file$i&quot;</span><br><span class="line">    # 如果文件存在，则删除</span><br><span class="line">    if [ -e $file ]; then</span><br><span class="line">        rm $file</span><br><span class="line">    fi</span><br><span class="line">    # 创建文件并设置内容</span><br><span class="line">    echo &quot;file$i&quot; &gt; $file</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="第二小题"><a href="#第二小题" class="headerlink" title="第二小题"></a>第二小题</h3><ol start="2">
-<li>用&#x2F;root&#x2F;createfile.sh命令测试。</li>
-</ol>
-<hr>
-<h4 id="3-运行脚本"><a href="#3-运行脚本" class="headerlink" title="3.运行脚本"></a>3.运行脚本</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sh /root/createfile.sh</span><br></pre></td></tr></table></figure>
-<p><font color="red"><b>提示：如果运行失败，请检查该文件是否有可执行权限，如果没有权限就用命令添加可执行权限</b></font></p>
-<h4 id="4-修改权限"><a href="#4-修改权限" class="headerlink" title="4.修改权限"></a>4.修改权限</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">chmod +x /root/createfile.sh</span><br></pre></td></tr></table></figure>
-
-<p>+x &#x3D; 给予该文件可执行权限</p>
-<p>权限编号说明：</p>
-<p>drwxr-xr-x  	root	root	<a href="http://xxxxxxx.sh/">XXXXXXX.sh</a></p>
-<table>
-<thead>
-<tr>
-<th>drwx</th>
-<th>r-x</th>
-<th>r-x</th>
-<th>root</th>
-<th>root</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>所属用户</td>
-<td>所属组</td>
-<td>其他用户和组</td>
-<td>所属用户</td>
-<td>所属组</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>d</td>
-<td>表示这是目录</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>r</td>
-<td>写</td>
-<td>权限编号 4</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>w</td>
-<td>读</td>
-<td>权限编号 2</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>x</td>
-<td>执行</td>
-<td>权限编号 1</td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-]]></content>
-      <categories>
-        <category>博客</category>
-        <category>职业技能大赛</category>
-        <category>教程</category>
-      </categories>
-      <tags>
-        <tag>博客</tag>
-        <tag>职业技能大赛</tag>
-        <tag>教程</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>震惊体标题生成器</title>
-    <url>/2024/02/20/2024-1-20-amazing_title/undefined/undefined.html</url>
-    <content><![CDATA[<h2 id="demo"><a href="#demo" class="headerlink" title="demo"></a>demo</h2><p>作者：<a href="https://github.com/guofei9987/">guofei9987</a></p>
-<p><strong>如果点击按钮没反应，刷新一次就好了（网站框架的锅，从目录点进来就有这问题，以后有时间再修复）</strong></p>
-<script src="https://www.guofei.site/vulgar_language_generator/amazing_title/amazing_title.js"></script>
-<script>
-function myFunction1() {
-    document.getElementById("amazing_tile").innerHTML += amazing_title_1();
-}
-
-function myFunction2() {
-    document.getElementById("amazing_tile").innerHTML += amazing_title_2();
-}
-</script>
-<p><button type="button" onclick="myFunction1()">带主语的震惊体</button><br><button type="button" onclick="myFunction2()">不带主语的震惊体</button></p>
-<p id="amazing_tile"></p>
-
-
-
-<h2 id="如何部署到你的网站上"><a href="#如何部署到你的网站上" class="headerlink" title="如何部署到你的网站上"></a>如何部署到你的网站上</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;http://www.guofei.site/vulgar_language_generator/amazing_title/amazing_title.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">myFunction1</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;amazing_tile&quot;</span>).<span class="property">innerHTML</span> += <span class="title function_">amazing_title_1</span>();</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">myFunction2</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;amazing_tile&quot;</span>).<span class="property">innerHTML</span> += <span class="title function_">amazing_title_2</span>();</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;myFunction1()&quot;</span>&gt;</span>带主语的震惊体<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;myFunction2()&quot;</span>&gt;</span>不带主语的震惊体<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">&quot;amazing_tile&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-<h2 id="源码和原理"><a href="#源码和原理" class="headerlink" title="源码和原理"></a>源码和原理</h2><p><a href="https://github.com/guofei9987/vulgar_language_generator">源码</a><br><a href="https://github.com/guofei9987/vulgar_language_generator/stargazers"><img src="https://img.shields.io/github/stars/guofei9987/vulgar_language_generator.svg?label=Stars&style=social" alt="Stars"></a><br><a href="https://github.com/guofei9987/vulgar_language_generator/network/members"><img src="https://img.shields.io/github/forks/guofei9987/vulgar_language_generator.svg?label=Fork&style=social" alt="Forks"></a></p>
-<p>原理其实就是三段短语随机拼接而成，分两种罗列如下：</p>
-<h3 id="1-带主语的震惊体"><a href="#1-带主语的震惊体" class="headerlink" title="1. 带主语的震惊体"></a>1. 带主语的震惊体</h3><p>part1：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">震惊！, 禽兽！, 太不是人了！, 重大揭秘！, 大惊失色！, 惊天内幕！, 居然是这样！, 数万人围观！, 你不得不信，, 速度进！, 有本事你别看！</span><br></pre></td></tr></table></figure>
-
-<p>part2：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">竟深夜推倒六个少女，, 久吃不胖的三个秘诀，, 隐藏多年的男友终于出现了！, 二十年单身的终极原因，, 第一次做这种事就被发现了，, 不会告诉你的择偶标准，, 账户余额竟高达亿余！, 竟喊话十亿国人，, 最想删除的照片原来是这张！, 居然有女朋友了！不是充气的！, 的真实身份可能是..., 竟在小树林干不可描述的事…, 曾与多名衣衫不整的少女共处一室！</span><br></pre></td></tr></table></figure>
-
-<p>part3：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">有图有真相！, 你一定要看！, 韩红听了都想打人 ..., 不转不是地大人！, 之前都被骗了！, 不能再瞒着大家了！, 看完我崩溃了..., 男人看完都沉默了..., 赶紧分享！, 简直不敢相信！, 不轻易分享出来！</span><br></pre></td></tr></table></figure>
-
-<p>公式就是 part1+张三+part2+part3，随机选取</p>
-<h3 id="2-不带主语的震惊体"><a href="#2-不带主语的震惊体" class="headerlink" title="2. 不带主语的震惊体"></a>2. 不带主语的震惊体</h3><h4 id="part1"><a href="#part1" class="headerlink" title="part1:"></a>part1:</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&quot;全世界80万人疯传&quot;, &quot;你不可不知的&quot;, &quot;立刻分享，&quot;, &quot;天啊！这居然是&quot;, &quot;我看了3遍都不相信&quot;, &quot;38个&quot;, &quot;21个&quot;, &quot;看完眼眶湿湿的&quot;, &quot;我怎么没早点发现这&quot;, &quot;让你大惊失色&quot;, &quot;15个&quot;,</span><br><span class="line">&quot;12个你一定得知道&quot;, &quot;不看后悔&quot;, &quot;超过6万人已经发现&quot;, &quot;你一定没看过的&quot;, &quot;这太神了！&quot;, &quot;史上最&quot;, &quot;整整流传两世纪&quot;, &quot;45个&quot;, &quot;10个影响你一生&quot;, &quot;让专家跌破眼镜&quot;, &quot;17个&quot;,</span><br><span class="line">&quot;每个人都忽略这&quot;, &quot;25个你一定会爱上&quot;, &quot;这是我听过最奇怪的&quot;, &quot;14个让人笑翻&quot;, &quot;胆小的人别看&quot;, &quot;3分钟看完这&quot;, &quot;20岁以前必看&quot;, &quot;全中国都在看，&quot;, &quot;杜拉克教我的&quot;, &quot;前所未闻&quot;, &quot;深度揭秘&quot;, &quot;史上最强&quot;</span><br></pre></td></tr></table></figure>
-
-
-<h4 id="part2："><a href="#part2：" class="headerlink" title="part2："></a>part2：</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&quot;不可思议的事实，&quot;, &quot;致富秘诀，&quot;, &quot;劲爆的惊险画面，&quot;, &quot;看到赚到的不传秘方，&quot;, &quot;绝无仅有的超自然现象，&quot;, &quot;值得收藏一辈子的秘密，&quot;, &quot;影响你全家的健康行为，&quot;, &quot;残酷的人生领悟，&quot;,</span><br><span class="line">&quot;首次解禁，&quot;, &quot;轰动全球的照片，&quot;, &quot;不可不看的影片，&quot;, &quot;不可告人的秘密&quot;, &quot;改变全人类的超酷行为，&quot;, &quot;家庭必备的神圣之物，&quot;, &quot;骇人听闻的灵异现象，&quot;, &quot;不轻易透露的超强技巧，&quot;, &quot;超搞笑的视频，&quot;, &quot;立刻就必须做的事，&quot;, &quot;从未被揭发的新闻，&quot;,</span><br><span class="line">&quot;啧啧称奇的绝妙发明，&quot;, &quot;让人傻眼的画面，&quot;, &quot;可爱到爆的小动物，&quot;, &quot;珍贵的历史宝物，&quot;, &quot;让全球男性陷入疯狂的影片，&quot;, &quot;诡异的视觉陷阱，&quot;, &quot;全人类的存亡关键，&quot;, &quot;操纵人心的秘密，&quot;,</span><br><span class="line">&quot;星座小秘密，&quot;, &quot;致癌的日常食品，&quot;, &quot;哈佛大学最受欢迎的课程，&quot;, &quot;全球禁播的MV，&quot;, &quot;医师养生法，&quot;, &quot;最难以置信的骗术，&quot;</span><br><span class="line">​```</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#### part3:</span><br></pre></td></tr></table></figure>
-<p>“看完后我惊呆了！”, “真的把我吓傻了！”, “全世界都崩溃！”, “我的下巴都掉了！”, “看完对人生对然开悟了！”, “全场的观众都崩溃了！”, “尤其是第7个！”, “特别是最后一个！”, “我不敢相信第3个！”, “你一定要看第5个！”, “完全颠覆你的想象！”, “不敢相信！”, “第4个太夸张了！”, “第6个不是真的吧？”, “第8个太疯狂了！”, “他是怎么做到的？”, “不分享还是人吗？”, “第2个太惊人了！”, “这真的让我看不下去了…”, “你一定要看到最后！”, “我的心融化了…”, “把所有人都吓坏了！”, “第9个真的很神奇！”, “真是太天才了！”, “我从椅子上跳了起来！”, “第5秒我就流泪了…”, “是女人一定要看！”, “我忍不住一直看下去…”, “请看完！”, “其他简直弱爆了！”, “强烈推荐！”, “有图有真相！”</p>
-<pre><code>
-公式就是 part1 + part2 + part3，随机选取
-</code></pre>
-]]></content>
-      <categories>
-        <category>开源</category>
-        <category>工具</category>
-      </categories>
-      <tags>
-        <tag>工具</tag>
-        <tag>开源</tag>
-        <tag>生成器</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>2023年昆明市中职学校技能大赛 赛项规程</title>
     <url>/2024/03/28/2023%E5%B9%B4%E6%98%86%E6%98%8E%E5%B8%82%E4%B8%AD%E8%81%8C%E5%AD%A6%E6%A0%A1%E6%8A%80%E8%83%BD%E5%A4%A7%E8%B5%9B%20%E8%B5%9B%E9%A1%B9%E8%A7%84%E7%A8%8B/undefined/undefined.html</url>
     <content><![CDATA[<center><font size="6"><b><p style="text-align: center;">2023年昆明市中等职业学校技能大赛(信息技术类)</p></b></font></center>
@@ -591,39 +434,106 @@ function myFunction2() {
       </tags>
   </entry>
   <entry>
-    <title>github star数量统计</title>
-    <url>/2024/02/20/2024-1-20-github_star_counter/undefined/undefined.html</url>
-    <content><![CDATA[<p>一个统计某个账号下 github 的 star 数量的在线小应用。<br>作者：<a href="https://github.com/guofei9987/">guofei9987</a></p>
-<h2 id="试试吧："><a href="#试试吧：" class="headerlink" title="试试吧："></a>试试吧：</h2><p>输入账号，然后点击<code>Calculate</code> 按钮<br><strong>如果点击按钮没反应，刷新一次就好了（网站框架的锅，以后有时间再修复）</strong>  </p>
-<script src="https://www.guofei.site/star_counter/star_counter.js"></script> <!--引用js代码-->
+    <title>Shell 脚本 教程</title>
+    <url>/2024/01/21/2024-01-21-Competition-sample-questions-Shell/undefined/undefined.html</url>
+    <content><![CDATA[<hr>
+<h2 id="Shell脚本"><a href="#Shell脚本" class="headerlink" title="Shell脚本"></a>Shell脚本</h2><hr>
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>任务描述：请采用 shell 脚本,实现快速批量的操作。</p>
+<ol>
+<li>在 linux4 上编写&#x2F;root&#x2F;createfile.sh的shell脚本，创建20个文件&#x2F;root&#x2F;shell&#x2F;file00至&#x2F;root&#x2F;shell&#x2F;file19，如果文件存在，则删除再创建； 每个文件的内容同文件名， 如file00文件的内容为“file00”。</li>
+<li>用&#x2F;root&#x2F;createfile.sh命令测试。</li>
+</ol>
+<h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><hr>
+<h3 id="第一小题"><a href="#第一小题" class="headerlink" title="第一小题"></a>第一小题</h3><ol>
+<li>在 linux4 上编写&#x2F;root&#x2F;createfile.sh的shell脚本，创建20个文件&#x2F;root&#x2F;shell&#x2F;file00至&#x2F;root&#x2F;shell&#x2F;file19，如果文件存在，则删除再创建； 每个文件的内容同文件名， 如file00文件的内容为“file00”。</li>
+</ol>
+<hr>
+<h4 id="1-创建createfile-sh脚本文件"><a href="#1-创建createfile-sh脚本文件" class="headerlink" title="1.创建createfile.sh脚本文件"></a>1.创建createfile.sh脚本文件</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vim /root/createfile.sh</span><br></pre></td></tr></table></figure>
 
+<h4 id="2-写入脚本代码"><a href="#2-写入脚本代码" class="headerlink" title="2.写入脚本代码"></a>2.写入脚本代码</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建目录</span></span><br><span class="line">mkdir -p /root/shell</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建文件</span></span><br><span class="line">for i in $(seq -f &quot;%02g&quot; 0 19)</span><br><span class="line">do</span><br><span class="line">    file=&quot;/root/shell/file$i&quot;</span><br><span class="line">    # 如果文件存在，则删除</span><br><span class="line">    if [ -e $file ]; then</span><br><span class="line">        rm $file</span><br><span class="line">    fi</span><br><span class="line">    # 创建文件并设置内容</span><br><span class="line">    echo &quot;file$i&quot; &gt; $file</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
 
-<script>
-    function func_1() {
-        document.getElementById("star_counter").innerHTML = 'If not print for seconds, please refresh';
-        github_id = document.getElementById("user").value;
-        document.getElementById("star_counter").innerHTML = cal_github_star(github_id);
-    }
-</script>
+<hr>
+<h3 id="第二小题"><a href="#第二小题" class="headerlink" title="第二小题"></a>第二小题</h3><ol start="2">
+<li>用&#x2F;root&#x2F;createfile.sh命令测试。</li>
+</ol>
+<hr>
+<h4 id="3-运行脚本"><a href="#3-运行脚本" class="headerlink" title="3.运行脚本"></a>3.运行脚本</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sh /root/createfile.sh</span><br></pre></td></tr></table></figure>
+<p><font color="red"><b>提示：如果运行失败，请检查该文件是否有可执行权限，如果没有权限就用命令添加可执行权限</b></font></p>
+<h4 id="4-修改权限"><a href="#4-修改权限" class="headerlink" title="4.修改权限"></a>4.修改权限</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">chmod +x /root/createfile.sh</span><br></pre></td></tr></table></figure>
 
-
-<p>Input github id: <input name="user" value="guofei9987" type="text" id="user"><br><input name="Button" type="button" value="Calculate" onClick="func_1()"></p>
-<p id="star_counter"></p>
-
-<h2 id="如何部署到你的网站"><a href="#如何部署到你的网站" class="headerlink" title="如何部署到你的网站"></a>如何部署到你的网站</h2><p>把这个copy到你的网页里</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;http://www.guofei.site/star_counter/star_counter.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span> <span class="comment">&lt;!--引用js代码--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">function</span> <span class="title function_">func_1</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;star_counter&quot;</span>).<span class="property">innerHTML</span> = <span class="string">&#x27;If not print for seconds, please refresh&#x27;</span>;</span></span><br><span class="line"><span class="language-javascript">        github_id = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;user&quot;</span>).<span class="property">value</span>;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;star_counter&quot;</span>).<span class="property">innerHTML</span> = <span class="title function_">cal_github_star</span>(github_id);</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Input github id: <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">&quot;user&quot;</span> <span class="attr">value</span>=<span class="string">&quot;guofei9987&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">id</span>=<span class="string">&quot;user&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">&quot;Button&quot;</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">value</span>=<span class="string">&quot;Calculate&quot;</span> <span class="attr">onClick</span>=<span class="string">&quot;func_1()&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">&quot;star_counter&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><a href="https://github.com/guofei9987/star_counter">源代码地址</a>，star一下，我就很开心啦  </p>
+<p>+x &#x3D; 给予该文件可执行权限</p>
+<p>权限编号说明：</p>
+<p>drwxr-xr-x  	root	root	<a href="http://xxxxxxx.sh/">XXXXXXX.sh</a></p>
+<table>
+<thead>
+<tr>
+<th>drwx</th>
+<th>r-x</th>
+<th>r-x</th>
+<th>root</th>
+<th>root</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>所属用户</td>
+<td>所属组</td>
+<td>其他用户和组</td>
+<td>所属用户</td>
+<td>所属组</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>d</td>
+<td>表示这是目录</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>r</td>
+<td>写</td>
+<td>权限编号 4</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>w</td>
+<td>读</td>
+<td>权限编号 2</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>x</td>
+<td>执行</td>
+<td>权限编号 1</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
 ]]></content>
       <categories>
-        <category>开源</category>
-        <category>工具</category>
+        <category>博客</category>
+        <category>职业技能大赛</category>
+        <category>教程</category>
       </categories>
       <tags>
-        <tag>工具</tag>
-        <tag>开源</tag>
-        <tag>统计</tag>
-        <tag>github</tag>
+        <tag>博客</tag>
+        <tag>职业技能大赛</tag>
+        <tag>教程</tag>
       </tags>
   </entry>
   <entry>
@@ -909,7 +819,7 @@ function myFunction2() {
 <h3 id="9-mail-服务"><a href="#9-mail-服务" class="headerlink" title="9. mail 服务"></a>9. mail 服务</h3><p>任务描述：请采用 postfix 邮件服务器，实现安全的邮件服务。</p>
 <ol>
 <li>配置 linux5 为 mail 服务器，安装 postfix 和 dovecot。</li>
-<li>仅支持 smtps 和 pop3s 连接。 3.创建用户 mail1 和 mail2，向 <a href="mailto:&#x61;&#108;&#108;&#x40;&#115;&#x6b;&#x69;&#x6c;&#108;&#x73;&#x2e;&#x63;&#111;&#109;">&#x61;&#108;&#108;&#x40;&#115;&#x6b;&#x69;&#x6c;&#108;&#x73;&#x2e;&#x63;&#111;&#109;</a> 发送的邮件，每个用户都 会收到。</li>
+<li>仅支持 smtps 和 pop3s 连接。 3.创建用户 mail1 和 mail2，向 <a href="mailto:&#97;&#108;&#108;&#x40;&#x73;&#107;&#105;&#108;&#x6c;&#x73;&#46;&#x63;&#111;&#x6d;">&#97;&#108;&#108;&#x40;&#x73;&#107;&#105;&#108;&#x6c;&#x73;&#46;&#x63;&#111;&#x6d;</a> 发送的邮件，每个用户都 会收到。</li>
 <li>使用本机测试。</li>
 </ol>
 <h3 id="10．shell-脚本"><a href="#10．shell-脚本" class="headerlink" title="10．shell 脚本"></a>10．shell 脚本</h3><p>任务描述：请采用 shell 脚本,实现快速批量的操作。</p>
@@ -929,6 +839,96 @@ function myFunction2() {
       <tags>
         <tag>职业技能大赛</tag>
         <tag>题目</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>震惊体标题生成器</title>
+    <url>/2024/02/20/2024-1-20-amazing_title/undefined/undefined.html</url>
+    <content><![CDATA[<h2 id="demo"><a href="#demo" class="headerlink" title="demo"></a>demo</h2><p>作者：<a href="https://github.com/guofei9987/">guofei9987</a></p>
+<p><strong>如果点击按钮没反应，刷新一次就好了（网站框架的锅，从目录点进来就有这问题，以后有时间再修复）</strong></p>
+<script src="https://www.guofei.site/vulgar_language_generator/amazing_title/amazing_title.js"></script>
+<script>
+function myFunction1() {
+    document.getElementById("amazing_tile").innerHTML += amazing_title_1();
+}
+
+function myFunction2() {
+    document.getElementById("amazing_tile").innerHTML += amazing_title_2();
+}
+</script>
+<p><button type="button" onclick="myFunction1()">带主语的震惊体</button><br><button type="button" onclick="myFunction2()">不带主语的震惊体</button></p>
+<p id="amazing_tile"></p>
+
+
+
+<h2 id="如何部署到你的网站上"><a href="#如何部署到你的网站上" class="headerlink" title="如何部署到你的网站上"></a>如何部署到你的网站上</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;http://www.guofei.site/vulgar_language_generator/amazing_title/amazing_title.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">myFunction1</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;amazing_tile&quot;</span>).<span class="property">innerHTML</span> += <span class="title function_">amazing_title_1</span>();</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">function</span> <span class="title function_">myFunction2</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;amazing_tile&quot;</span>).<span class="property">innerHTML</span> += <span class="title function_">amazing_title_2</span>();</span></span><br><span class="line"><span class="language-javascript">&#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;myFunction1()&quot;</span>&gt;</span>带主语的震惊体<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">onclick</span>=<span class="string">&quot;myFunction2()&quot;</span>&gt;</span>不带主语的震惊体<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">&quot;amazing_tile&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+<h2 id="源码和原理"><a href="#源码和原理" class="headerlink" title="源码和原理"></a>源码和原理</h2><p><a href="https://github.com/guofei9987/vulgar_language_generator">源码</a><br><a href="https://github.com/guofei9987/vulgar_language_generator/stargazers"><img src="https://img.shields.io/github/stars/guofei9987/vulgar_language_generator.svg?label=Stars&style=social" alt="Stars"></a><br><a href="https://github.com/guofei9987/vulgar_language_generator/network/members"><img src="https://img.shields.io/github/forks/guofei9987/vulgar_language_generator.svg?label=Fork&style=social" alt="Forks"></a></p>
+<p>原理其实就是三段短语随机拼接而成，分两种罗列如下：</p>
+<h3 id="1-带主语的震惊体"><a href="#1-带主语的震惊体" class="headerlink" title="1. 带主语的震惊体"></a>1. 带主语的震惊体</h3><p>part1：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">震惊！, 禽兽！, 太不是人了！, 重大揭秘！, 大惊失色！, 惊天内幕！, 居然是这样！, 数万人围观！, 你不得不信，, 速度进！, 有本事你别看！</span><br></pre></td></tr></table></figure>
+
+<p>part2：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">竟深夜推倒六个少女，, 久吃不胖的三个秘诀，, 隐藏多年的男友终于出现了！, 二十年单身的终极原因，, 第一次做这种事就被发现了，, 不会告诉你的择偶标准，, 账户余额竟高达亿余！, 竟喊话十亿国人，, 最想删除的照片原来是这张！, 居然有女朋友了！不是充气的！, 的真实身份可能是..., 竟在小树林干不可描述的事…, 曾与多名衣衫不整的少女共处一室！</span><br></pre></td></tr></table></figure>
+
+<p>part3：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">有图有真相！, 你一定要看！, 韩红听了都想打人 ..., 不转不是地大人！, 之前都被骗了！, 不能再瞒着大家了！, 看完我崩溃了..., 男人看完都沉默了..., 赶紧分享！, 简直不敢相信！, 不轻易分享出来！</span><br></pre></td></tr></table></figure>
+
+<p>公式就是 part1+张三+part2+part3，随机选取</p>
+<h3 id="2-不带主语的震惊体"><a href="#2-不带主语的震惊体" class="headerlink" title="2. 不带主语的震惊体"></a>2. 不带主语的震惊体</h3><h4 id="part1"><a href="#part1" class="headerlink" title="part1:"></a>part1:</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&quot;全世界80万人疯传&quot;, &quot;你不可不知的&quot;, &quot;立刻分享，&quot;, &quot;天啊！这居然是&quot;, &quot;我看了3遍都不相信&quot;, &quot;38个&quot;, &quot;21个&quot;, &quot;看完眼眶湿湿的&quot;, &quot;我怎么没早点发现这&quot;, &quot;让你大惊失色&quot;, &quot;15个&quot;,</span><br><span class="line">&quot;12个你一定得知道&quot;, &quot;不看后悔&quot;, &quot;超过6万人已经发现&quot;, &quot;你一定没看过的&quot;, &quot;这太神了！&quot;, &quot;史上最&quot;, &quot;整整流传两世纪&quot;, &quot;45个&quot;, &quot;10个影响你一生&quot;, &quot;让专家跌破眼镜&quot;, &quot;17个&quot;,</span><br><span class="line">&quot;每个人都忽略这&quot;, &quot;25个你一定会爱上&quot;, &quot;这是我听过最奇怪的&quot;, &quot;14个让人笑翻&quot;, &quot;胆小的人别看&quot;, &quot;3分钟看完这&quot;, &quot;20岁以前必看&quot;, &quot;全中国都在看，&quot;, &quot;杜拉克教我的&quot;, &quot;前所未闻&quot;, &quot;深度揭秘&quot;, &quot;史上最强&quot;</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="part2："><a href="#part2：" class="headerlink" title="part2："></a>part2：</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&quot;不可思议的事实，&quot;, &quot;致富秘诀，&quot;, &quot;劲爆的惊险画面，&quot;, &quot;看到赚到的不传秘方，&quot;, &quot;绝无仅有的超自然现象，&quot;, &quot;值得收藏一辈子的秘密，&quot;, &quot;影响你全家的健康行为，&quot;, &quot;残酷的人生领悟，&quot;,</span><br><span class="line">&quot;首次解禁，&quot;, &quot;轰动全球的照片，&quot;, &quot;不可不看的影片，&quot;, &quot;不可告人的秘密&quot;, &quot;改变全人类的超酷行为，&quot;, &quot;家庭必备的神圣之物，&quot;, &quot;骇人听闻的灵异现象，&quot;, &quot;不轻易透露的超强技巧，&quot;, &quot;超搞笑的视频，&quot;, &quot;立刻就必须做的事，&quot;, &quot;从未被揭发的新闻，&quot;,</span><br><span class="line">&quot;啧啧称奇的绝妙发明，&quot;, &quot;让人傻眼的画面，&quot;, &quot;可爱到爆的小动物，&quot;, &quot;珍贵的历史宝物，&quot;, &quot;让全球男性陷入疯狂的影片，&quot;, &quot;诡异的视觉陷阱，&quot;, &quot;全人类的存亡关键，&quot;, &quot;操纵人心的秘密，&quot;,</span><br><span class="line">&quot;星座小秘密，&quot;, &quot;致癌的日常食品，&quot;, &quot;哈佛大学最受欢迎的课程，&quot;, &quot;全球禁播的MV，&quot;, &quot;医师养生法，&quot;, &quot;最难以置信的骗术，&quot;</span><br><span class="line">​```</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#### part3:</span><br></pre></td></tr></table></figure>
+<p>“看完后我惊呆了！”, “真的把我吓傻了！”, “全世界都崩溃！”, “我的下巴都掉了！”, “看完对人生对然开悟了！”, “全场的观众都崩溃了！”, “尤其是第7个！”, “特别是最后一个！”, “我不敢相信第3个！”, “你一定要看第5个！”, “完全颠覆你的想象！”, “不敢相信！”, “第4个太夸张了！”, “第6个不是真的吧？”, “第8个太疯狂了！”, “他是怎么做到的？”, “不分享还是人吗？”, “第2个太惊人了！”, “这真的让我看不下去了…”, “你一定要看到最后！”, “我的心融化了…”, “把所有人都吓坏了！”, “第9个真的很神奇！”, “真是太天才了！”, “我从椅子上跳了起来！”, “第5秒我就流泪了…”, “是女人一定要看！”, “我忍不住一直看下去…”, “请看完！”, “其他简直弱爆了！”, “强烈推荐！”, “有图有真相！”</p>
+<pre><code>
+公式就是 part1 + part2 + part3，随机选取
+</code></pre>
+]]></content>
+      <categories>
+        <category>开源</category>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+        <tag>开源</tag>
+        <tag>生成器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>github star数量统计</title>
+    <url>/2024/02/20/2024-1-20-github_star_counter/undefined/undefined.html</url>
+    <content><![CDATA[<p>一个统计某个账号下 github 的 star 数量的在线小应用。<br>作者：<a href="https://github.com/guofei9987/">guofei9987</a></p>
+<h2 id="试试吧："><a href="#试试吧：" class="headerlink" title="试试吧："></a>试试吧：</h2><p>输入账号，然后点击<code>Calculate</code> 按钮<br><strong>如果点击按钮没反应，刷新一次就好了（网站框架的锅，以后有时间再修复）</strong>  </p>
+<script src="https://www.guofei.site/star_counter/star_counter.js"></script> <!--引用js代码-->
+
+
+<script>
+    function func_1() {
+        document.getElementById("star_counter").innerHTML = 'If not print for seconds, please refresh';
+        github_id = document.getElementById("user").value;
+        document.getElementById("star_counter").innerHTML = cal_github_star(github_id);
+    }
+</script>
+
+
+<p>Input github id: <input name="user" value="guofei9987" type="text" id="user"><br><input name="Button" type="button" value="Calculate" onClick="func_1()"></p>
+<p id="star_counter"></p>
+
+<h2 id="如何部署到你的网站"><a href="#如何部署到你的网站" class="headerlink" title="如何部署到你的网站"></a>如何部署到你的网站</h2><p>把这个copy到你的网页里</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;http://www.guofei.site/star_counter/star_counter.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span> <span class="comment">&lt;!--引用js代码--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">function</span> <span class="title function_">func_1</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;star_counter&quot;</span>).<span class="property">innerHTML</span> = <span class="string">&#x27;If not print for seconds, please refresh&#x27;</span>;</span></span><br><span class="line"><span class="language-javascript">        github_id = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;user&quot;</span>).<span class="property">value</span>;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;star_counter&quot;</span>).<span class="property">innerHTML</span> = <span class="title function_">cal_github_star</span>(github_id);</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Input github id: <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">&quot;user&quot;</span> <span class="attr">value</span>=<span class="string">&quot;guofei9987&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">id</span>=<span class="string">&quot;user&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">&quot;Button&quot;</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">value</span>=<span class="string">&quot;Calculate&quot;</span> <span class="attr">onClick</span>=<span class="string">&quot;func_1()&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">&quot;star_counter&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><a href="https://github.com/guofei9987/star_counter">源代码地址</a>，star一下，我就很开心啦  </p>
+]]></content>
+      <categories>
+        <category>开源</category>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+        <tag>开源</tag>
+        <tag>统计</tag>
+        <tag>github</tag>
       </tags>
   </entry>
   <entry>
@@ -1031,125 +1031,6 @@ function myFunction2() {
 <p><img src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/butterfly-docs-install-suggestion-1.png" alt="image-20200805191531090"></p>
 <a class="btn-beautify block right larger" href="/posts/dc584b87/" 
   title="📑 Butterfly 安裝文檔(二) 主題頁面"><i class="far fa-hand-point-right"></i><span>📑 Butterfly 安裝文檔(二) 主題頁面</span></a>
-]]></content>
-      <categories>
-        <category>Docs文檔</category>
-      </categories>
-      <tags>
-        <tag>教程</tag>
-        <tag>Hexo</tag>
-        <tag>主題</tag>
-        <tag>butterfly</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Butterfly 安裝文檔(六) 進階教程</title>
-    <url>/2020/05/29/Butterfly-%E5%AE%89%E8%A3%9D%E6%96%87%E6%AA%94-%E5%85%AD-%E9%80%B2%E9%9A%8E%E6%95%99%E7%A8%8B/undefined/4073eda.html</url>
-    <content><![CDATA[<div class="note green icon-padding flat"><i class="note-icon fas fa-rocket"></i><p> 📚  文檔目錄</p>
-<p><a href="/2020/05/29/Butterfly-%E5%AE%89%E8%A3%9D%E6%96%87%E6%AA%94-%E4%B8%80-%E5%BF%AB%E9%80%9F%E9%96%8B%E5%A7%8B/undefined/21cfbf15.html" title="Butterfly 安裝文檔(一) 快速開始">🚀 快速開始</a> - <a href="/2020/05/29/Butterfly-%E5%AE%89%E8%A3%9D%E6%96%87%E6%AA%94-%E4%BA%8C-%E4%B8%BB%E9%A1%8C%E9%A0%81%E9%9D%A2/undefined/dc584b87.html" title="Butterfly 安裝文檔(二) 主題頁面">📑 主題頁面</a> - <a href="/2020/05/29/Butterfly-%E5%AE%89%E8%A3%9D%E6%96%87%E6%AA%94-%E4%B8%89-%E4%B8%BB%E9%A1%8C%E9%85%8D%E7%BD%AE-1/undefined/4aa8abbe.html" title="Butterfly 安裝文檔(三) 主題配置-1">📌 主題配置-1</a> - <a href="/2020/05/29/Butterfly-%E5%AE%89%E8%A3%9D%E6%96%87%E6%AA%94-%E5%9B%9B-%E4%B8%BB%E9%A1%8C%E9%85%8D%E7%BD%AE-2/undefined/ceeb73f.html" title="Butterfly 安裝文檔(四) 主題配置-2">⚔️ 主題配置-2</a> - <a href="/2020/05/29/Butterfly-%E5%AE%89%E8%A3%9D%E6%96%87%E6%AA%94-%E4%BA%94-%E4%B8%BB%E9%A1%8C%E5%95%8F%E7%AD%94/undefined/98d20436.html" title="Butterfly 安裝文檔(五) 主題問答">❓ 主題問答</a> - <a href="/2020/05/29/Butterfly-%E5%AE%89%E8%A3%9D%E6%96%87%E6%AA%94-%E5%85%AD-%E9%80%B2%E9%9A%8E%E6%95%99%E7%A8%8B/undefined/4073eda.html" title="Butterfly 安裝文檔(六) 進階教程">⚡️ 進階教程</a></p>
-</div>
-
-<div class="note orange icon-padding flat"><i class="note-icon fas fa-magic"></i><p>你可以通過右下角的 <strong>簡</strong> 按鈕切換為簡體顯示 </p>
-</div>
-
-<hr>
-<h2 id="建議"><a href="#建議" class="headerlink" title="建議"></a>建議</h2><ol>
-<li>不要把個人需要的文件&#x2F;圖片放在主題<code>source</code>文件夾裏，因為在升級主題的過程中，可能會把文件覆蓋刪除了。<br>在Hexo根目錄的<code>source</code>文件夾裏，創建一個文件夾來放置個人文件&#x2F;圖片。<br>引用文件直接為<code>/文件夾名稱/文件名</code></li>
-</ol>
-<h2 id="音樂"><a href="#音樂" class="headerlink" title="音樂"></a>音樂</h2><p>音樂界面使用了插件 <code>hexo-tag-aplayer</code><br>使用方法請參考插件<a href="https://github.com/MoePlayer/hexo-tag-aplayer/blob/master/docs/README-zh_cn.md">文檔</a></p>
-<p>音樂頁面只是普通的page頁，按普通頁面操作生成就行。</p>
-<blockquote>
-<p>以下內容可供<strong>選擇</strong>配置</p>
-<p>注意： 仍需要安裝插件<a href="https://github.com/MoePlayer/hexo-tag-aplayer">hexo-tag-aplayer</a></p>
-</blockquote>
-<p>插件會在每一個文件都插入 js 和 css，為了避免這一情況，3.0 版本內置了 aplayer 需要的 css 和 js。</p>
-<p>首先在Hexo根目錄<code>_config</code>裏配置<code>asset_inject</code>為<code>false</code></p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">aplayer:</span></span><br><span class="line">  <span class="attr">asset_inject:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-
-<p>然後在你需要使用aplayer的頁面Front-matter添加</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">aplayer: true</span><br></pre></td></tr></table></figure>
-
-<p>這樣只會在需要aplayer的頁面插入js和css。</p>
-<p>如何添加全局 Aplayer 播放，請參考 <a href="/posts/507c070f/">這篇文章</a></p>
-<h2 id="電影"><a href="#電影" class="headerlink" title="電影"></a>電影</h2><p>電影界面使用了插件 <code>hexo-butterfly-douban</code><br>使用方法請參考插件的<a href="https://github.com/jerryc127/butterfly-plugins/tree/main/hexo-butterfly-douban">文檔</a>。</p>
-<p><strong>注意：</strong> </p>
-<ol>
-<li>hexo-butterfly-douban 會主動生成頁面，所以不需要自己創建。</li>
-<li>如遇到無法抓取問題，顯示 <code>INFO  0 movies have been loaded in xxx ms, because you are offline or your network is bad</code><br>請過段時間再試試，這我也無能為力。</li>
-</ol>
-<h2 id="説説"><a href="#説説" class="headerlink" title="説説"></a>説説</h2><h3 id="Artitalk"><a href="#Artitalk" class="headerlink" title="Artitalk"></a>Artitalk</h3><p>安裝插件 <a href="https://www.npmjs.com/package/hexo-butterfly-artitalk">hexo-butterfly-artitalk</a></p>
-<p>具體配置查看<a href="https://github.com/jerryc127/butterfly-plugins/tree/main/hexo-butterfly-artitalk">插件文檔</a></p>
-<h3 id="HexoPlusPlus-Talk"><a href="#HexoPlusPlus-Talk" class="headerlink" title="HexoPlusPlus Talk"></a>HexoPlusPlus Talk</h3><p>安裝插件 <a href="https://www.npmjs.com/package/hexo-butterfly-hpptalk">hexo-butterfly-hpptalk</a></p>
-<p>具體配置查看<a href="https://github.com/jerryc127/butterfly-plugins/tree/main/hexo-butterfly-hpptalk">插件文檔</a></p>
-<h2 id="自定義代碼配色"><a href="#自定義代碼配色" class="headerlink" title="自定義代碼配色"></a>自定義代碼配色</h2><a class="btn-beautify block blue" href="/posts/b37b5fe3/" 
-  title="點擊前往"><i class="fas fa-code"></i><span>點擊前往</span></a>
-
-
-<h2 id="自定義側邊欄"><a href="#自定義側邊欄" class="headerlink" title="自定義側邊欄"></a>自定義側邊欄</h2><a class="btn-beautify block green" href="/posts/ea33ab97/" 
-  title="點擊前往"><i class="fas fa-lightbulb"></i><span>點擊前往</span></a>
-
-
-
-<h2 id="添加全局吸底Aplayer教程"><a href="#添加全局吸底Aplayer教程" class="headerlink" title="添加全局吸底Aplayer教程"></a>添加全局吸底Aplayer教程</h2><a class="btn-beautify block pink" href="/posts/507c070f/" 
-  title="點擊前往"><i class="fas fa-music"></i><span>點擊前往</span></a>
-<h2 id="Icon"><a href="#Icon" class="headerlink" title="Icon"></a>Icon</h2><p>Butterfly主題內置了<a href="https://fontawesome.com/">Font Awesome V5 </a>圖標，目前已更新到 5.13.0，總共有1,588個免費圖標。由於是國外的圖標網站，對於國內的一些網站Icon並不支持。如有需要，你可以引入其它的圖標服務商。</p>
-<h3 id="iconfont"><a href="#iconfont" class="headerlink" title="iconfont"></a>iconfont</h3><p>國內最出名的莫過於<a href="https://www.iconfont.cn/">iconfont</a>,功能很強大且圖標內容很豐富的矢量圖標庫。很多<code>Font Awesome</code>不支持的圖標都可以在這裏找到。同時，<a href="https://www.iconfont.cn/">iconfont</a>支持選擇需要的圖標生成css鏈接，減少不必要的CSS加載。</p>
-<h4 id="註冊賬號"><a href="#註冊賬號" class="headerlink" title="註冊賬號"></a>註冊賬號</h4><p>打開<a href="https://www.iconfont.cn/">iconfont</a>的網站，點擊導航欄的<code>人像</code>圖標，會跳出註冊界面，按要求註冊賬號。</p>
-<p><img src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/butterfly-iconfont.png" alt="Snipaste_2020-05-28_21-12-01"></p>
-<h4 id="添加圖標入庫"><a href="#添加圖標入庫" class="headerlink" title="添加圖標入庫"></a>添加圖標入庫</h4><p>選擇自己需要的圖標，把鼠標移到圖標上，會顯示三個按鈕（依次是添加入庫、收藏和下載），而我們需要的是把圖標添加入庫</p>
-<p><img src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/butterfly-iconfont-add.png" alt="image-20200528205401440"></p>
-<p>添加入庫後，你可以看到網站右上角<code>購物車</code>圖標顯示了<code>1</code>字，代表圖標已經添加入庫，點擊<code>購物車</code>圖標，會彈出側邊欄顯示詳情。</p>
-<p><img src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/butterfly-iconfont-check.png" alt="image-20200528205925258"></p>
-<p><img src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/butterfly-iconfont-detail.png" alt="image-20200528210120442"></p>
-<p>已選擇的圖標會顯示在上面，你可以重複上面的操作，把需要的圖標添加入庫，然後點擊<code>添加到項目</code>。</p>
-<p>接下來會要求選擇項目名稱，沒有的自己創建一個。</p>
-<p><img src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/butterfly-iconfont-create.png" alt="image-20200528211624459"></p>
-<h4 id="生成CSS鏈接"><a href="#生成CSS鏈接" class="headerlink" title="生成CSS鏈接"></a>生成CSS鏈接</h4><p>在添加到項目之後，會跳到項目的詳情界面。點擊<code>Font class</code>，然後再點擊<code>暫無代碼，點擊生成</code>文字。網站會自動生成CSS鏈接，我們只需要複製鏈接就行。</p>
-<p><img src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/butterfly-iconfont-link.png" alt="image-20200528212301786"></p>
-<h4 id="添加鏈接進主題配置文件"><a href="#添加鏈接進主題配置文件" class="headerlink" title="添加鏈接進主題配置文件"></a>添加鏈接進主題配置文件</h4><p>打開<code>主題配置文件</code>，找到<code>inject</code>配置，按要求把鏈接填入</p>
-<p><img src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/butterfly-iconfont-setting.png" alt="image-20200528212440743"></p>
-<p>在我們需要使用的地方填入icon，例如<code>Menu</code>，圖片使用格式為<code>iconfont icon名字</code></p>
-<p><img src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/butterfly-iconfont-setting-menu.png" alt="image-20200528213151304"></p>
-<p>運行Butterfly之後，你就可以看到menu的圖標生效了</p>
-<p><img src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/butterfly-iconfont-show.png" alt="image-20200528213346338"></p>
-<h4 id="其他添加方法"><a href="#其他添加方法" class="headerlink" title="其他添加方法"></a>其他添加方法</h4><p>除了通過引入CSS鏈接使用圖標，iconfont也支持通過其它方法使用圖標，具體可查看<a href="https://www.iconfont.cn/help/detail?helptype=code">iconfont官方使用文檔</a></p>
-<h3 id="其它圖標提供商"><a href="#其它圖標提供商" class="headerlink" title="其它圖標提供商"></a>其它圖標提供商</h3><p>除了<a href="https://www.iconfont.cn/">iconfont</a>，還有<a href="https://github.com/Remix-Design/RemixIcon">RemixIcon</a>、<a href="https://www.flaticon.com/categories/seo-and-web">Flaticon</a>等等提供商，很多圖標可以選擇，具體使用方法請參考各自的文檔。</p>
-<h2 id="圖片壓縮"><a href="#圖片壓縮" class="headerlink" title="圖片壓縮"></a>圖片壓縮</h2><p>Butterfly主題需要使用到很多圖片。如果圖片太大，會嚴重拖慢網站的加載速度。</p>
-<p>圖片壓縮能夠有效的緩解這個問題。</p>
-<p>除了通過<code>gulp-imagemin</code>來壓縮圖片，還可以通過在綫壓縮網站和軟件來進行壓縮。以下兩款是我自己正在使用的工具。網上有很多這樣的工具，挑選一款適合自己的就行。</p>
-<ul>
-<li><p><a href="https://tinypng.com/">tinypng</a></p>
-<p>一個在綫壓縮的網站。壓縮後的圖片也保留了很高的質量，在知乎上很多人推薦，不過免費版有限制。</p>
-<p><img src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/butterfly-tinypng.png" alt="image-20200526173511503"></p>
-</li>
-<li><p><a href="https://saerasoft.com/caesium/">caesium</a></p>
-<p>開源軟件，支持Windows和macOS。可以批量壓縮軟件，無限制。</p>
-<p><img src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/butterfly-caesium.png" alt="image-20200526173316278"></p>
-</li>
-<li><p><a href="https://github.com/marketplace/imgbot">imgbot</a></p>
-</li>
-</ul>
-<p>  imgbot 是一款 Github 插件。</p>
-<p>  安裝後，你上傳圖片到 Github 去，imgbot 會自動壓縮圖片並推送 PR，我們只需要合併 PR 就行</p>
-<p>  你可以配置 imgbot 的偵測方法、壓縮方法（有損&#x2F;無損），具體可以查看插件的文檔</p>
-<p>  <img src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/butterfly-enhance-imgbot.png" alt="image-20200830231742951"></p>
-<h2 id="插件推薦"><a href="#插件推薦" class="headerlink" title="插件推薦"></a>插件推薦</h2><ul>
-<li><p><a href="https://github.com/rozbo/hexo-abbrlink">hexo-abbrlink</a></p>
-<p>可以把鏈接permalink轉為數字的插件，配置容易，生成時自動轉為數字。</p>
-</li>
-<li><p><a href="https://github.com/hexojs/hexo-generator-feed">hexo-generator-feed</a> </p>
-<p>生成RSS文件的插件</p>
-</li>
-<li><p><a href="https://github.com/hexojs/hexo-filter-nofollow">hexo-filter-nofollow</a></p>
-<p>為網站使用到的所有外鏈添加<code>rel=&quot;noopener external nofollow noreferrer&quot;</code>, 可以有效地加強網站SEO和防止權重流失</p>
-</li>
-<li><p><a href="https://github.com/hexojs/hexo-generator-sitemap">hexo-generator-sitemap</a></p>
-<p>生成sitemap的插件</p>
-</li>
-<li><p><a href="https://github.com/coneycode/hexo-generator-baidu-sitemap">hexo-generator-baidu-sitemap</a></p>
-<p>看名字就知道，是專門為百度生成sitemap的插件</p>
-</li>
-</ul>
 ]]></content>
       <categories>
         <category>Docs文檔</category>
@@ -1494,6 +1375,125 @@ function myFunction2() {
       </tags>
   </entry>
   <entry>
+    <title>Butterfly 安裝文檔(六) 進階教程</title>
+    <url>/2020/05/29/Butterfly-%E5%AE%89%E8%A3%9D%E6%96%87%E6%AA%94-%E5%85%AD-%E9%80%B2%E9%9A%8E%E6%95%99%E7%A8%8B/undefined/4073eda.html</url>
+    <content><![CDATA[<div class="note green icon-padding flat"><i class="note-icon fas fa-rocket"></i><p> 📚  文檔目錄</p>
+<p><a href="/2020/05/29/Butterfly-%E5%AE%89%E8%A3%9D%E6%96%87%E6%AA%94-%E4%B8%80-%E5%BF%AB%E9%80%9F%E9%96%8B%E5%A7%8B/undefined/21cfbf15.html" title="Butterfly 安裝文檔(一) 快速開始">🚀 快速開始</a> - <a href="/2020/05/29/Butterfly-%E5%AE%89%E8%A3%9D%E6%96%87%E6%AA%94-%E4%BA%8C-%E4%B8%BB%E9%A1%8C%E9%A0%81%E9%9D%A2/undefined/dc584b87.html" title="Butterfly 安裝文檔(二) 主題頁面">📑 主題頁面</a> - <a href="/2020/05/29/Butterfly-%E5%AE%89%E8%A3%9D%E6%96%87%E6%AA%94-%E4%B8%89-%E4%B8%BB%E9%A1%8C%E9%85%8D%E7%BD%AE-1/undefined/4aa8abbe.html" title="Butterfly 安裝文檔(三) 主題配置-1">📌 主題配置-1</a> - <a href="/2020/05/29/Butterfly-%E5%AE%89%E8%A3%9D%E6%96%87%E6%AA%94-%E5%9B%9B-%E4%B8%BB%E9%A1%8C%E9%85%8D%E7%BD%AE-2/undefined/ceeb73f.html" title="Butterfly 安裝文檔(四) 主題配置-2">⚔️ 主題配置-2</a> - <a href="/2020/05/29/Butterfly-%E5%AE%89%E8%A3%9D%E6%96%87%E6%AA%94-%E4%BA%94-%E4%B8%BB%E9%A1%8C%E5%95%8F%E7%AD%94/undefined/98d20436.html" title="Butterfly 安裝文檔(五) 主題問答">❓ 主題問答</a> - <a href="/2020/05/29/Butterfly-%E5%AE%89%E8%A3%9D%E6%96%87%E6%AA%94-%E5%85%AD-%E9%80%B2%E9%9A%8E%E6%95%99%E7%A8%8B/undefined/4073eda.html" title="Butterfly 安裝文檔(六) 進階教程">⚡️ 進階教程</a></p>
+</div>
+
+<div class="note orange icon-padding flat"><i class="note-icon fas fa-magic"></i><p>你可以通過右下角的 <strong>簡</strong> 按鈕切換為簡體顯示 </p>
+</div>
+
+<hr>
+<h2 id="建議"><a href="#建議" class="headerlink" title="建議"></a>建議</h2><ol>
+<li>不要把個人需要的文件&#x2F;圖片放在主題<code>source</code>文件夾裏，因為在升級主題的過程中，可能會把文件覆蓋刪除了。<br>在Hexo根目錄的<code>source</code>文件夾裏，創建一個文件夾來放置個人文件&#x2F;圖片。<br>引用文件直接為<code>/文件夾名稱/文件名</code></li>
+</ol>
+<h2 id="音樂"><a href="#音樂" class="headerlink" title="音樂"></a>音樂</h2><p>音樂界面使用了插件 <code>hexo-tag-aplayer</code><br>使用方法請參考插件<a href="https://github.com/MoePlayer/hexo-tag-aplayer/blob/master/docs/README-zh_cn.md">文檔</a></p>
+<p>音樂頁面只是普通的page頁，按普通頁面操作生成就行。</p>
+<blockquote>
+<p>以下內容可供<strong>選擇</strong>配置</p>
+<p>注意： 仍需要安裝插件<a href="https://github.com/MoePlayer/hexo-tag-aplayer">hexo-tag-aplayer</a></p>
+</blockquote>
+<p>插件會在每一個文件都插入 js 和 css，為了避免這一情況，3.0 版本內置了 aplayer 需要的 css 和 js。</p>
+<p>首先在Hexo根目錄<code>_config</code>裏配置<code>asset_inject</code>為<code>false</code></p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">aplayer:</span></span><br><span class="line">  <span class="attr">asset_inject:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+<p>然後在你需要使用aplayer的頁面Front-matter添加</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">aplayer: true</span><br></pre></td></tr></table></figure>
+
+<p>這樣只會在需要aplayer的頁面插入js和css。</p>
+<p>如何添加全局 Aplayer 播放，請參考 <a href="/posts/507c070f/">這篇文章</a></p>
+<h2 id="電影"><a href="#電影" class="headerlink" title="電影"></a>電影</h2><p>電影界面使用了插件 <code>hexo-butterfly-douban</code><br>使用方法請參考插件的<a href="https://github.com/jerryc127/butterfly-plugins/tree/main/hexo-butterfly-douban">文檔</a>。</p>
+<p><strong>注意：</strong> </p>
+<ol>
+<li>hexo-butterfly-douban 會主動生成頁面，所以不需要自己創建。</li>
+<li>如遇到無法抓取問題，顯示 <code>INFO  0 movies have been loaded in xxx ms, because you are offline or your network is bad</code><br>請過段時間再試試，這我也無能為力。</li>
+</ol>
+<h2 id="説説"><a href="#説説" class="headerlink" title="説説"></a>説説</h2><h3 id="Artitalk"><a href="#Artitalk" class="headerlink" title="Artitalk"></a>Artitalk</h3><p>安裝插件 <a href="https://www.npmjs.com/package/hexo-butterfly-artitalk">hexo-butterfly-artitalk</a></p>
+<p>具體配置查看<a href="https://github.com/jerryc127/butterfly-plugins/tree/main/hexo-butterfly-artitalk">插件文檔</a></p>
+<h3 id="HexoPlusPlus-Talk"><a href="#HexoPlusPlus-Talk" class="headerlink" title="HexoPlusPlus Talk"></a>HexoPlusPlus Talk</h3><p>安裝插件 <a href="https://www.npmjs.com/package/hexo-butterfly-hpptalk">hexo-butterfly-hpptalk</a></p>
+<p>具體配置查看<a href="https://github.com/jerryc127/butterfly-plugins/tree/main/hexo-butterfly-hpptalk">插件文檔</a></p>
+<h2 id="自定義代碼配色"><a href="#自定義代碼配色" class="headerlink" title="自定義代碼配色"></a>自定義代碼配色</h2><a class="btn-beautify block blue" href="/posts/b37b5fe3/" 
+  title="點擊前往"><i class="fas fa-code"></i><span>點擊前往</span></a>
+
+
+<h2 id="自定義側邊欄"><a href="#自定義側邊欄" class="headerlink" title="自定義側邊欄"></a>自定義側邊欄</h2><a class="btn-beautify block green" href="/posts/ea33ab97/" 
+  title="點擊前往"><i class="fas fa-lightbulb"></i><span>點擊前往</span></a>
+
+
+
+<h2 id="添加全局吸底Aplayer教程"><a href="#添加全局吸底Aplayer教程" class="headerlink" title="添加全局吸底Aplayer教程"></a>添加全局吸底Aplayer教程</h2><a class="btn-beautify block pink" href="/posts/507c070f/" 
+  title="點擊前往"><i class="fas fa-music"></i><span>點擊前往</span></a>
+<h2 id="Icon"><a href="#Icon" class="headerlink" title="Icon"></a>Icon</h2><p>Butterfly主題內置了<a href="https://fontawesome.com/">Font Awesome V5 </a>圖標，目前已更新到 5.13.0，總共有1,588個免費圖標。由於是國外的圖標網站，對於國內的一些網站Icon並不支持。如有需要，你可以引入其它的圖標服務商。</p>
+<h3 id="iconfont"><a href="#iconfont" class="headerlink" title="iconfont"></a>iconfont</h3><p>國內最出名的莫過於<a href="https://www.iconfont.cn/">iconfont</a>,功能很強大且圖標內容很豐富的矢量圖標庫。很多<code>Font Awesome</code>不支持的圖標都可以在這裏找到。同時，<a href="https://www.iconfont.cn/">iconfont</a>支持選擇需要的圖標生成css鏈接，減少不必要的CSS加載。</p>
+<h4 id="註冊賬號"><a href="#註冊賬號" class="headerlink" title="註冊賬號"></a>註冊賬號</h4><p>打開<a href="https://www.iconfont.cn/">iconfont</a>的網站，點擊導航欄的<code>人像</code>圖標，會跳出註冊界面，按要求註冊賬號。</p>
+<p><img src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/butterfly-iconfont.png" alt="Snipaste_2020-05-28_21-12-01"></p>
+<h4 id="添加圖標入庫"><a href="#添加圖標入庫" class="headerlink" title="添加圖標入庫"></a>添加圖標入庫</h4><p>選擇自己需要的圖標，把鼠標移到圖標上，會顯示三個按鈕（依次是添加入庫、收藏和下載），而我們需要的是把圖標添加入庫</p>
+<p><img src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/butterfly-iconfont-add.png" alt="image-20200528205401440"></p>
+<p>添加入庫後，你可以看到網站右上角<code>購物車</code>圖標顯示了<code>1</code>字，代表圖標已經添加入庫，點擊<code>購物車</code>圖標，會彈出側邊欄顯示詳情。</p>
+<p><img src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/butterfly-iconfont-check.png" alt="image-20200528205925258"></p>
+<p><img src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/butterfly-iconfont-detail.png" alt="image-20200528210120442"></p>
+<p>已選擇的圖標會顯示在上面，你可以重複上面的操作，把需要的圖標添加入庫，然後點擊<code>添加到項目</code>。</p>
+<p>接下來會要求選擇項目名稱，沒有的自己創建一個。</p>
+<p><img src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/butterfly-iconfont-create.png" alt="image-20200528211624459"></p>
+<h4 id="生成CSS鏈接"><a href="#生成CSS鏈接" class="headerlink" title="生成CSS鏈接"></a>生成CSS鏈接</h4><p>在添加到項目之後，會跳到項目的詳情界面。點擊<code>Font class</code>，然後再點擊<code>暫無代碼，點擊生成</code>文字。網站會自動生成CSS鏈接，我們只需要複製鏈接就行。</p>
+<p><img src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/butterfly-iconfont-link.png" alt="image-20200528212301786"></p>
+<h4 id="添加鏈接進主題配置文件"><a href="#添加鏈接進主題配置文件" class="headerlink" title="添加鏈接進主題配置文件"></a>添加鏈接進主題配置文件</h4><p>打開<code>主題配置文件</code>，找到<code>inject</code>配置，按要求把鏈接填入</p>
+<p><img src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/butterfly-iconfont-setting.png" alt="image-20200528212440743"></p>
+<p>在我們需要使用的地方填入icon，例如<code>Menu</code>，圖片使用格式為<code>iconfont icon名字</code></p>
+<p><img src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/butterfly-iconfont-setting-menu.png" alt="image-20200528213151304"></p>
+<p>運行Butterfly之後，你就可以看到menu的圖標生效了</p>
+<p><img src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/butterfly-iconfont-show.png" alt="image-20200528213346338"></p>
+<h4 id="其他添加方法"><a href="#其他添加方法" class="headerlink" title="其他添加方法"></a>其他添加方法</h4><p>除了通過引入CSS鏈接使用圖標，iconfont也支持通過其它方法使用圖標，具體可查看<a href="https://www.iconfont.cn/help/detail?helptype=code">iconfont官方使用文檔</a></p>
+<h3 id="其它圖標提供商"><a href="#其它圖標提供商" class="headerlink" title="其它圖標提供商"></a>其它圖標提供商</h3><p>除了<a href="https://www.iconfont.cn/">iconfont</a>，還有<a href="https://github.com/Remix-Design/RemixIcon">RemixIcon</a>、<a href="https://www.flaticon.com/categories/seo-and-web">Flaticon</a>等等提供商，很多圖標可以選擇，具體使用方法請參考各自的文檔。</p>
+<h2 id="圖片壓縮"><a href="#圖片壓縮" class="headerlink" title="圖片壓縮"></a>圖片壓縮</h2><p>Butterfly主題需要使用到很多圖片。如果圖片太大，會嚴重拖慢網站的加載速度。</p>
+<p>圖片壓縮能夠有效的緩解這個問題。</p>
+<p>除了通過<code>gulp-imagemin</code>來壓縮圖片，還可以通過在綫壓縮網站和軟件來進行壓縮。以下兩款是我自己正在使用的工具。網上有很多這樣的工具，挑選一款適合自己的就行。</p>
+<ul>
+<li><p><a href="https://tinypng.com/">tinypng</a></p>
+<p>一個在綫壓縮的網站。壓縮後的圖片也保留了很高的質量，在知乎上很多人推薦，不過免費版有限制。</p>
+<p><img src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/butterfly-tinypng.png" alt="image-20200526173511503"></p>
+</li>
+<li><p><a href="https://saerasoft.com/caesium/">caesium</a></p>
+<p>開源軟件，支持Windows和macOS。可以批量壓縮軟件，無限制。</p>
+<p><img src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/butterfly-caesium.png" alt="image-20200526173316278"></p>
+</li>
+<li><p><a href="https://github.com/marketplace/imgbot">imgbot</a></p>
+</li>
+</ul>
+<p>  imgbot 是一款 Github 插件。</p>
+<p>  安裝後，你上傳圖片到 Github 去，imgbot 會自動壓縮圖片並推送 PR，我們只需要合併 PR 就行</p>
+<p>  你可以配置 imgbot 的偵測方法、壓縮方法（有損&#x2F;無損），具體可以查看插件的文檔</p>
+<p>  <img src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/butterfly-enhance-imgbot.png" alt="image-20200830231742951"></p>
+<h2 id="插件推薦"><a href="#插件推薦" class="headerlink" title="插件推薦"></a>插件推薦</h2><ul>
+<li><p><a href="https://github.com/rozbo/hexo-abbrlink">hexo-abbrlink</a></p>
+<p>可以把鏈接permalink轉為數字的插件，配置容易，生成時自動轉為數字。</p>
+</li>
+<li><p><a href="https://github.com/hexojs/hexo-generator-feed">hexo-generator-feed</a> </p>
+<p>生成RSS文件的插件</p>
+</li>
+<li><p><a href="https://github.com/hexojs/hexo-filter-nofollow">hexo-filter-nofollow</a></p>
+<p>為網站使用到的所有外鏈添加<code>rel=&quot;noopener external nofollow noreferrer&quot;</code>, 可以有效地加強網站SEO和防止權重流失</p>
+</li>
+<li><p><a href="https://github.com/hexojs/hexo-generator-sitemap">hexo-generator-sitemap</a></p>
+<p>生成sitemap的插件</p>
+</li>
+<li><p><a href="https://github.com/coneycode/hexo-generator-baidu-sitemap">hexo-generator-baidu-sitemap</a></p>
+<p>看名字就知道，是專門為百度生成sitemap的插件</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Docs文檔</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+        <tag>Hexo</tag>
+        <tag>主題</tag>
+        <tag>butterfly</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Butterfly 安裝文檔(五) 主題問答</title>
     <url>/2020/05/29/Butterfly-%E5%AE%89%E8%A3%9D%E6%96%87%E6%AA%94-%E4%BA%94-%E4%B8%BB%E9%A1%8C%E5%95%8F%E7%AD%94/undefined/98d20436.html</url>
     <content><![CDATA[<div class="note green icon-padding flat"><i class="note-icon fas fa-rocket"></i><p> 📚  文檔目錄</p>
@@ -1539,7 +1539,7 @@ function myFunction2() {
 <p><img src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/73515338-e6874d80-442f-11ea-9d07-725d37002985.png"></p>
 <blockquote>
 <p>cheerio版本錯誤，請安裝0.22.0版本</p>
-<p>npm install <a href="mailto:&#x63;&#x68;&#101;&#101;&#x72;&#x69;&#x6f;&#64;&#x30;&#x2e;&#x32;&#50;&#46;&#x30;">&#x63;&#x68;&#101;&#101;&#x72;&#x69;&#x6f;&#64;&#x30;&#x2e;&#x32;&#50;&#46;&#x30;</a> –save</p>
+<p>npm install <a href="mailto:&#99;&#x68;&#101;&#101;&#114;&#105;&#111;&#x40;&#48;&#x2e;&#x32;&#50;&#46;&#48;">&#99;&#x68;&#101;&#101;&#114;&#105;&#111;&#x40;&#48;&#x2e;&#x32;&#50;&#46;&#48;</a> –save</p>
 </blockquote>
 <h3 id="搜索欄在底部"><a href="#搜索欄在底部" class="headerlink" title="搜索欄在底部"></a>搜索欄在底部</h3><p>hexo deploy後搜索欄在頁面底部</p>
 <blockquote>
@@ -2422,156 +2422,6 @@ function myFunction2() {
         <tag>Hexo</tag>
         <tag>主題</tag>
         <tag>butterfly</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Butterfly添加全局吸底Aplayer教程</title>
-    <url>/2020/08/01/Butterfly%E6%B7%BB%E5%8A%A0Aplayer%E6%95%99%E7%A8%8B/undefined/507c070f.html</url>
-    <content><![CDATA[<div class="note info flat"><p>以下文章只是教程</p>
-<p>如果部署之后，并没有出现 aplayer , 请确认是否跟足步骤操作或者更换音乐源，多试试。</p>
-<p>如果遇到使用问题，请仔细查看插件文档，或者到插件那里反馈。</p>
-</div>
-
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>如果你想使用 aplayer，很多人都会推荐安装 <a href="https://github.com/MoePlayer/hexo-tag-aplayer">hexo-tag-aplayer</a> 这款插件。这款插件通过 Hexo 独有的标籤外挂，我们可以很方便的写入一些参数，插件就会帮我们生成对应的 html。如果你只是使用一些简单的功能，其实无需使用到这个插件，只需以 html 格式书写就行，不用插件去转换。</p>
-<p>例如：</p>
-<p>如果使用插件，在 markdown 中要这样写</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% meting &quot;000PeZCQ1i4XVs&quot; &quot;tencent&quot; &quot;artist&quot; &quot;theme:#3F51B5&quot; &quot;mutex:true&quot; &quot;preload:auto&quot; %&#125;</span><br></pre></td></tr></table></figure>
-
-<p>其会被插件渲染为</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;aplayer-uxAIfEUs&quot;</span> <span class="attr">class</span>=<span class="string">&quot;aplayer aplayer-tag-marker meting-tag-marker&quot;</span> <span class="attr">data-id</span>=<span class="string">&quot;000PeZCQ1i4XVs&quot;</span> <span class="attr">data-server</span>=<span class="string">&quot;tencent&quot;</span> <span class="attr">data-type</span>=<span class="string">&quot;artist&quot;</span> <span class="attr">data-mode</span>=<span class="string">&quot;circulation&quot;</span> <span class="attr">data-autoplay</span>=<span class="string">&quot;false&quot;</span> <span class="attr">data-mutex</span>=<span class="string">&quot;true&quot;</span> <span class="attr">data-listmaxheight</span>=<span class="string">&quot;340px&quot;</span> <span class="attr">data-preload</span>=<span class="string">&quot;auto&quot;</span> <span class="attr">data-theme</span>=<span class="string">&quot;#3F51B5&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>如果我们不想使用插件，就需要在markdown中用html的格式书写，同时把主题配置文件中的<code>aplayerInject</code>开启</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;aplayer&quot;</span> <span class="attr">data-id</span>=<span class="string">&quot;000PeZCQ1i4XVs&quot;</span> <span class="attr">data-server</span>=<span class="string">&quot;tencent&quot;</span> <span class="attr">data-type</span>=<span class="string">&quot;artist&quot;</span> <span class="attr">data-mutex</span>=<span class="string">&quot;true&quot;</span> <span class="attr">data-preload</span>=<span class="string">&quot;auto&quot;</span> <span class="attr">data-theme</span>=<span class="string">&quot;#3F51B5&quot;</span>&gt;</span></span><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-<p>这样我们就可以不用使用多一个插件，当然这种东西见仁见智，选自己喜欢的就行。</p>
-<p>回到正题，这篇文章将教大家如何在Butterfly上使用全局吸底 Aplayer</p>
-<p><img src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/butterfly-aplayer-xidi.gif" alt="aplayer"></p>
-<h2 id="关闭-asset-inject"><a href="#关闭-asset-inject" class="headerlink" title="关闭 asset_inject"></a>关闭 <code>asset_inject</code></h2><div class="note info flat"><p>此步骤适用于安装了 <code>hexo-tag-aplayer</code> 插件的人</p>
-</div>
-
-
-
-<p>由于需要全局都插入 aplayer 和 meting 资源，为了防止插入重复的资源，需要把 asset_inject 设为 <code>false</code></p>
-<p>在 Hexo 的配置文件中</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">aplayer:</span></span><br><span class="line">  <span class="attr">meting:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">asset_inject:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="开启主题的-aplayerInject"><a href="#开启主题的-aplayerInject" class="headerlink" title="开启主题的 aplayerInject"></a>开启主题的 <code>aplayerInject</code></h2><p>在主题的配置文件中，<code>enable</code> 设为 <code>true</code> 和 <code>per_page</code> 设为 <code>true</code></p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Inject the css and script (aplayer/meting)</span></span><br><span class="line"><span class="attr">aplayerInject:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">per_page:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="插入-Aplayer-html"><a href="#插入-Aplayer-html" class="headerlink" title="插入 Aplayer html"></a>插入 Aplayer html</h2><p>为了适配 hexo-tag-aplayer，主题内置的 Meting js 仍为 1.2 版本，并非最新的 2.x 版本。</p>
-<p>Aplayer html 例子：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;aplayer no-destroy&quot;</span> <span class="attr">data-id</span>=<span class="string">&quot;60198&quot;</span> <span class="attr">data-server</span>=<span class="string">&quot;netease&quot;</span> <span class="attr">data-type</span>=<span class="string">&quot;playlist&quot;</span> <span class="attr">data-fixed</span>=<span class="string">&quot;true&quot;</span> <span class="attr">data-autoplay</span>=<span class="string">&quot;true&quot;</span>&gt;</span></span> <span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-<p>参数解释</p>
-<table>
-<thead>
-<tr>
-<th>option</th>
-<th>default</th>
-<th>description</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>data-id</td>
-<td><strong>require</strong></td>
-<td>song id &#x2F; playlist id &#x2F; album id &#x2F; search keyword</td>
-</tr>
-<tr>
-<td>data-server</td>
-<td><strong>require</strong></td>
-<td>music platform: <code>netease</code>, <code>tencent</code>, <code>kugou</code>, <code>xiami</code>, <code>baidu</code></td>
-</tr>
-<tr>
-<td>data-type</td>
-<td><strong>require</strong></td>
-<td><code>song</code>, <code>playlist</code>, <code>album</code>, <code>search</code>, <code>artist</code></td>
-</tr>
-<tr>
-<td>data-fixed</td>
-<td><code>false</code></td>
-<td>enable fixed mode</td>
-</tr>
-<tr>
-<td>data-mini</td>
-<td><code>false</code></td>
-<td>enable mini mode</td>
-</tr>
-<tr>
-<td>data-autoplay</td>
-<td><code>false</code></td>
-<td>audio autoplay</td>
-</tr>
-<tr>
-<td>data-theme</td>
-<td><code>#2980b9</code></td>
-<td>main color</td>
-</tr>
-<tr>
-<td>data-loop</td>
-<td><code>all</code></td>
-<td>player loop play, values: ‘all’, ‘one’, ‘none’</td>
-</tr>
-<tr>
-<td>data-order</td>
-<td><code>list</code></td>
-<td>player play order, values: ‘list’, ‘random’</td>
-</tr>
-<tr>
-<td>data-preload</td>
-<td><code>auto</code></td>
-<td>values: ‘none’, ‘metadata’, ‘auto’</td>
-</tr>
-<tr>
-<td>data-volume</td>
-<td><code>0.7</code></td>
-<td>default volume, notice that player will remember user setting, default volume will not work after user set volume themselves</td>
-</tr>
-<tr>
-<td>data-mutex</td>
-<td><code>true</code></td>
-<td>prevent to play multiple player at the same time, pause other players when this player start play</td>
-</tr>
-<tr>
-<td>data-lrctype</td>
-<td><code>0</code></td>
-<td>lyric type</td>
-</tr>
-<tr>
-<td>data-listfolded</td>
-<td><code>false</code></td>
-<td>indicate whether list should folded at first</td>
-</tr>
-<tr>
-<td>data-listmaxheight</td>
-<td><code>340px</code></td>
-<td>list max height</td>
-</tr>
-<tr>
-<td>data-storagename</td>
-<td><code>metingjs</code></td>
-<td>localStorage key that store player setting</td>
-</tr>
-</tbody></table>
-<div class="note info flat"><p><code>require</code> 代表着这些参数是必须要使用的，其它的参数则可以根据自己需要配置。</p>
-<p>配置全局吸底，<code>data-fixed</code> 和 <code>data-mini</code> 也必须配置，配置为 <code>true</code></p>
-<p>如果使用 Pjax，则在 class 里需添加 <code>no-destroy</code>，这样防止切换页面时 Aplayer 被销毁</p>
-</div>
-
-<p>把  <code>aplayer代码</code>  插入到主题配置文件的  <code>inject.bottom</code> 去</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">inject:</span></span><br><span class="line">  <span class="attr">head:</span></span><br><span class="line">  <span class="attr">bottom:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;div</span> <span class="string">class=&quot;aplayer</span> <span class="literal">no</span><span class="string">-destroy&quot;</span> <span class="string">data-id=&quot;60198&quot;</span> <span class="string">data-server=&quot;netease&quot;</span> <span class="string">data-type=&quot;playlist&quot;</span> <span class="string">data-fixed=&quot;true&quot;</span> <span class="string">data-autoplay=&quot;true&quot;&gt;</span> <span class="string">&lt;/div&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>运行 Hexo 就可以看到网页左下角出现了 Aplayer</p>
-<p>最后，如果你想切换页面时，音乐不会中断。请把主题配置文件的 <code>pjax</code> 设为 <code>true</code></p>
-]]></content>
-      <categories>
-        <category>进阶教程</category>
-      </categories>
-      <tags>
-        <tag>教程</tag>
-        <tag>Hexo</tag>
-        <tag>butterfly</tag>
-        <tag>主题</tag>
-        <tag>Aplayer</tag>
       </tags>
   </entry>
   <entry>
@@ -4031,6 +3881,156 @@ w:Rock-y did-nt like that</div>
       </tags>
   </entry>
   <entry>
+    <title>Butterfly添加全局吸底Aplayer教程</title>
+    <url>/2020/08/01/Butterfly%E6%B7%BB%E5%8A%A0Aplayer%E6%95%99%E7%A8%8B/undefined/507c070f.html</url>
+    <content><![CDATA[<div class="note info flat"><p>以下文章只是教程</p>
+<p>如果部署之后，并没有出现 aplayer , 请确认是否跟足步骤操作或者更换音乐源，多试试。</p>
+<p>如果遇到使用问题，请仔细查看插件文档，或者到插件那里反馈。</p>
+</div>
+
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>如果你想使用 aplayer，很多人都会推荐安装 <a href="https://github.com/MoePlayer/hexo-tag-aplayer">hexo-tag-aplayer</a> 这款插件。这款插件通过 Hexo 独有的标籤外挂，我们可以很方便的写入一些参数，插件就会帮我们生成对应的 html。如果你只是使用一些简单的功能，其实无需使用到这个插件，只需以 html 格式书写就行，不用插件去转换。</p>
+<p>例如：</p>
+<p>如果使用插件，在 markdown 中要这样写</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">&#123;% meting &quot;000PeZCQ1i4XVs&quot; &quot;tencent&quot; &quot;artist&quot; &quot;theme:#3F51B5&quot; &quot;mutex:true&quot; &quot;preload:auto&quot; %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其会被插件渲染为</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;aplayer-uxAIfEUs&quot;</span> <span class="attr">class</span>=<span class="string">&quot;aplayer aplayer-tag-marker meting-tag-marker&quot;</span> <span class="attr">data-id</span>=<span class="string">&quot;000PeZCQ1i4XVs&quot;</span> <span class="attr">data-server</span>=<span class="string">&quot;tencent&quot;</span> <span class="attr">data-type</span>=<span class="string">&quot;artist&quot;</span> <span class="attr">data-mode</span>=<span class="string">&quot;circulation&quot;</span> <span class="attr">data-autoplay</span>=<span class="string">&quot;false&quot;</span> <span class="attr">data-mutex</span>=<span class="string">&quot;true&quot;</span> <span class="attr">data-listmaxheight</span>=<span class="string">&quot;340px&quot;</span> <span class="attr">data-preload</span>=<span class="string">&quot;auto&quot;</span> <span class="attr">data-theme</span>=<span class="string">&quot;#3F51B5&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>如果我们不想使用插件，就需要在markdown中用html的格式书写，同时把主题配置文件中的<code>aplayerInject</code>开启</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;aplayer&quot;</span> <span class="attr">data-id</span>=<span class="string">&quot;000PeZCQ1i4XVs&quot;</span> <span class="attr">data-server</span>=<span class="string">&quot;tencent&quot;</span> <span class="attr">data-type</span>=<span class="string">&quot;artist&quot;</span> <span class="attr">data-mutex</span>=<span class="string">&quot;true&quot;</span> <span class="attr">data-preload</span>=<span class="string">&quot;auto&quot;</span> <span class="attr">data-theme</span>=<span class="string">&quot;#3F51B5&quot;</span>&gt;</span></span><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>这样我们就可以不用使用多一个插件，当然这种东西见仁见智，选自己喜欢的就行。</p>
+<p>回到正题，这篇文章将教大家如何在Butterfly上使用全局吸底 Aplayer</p>
+<p><img src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/butterfly-aplayer-xidi.gif" alt="aplayer"></p>
+<h2 id="关闭-asset-inject"><a href="#关闭-asset-inject" class="headerlink" title="关闭 asset_inject"></a>关闭 <code>asset_inject</code></h2><div class="note info flat"><p>此步骤适用于安装了 <code>hexo-tag-aplayer</code> 插件的人</p>
+</div>
+
+
+
+<p>由于需要全局都插入 aplayer 和 meting 资源，为了防止插入重复的资源，需要把 asset_inject 设为 <code>false</code></p>
+<p>在 Hexo 的配置文件中</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">aplayer:</span></span><br><span class="line">  <span class="attr">meting:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">asset_inject:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="开启主题的-aplayerInject"><a href="#开启主题的-aplayerInject" class="headerlink" title="开启主题的 aplayerInject"></a>开启主题的 <code>aplayerInject</code></h2><p>在主题的配置文件中，<code>enable</code> 设为 <code>true</code> 和 <code>per_page</code> 设为 <code>true</code></p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Inject the css and script (aplayer/meting)</span></span><br><span class="line"><span class="attr">aplayerInject:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">per_page:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="插入-Aplayer-html"><a href="#插入-Aplayer-html" class="headerlink" title="插入 Aplayer html"></a>插入 Aplayer html</h2><p>为了适配 hexo-tag-aplayer，主题内置的 Meting js 仍为 1.2 版本，并非最新的 2.x 版本。</p>
+<p>Aplayer html 例子：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;aplayer no-destroy&quot;</span> <span class="attr">data-id</span>=<span class="string">&quot;60198&quot;</span> <span class="attr">data-server</span>=<span class="string">&quot;netease&quot;</span> <span class="attr">data-type</span>=<span class="string">&quot;playlist&quot;</span> <span class="attr">data-fixed</span>=<span class="string">&quot;true&quot;</span> <span class="attr">data-autoplay</span>=<span class="string">&quot;true&quot;</span>&gt;</span></span> <span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>参数解释</p>
+<table>
+<thead>
+<tr>
+<th>option</th>
+<th>default</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>data-id</td>
+<td><strong>require</strong></td>
+<td>song id &#x2F; playlist id &#x2F; album id &#x2F; search keyword</td>
+</tr>
+<tr>
+<td>data-server</td>
+<td><strong>require</strong></td>
+<td>music platform: <code>netease</code>, <code>tencent</code>, <code>kugou</code>, <code>xiami</code>, <code>baidu</code></td>
+</tr>
+<tr>
+<td>data-type</td>
+<td><strong>require</strong></td>
+<td><code>song</code>, <code>playlist</code>, <code>album</code>, <code>search</code>, <code>artist</code></td>
+</tr>
+<tr>
+<td>data-fixed</td>
+<td><code>false</code></td>
+<td>enable fixed mode</td>
+</tr>
+<tr>
+<td>data-mini</td>
+<td><code>false</code></td>
+<td>enable mini mode</td>
+</tr>
+<tr>
+<td>data-autoplay</td>
+<td><code>false</code></td>
+<td>audio autoplay</td>
+</tr>
+<tr>
+<td>data-theme</td>
+<td><code>#2980b9</code></td>
+<td>main color</td>
+</tr>
+<tr>
+<td>data-loop</td>
+<td><code>all</code></td>
+<td>player loop play, values: ‘all’, ‘one’, ‘none’</td>
+</tr>
+<tr>
+<td>data-order</td>
+<td><code>list</code></td>
+<td>player play order, values: ‘list’, ‘random’</td>
+</tr>
+<tr>
+<td>data-preload</td>
+<td><code>auto</code></td>
+<td>values: ‘none’, ‘metadata’, ‘auto’</td>
+</tr>
+<tr>
+<td>data-volume</td>
+<td><code>0.7</code></td>
+<td>default volume, notice that player will remember user setting, default volume will not work after user set volume themselves</td>
+</tr>
+<tr>
+<td>data-mutex</td>
+<td><code>true</code></td>
+<td>prevent to play multiple player at the same time, pause other players when this player start play</td>
+</tr>
+<tr>
+<td>data-lrctype</td>
+<td><code>0</code></td>
+<td>lyric type</td>
+</tr>
+<tr>
+<td>data-listfolded</td>
+<td><code>false</code></td>
+<td>indicate whether list should folded at first</td>
+</tr>
+<tr>
+<td>data-listmaxheight</td>
+<td><code>340px</code></td>
+<td>list max height</td>
+</tr>
+<tr>
+<td>data-storagename</td>
+<td><code>metingjs</code></td>
+<td>localStorage key that store player setting</td>
+</tr>
+</tbody></table>
+<div class="note info flat"><p><code>require</code> 代表着这些参数是必须要使用的，其它的参数则可以根据自己需要配置。</p>
+<p>配置全局吸底，<code>data-fixed</code> 和 <code>data-mini</code> 也必须配置，配置为 <code>true</code></p>
+<p>如果使用 Pjax，则在 class 里需添加 <code>no-destroy</code>，这样防止切换页面时 Aplayer 被销毁</p>
+</div>
+
+<p>把  <code>aplayer代码</code>  插入到主题配置文件的  <code>inject.bottom</code> 去</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">inject:</span></span><br><span class="line">  <span class="attr">head:</span></span><br><span class="line">  <span class="attr">bottom:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;div</span> <span class="string">class=&quot;aplayer</span> <span class="literal">no</span><span class="string">-destroy&quot;</span> <span class="string">data-id=&quot;60198&quot;</span> <span class="string">data-server=&quot;netease&quot;</span> <span class="string">data-type=&quot;playlist&quot;</span> <span class="string">data-fixed=&quot;true&quot;</span> <span class="string">data-autoplay=&quot;true&quot;&gt;</span> <span class="string">&lt;/div&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>运行 Hexo 就可以看到网页左下角出现了 Aplayer</p>
+<p>最后，如果你想切换页面时，音乐不会中断。请把主题配置文件的 <code>pjax</code> 设为 <code>true</code></p>
+]]></content>
+      <categories>
+        <category>进阶教程</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+        <tag>Hexo</tag>
+        <tag>butterfly</tag>
+        <tag>主题</tag>
+        <tag>Aplayer</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>沒有封面</title>
     <url>/2020/03/10/no-cover/undefined/913b2502.html</url>
     <content><![CDATA[<p>這篇文章沒有封面</p>
@@ -4040,6 +4040,192 @@ w:Rock-y did-nt like that</div>
       </categories>
       <tags>
         <tag>demo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Tomcat 服务</title>
+    <url>/2024/04/12/Tomcat/undefined/undefined.html</url>
+    <content><![CDATA[<center><font size="6"><b>Tomcat 服务</b></font></center>
+
+<hr>
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>3．tomcat 服务<br>任务描述：采用 Tomcat 搭建动态网站。</p>
+<p>(1)配置 linux2 为 nginx 服务器，默认文档 index.html 的内容为 “HelloNginx”；仅允许使用域名访问，http 访问自动跳转到 https。<br>(2)利用 nginx 反向代理，实现 linux3 和 linux4 的 tomcat 负载均衡，通过 https&#x2F;&#x2F;tomcat.skills.lan 加密访问 Tomcat<br>(3)配置 linux3 和 linux4 为 tomcat 服务器，网站默认首页内容分别为 “tomcatA” 和 “tomcatB”，仅使用域名访问 80 端口的 http 服务。</p>
+<hr>
+<h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><h3 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h3><p><font color="red"><b>需要先配置 Tomcat 服务器才能配置 Nginx 服务</b></font></p>
+<p>题目：<br>(3)配置 linux3 和 linux4 为 tomcat 服务器，网站默认首页内容分别为 “tomcatA” 和 “tomcatB”，仅使用域名访问 80 端口的 http 服务。</p>
+<hr>
+<h4 id="1-安装-Tomcat-服务器"><a href="#1-安装-Tomcat-服务器" class="headerlink" title="1.安装 Tomcat 服务器"></a>1.安装 Tomcat 服务器</h4><p>为 linux3 安装 Tomcat 并开放防火墙端口</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@linux3 ~]# yum install tomcat* -y</span><br><span class="line">[root@linux3 ~]# firewall-cmd --permanent --zone=public --add-port=&#123;80,8080,443&#125;/tcp </span><br><span class="line">[root@linux3 ~]# firewall-cmd --reload                      # 更新防火墙配置</span><br></pre></td></tr></table></figure>
+
+<p>为 linux4 安装 Tomcat 并开放防火墙端口</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@linux4 ~]# yum install tomcat* -y</span><br><span class="line">[root@linux4 ~]# firewall-cmd --permanent --zone=public --add-port=&#123;80,8080,443&#125;/tcp </span><br><span class="line">[root@linux4 ~]# firewall-cmd --reload                       # 更新防火墙配置</span><br></pre></td></tr></table></figure>
+
+
+<p>端口定义：<br>80      http服务<br>443     https服务 # 虽然好像用不上<br>8080    一般也是http之类的服务</p>
+<hr>
+<h4 id="配置-Tomcat-先让服务飞起来"><a href="#配置-Tomcat-先让服务飞起来" class="headerlink" title="配置 Tomcat [先让服务飞起来]"></a>配置 Tomcat [先让服务飞起来]</h4><p><font color="red"><b>Linux 3 配置：</b></font></p>
+<p>打开配置文件：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@linux3 ~]# vim /etc/tomcat/server.xml</span><br></pre></td></tr></table></figure>
+
+<p>大约：131行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;Engine name=&quot;Catalina&quot; defaultHost=&quot;localhost&quot;&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>改为 ↓</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">&lt;Engine name=&quot;Catalina&quot; defaultHost=&quot;linux3.skills.lan&quot;&gt;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>大约：151行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;Host name=&quot;localhost&quot;  appBase=&quot;webapps&quot;</span><br><span class="line">      unpackWARs=&quot;true&quot; autoDeploy=&quot;true&quot;&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>改为 ↓</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">&lt;Host name=&quot;linux3.skills.lan&quot;  appBase=&quot;webapps&quot;</span><br><span class="line">      unpackWARs=&quot;true&quot; autoDeploy=&quot;true&quot;&gt;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>设置开机自启，然后 –now 代表立即启动</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">systemctl enable tomcat --now </span><br></pre></td></tr></table></figure>
+<p>删除站点模板文件</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">rm -rf  /usr/share/tomcat/webapps/ROOT/*</span><br></pre></td></tr></table></figure>
+<p>创建index.html，并写入”TomcatA”</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">echo &quot;TomcatA&quot; &gt;  /usr/share/tomcat/webapps/ROOT/index.html</span><br></pre></td></tr></table></figure>
+<p>重启Tomcat服务</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">systemctl restart tomcat.service</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><font color="red"><b>Linux 4 配置：</b></font></p>
+<p>打开配置文件：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@linux4 ~]# vim /etc/tomcat/server.xml</span><br></pre></td></tr></table></figure>
+
+<p>大约：131行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;Engine name=&quot;Catalina&quot; defaultHost=&quot;localhost&quot;&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>改为 ↓</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">&lt;Engine name=&quot;Catalina&quot; defaultHost=&quot;linux4.skills.lan&quot;&gt;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>大约：151行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;Host name=&quot;localhost&quot;  appBase=&quot;webapps&quot;</span><br><span class="line">      unpackWARs=&quot;true&quot; autoDeploy=&quot;true&quot;&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>改为 ↓</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">&lt;Host name=&quot;linux4.skills.lan&quot;  appBase=&quot;webapps&quot;</span><br><span class="line">      unpackWARs=&quot;true&quot; autoDeploy=&quot;true&quot;&gt;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>设置开机自启，然后立即启动。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">systemctl enable tomcat --now </span><br></pre></td></tr></table></figure>
+
+<p>删除模板文件</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">rm -rf  /usr/share/tomcat/webapps/ROOT/*</span><br></pre></td></tr></table></figure>
+<p>创建index.html，并写入”TomcatB”</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">echo &quot;TomcatB&quot; &gt;  /usr/share/tomcat/webapps/ROOT/index.html</span><br></pre></td></tr></table></figure>
+<p>重启服务</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">systemctl restart tomcat.service</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="测试-Tomcat"><a href="#测试-Tomcat" class="headerlink" title="测试 Tomcat"></a>测试 Tomcat</h4><p>使用 curl 命令 进行验证，如：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">curl linux3.skills.lan:8080</span><br></pre></td></tr></table></figure>
+<p>效果参考:<br><a href="https://imgse.com/i/pFXyRNn"><img src="https://s21.ax1x.com/2024/04/11/pFXyRNn.png" alt="pFXyRNn.png"></a><br><font color="red"><b>提示：若无法连接请检查防火墙是否放行相应端口，以及测试时是否输入端口号！如:8080端口</b></font></p>
+<hr>
+<h4 id="更改端口"><a href="#更改端口" class="headerlink" title="更改端口"></a>更改端口</h4><p>因为该服务默认没有使用root用户所以在使用高位端口（0~1024）的时候没有权限，会导致服务没法正常启动。</p>
+<p><font color="red"><b>注意：两台 Tomcat 服务器都要改</b></font></p>
+<p>改权限：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vim /usr/lib/systemd/system/tomcat.service</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">user=tomcat</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>改为 ↓</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">user=root</span><br></pre></td></tr></table></figure>
+
+<p>修改端口:</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vim /etc/tomcat/server.xml</span><br></pre></td></tr></table></figure>
+<p>大约在第69行：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;Connector port=&quot;8080&quot; protocol=&quot;HTTP/1.1&quot;</span><br><span class="line">           connectionTimeout=&quot;20000&quot;</span><br><span class="line">           redirectPort=&quot;8443&quot; /&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>改为 ↓</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">&lt;Connector port=&quot;80&quot; protocol=&quot;HTTP/1.1&quot;</span><br><span class="line">           connectionTimeout=&quot;20000&quot;</span><br><span class="line">           redirectPort=&quot;443&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">systemctl restart tomcat.service</span><br></pre></td></tr></table></figure>
+
+<h4 id="再次测试-Tomcat"><a href="#再次测试-Tomcat" class="headerlink" title="再次测试 Tomcat"></a>再次测试 Tomcat</h4><p>使用 curl 命令 进行验证，如：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">curl http://linux3.skills.lan</span><br></pre></td></tr></table></figure>
+<p>效果参考:<br><a href="https://imgse.com/i/pFXyRNn"><img src="https://s21.ax1x.com/2024/04/11/pFXyRNn.png" alt="pFXyRNn.png"></a><br><font color="red"><b>提示：若无法连接请检查防火墙是否放行相应端口，以及测试时是否输入端口号！如:80端口</b></font></p>
+<hr>
+<h3 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h3><p>题目：<br>(1)配置 linux2 为 nginx 服务器，默认文档 index.html 的内容为 “hellonginx”；仅允许使用域名访问，http 访问自动跳转到 https。</p>
+<hr>
+<h4 id="安装-Nginx"><a href="#安装-Nginx" class="headerlink" title="安装 Nginx"></a>安装 Nginx</h4><p>安装 Nginx 服务 并开放 Linux2 相应端口</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@linux2 ~]# yum install nginx* -y</span><br><span class="line">[root@linux2 ~]# firewall-cmd --permanent --zone=public --add-port=&#123;80,443&#125;/tcp </span><br><span class="line">[root@linux2 ~]# firewall-cmd --reload                      # 更新防火墙配置</span><br></pre></td></tr></table></figure>
+
+<h4 id="配置-nginx-conf"><a href="#配置-nginx-conf" class="headerlink" title="配置 nginx.conf"></a>配置 nginx.conf</h4><p>打开 Nginx 配置文件</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@linux2 ~]# vim /etc/nginx/nginx.conf</span><br></pre></td></tr></table></figure>
+
+<p>写入配置:<br><font color="red"><b>注意：编辑前请注释多余的配置，以下配置必须写在HTTP模块里.</b></font></p>
+<p>就是：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http&#123;</span><br><span class="line">    这里面！！！</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"># 拒绝 80端口 使用 IP 地址访问</span><br><span class="line">server &#123;</span><br><span class="line">    listen 80 default_server;</span><br><span class="line">    server_name _;</span><br><span class="line">    return 403;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"># 拒绝 443端口 使用 IP 地址访问</span><br><span class="line">server &#123;</span><br><span class="line">        listen 443 default_server;</span><br><span class="line">        server_name _;</span><br><span class="line">        ssl_certificate &quot;/etc/ssl/skills.crt&quot;;</span><br><span class="line">        ssl_certificate_key &quot;/etc/ssl/skills.key&quot;;</span><br><span class="line">        return 403;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"># HTTP 访问自动跳转到 HTTPS</span><br><span class="line">server &#123;</span><br><span class="line">    listen 80;</span><br><span class="line">    server_name linux2.skills.lan;</span><br><span class="line">    return 301 https://$server_name$request_uri;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 配置 linux2.skills.com 的 HTTPS 服务</span><br><span class="line">server &#123;</span><br><span class="line">        listen 443 ssl;</span><br><span class="line">        server_name linux2.skills.lan;</span><br><span class="line">        ssl_certificate /etc/ssl/skills.crt;</span><br><span class="line">        ssl_certificate_key /etc/ssl/skills.key;</span><br><span class="line">        root /usr/share/nginx/html;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>设置开机执行并且立即启动 # 启动服务</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">systemctl enable nginx --now</span><br></pre></td></tr></table></figure>
+
+<p>你可以使用此命令检查配置文件是否有语法错误</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">nginx -t</span><br></pre></td></tr></table></figure>
+
+<h4 id="编写HTML文件输出HelloNginx"><a href="#编写HTML文件输出HelloNginx" class="headerlink" title="编写HTML文件输出HelloNginx"></a>编写HTML文件输出HelloNginx</h4><p>先删除自带的模板文件</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">rm -rf /usr/share/nginx/html/*</span><br></pre></td></tr></table></figure>
+
+<p>创建HTML文件</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">echo &quot;HelloNginx&quot; /usr/share/nginx/html/index.html</span><br></pre></td></tr></table></figure>
+
+<p>重启服务</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">systemctl restart nginx</span><br></pre></td></tr></table></figure>
+
+<h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><p>使用 curl 命令 进行验证，如反复使用此命令：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">curl https://linux2.skills.lan</span><br></pre></td></tr></table></figure>
+<p>结果参考：<br><a href="https://imgse.com/i/pFXRYFJ"><img src="https://s21.ax1x.com/2024/04/11/pFXRYFJ.png" alt="pFXRYFJ.png"></a></p>
+<p><font color="red"><b>提示：若无法连接请检查防火墙是否放行相应端口，以及测试时是否输入端口号！如:443端口</b></font></p>
+<hr>
+<h3 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h3><p>题目：<br>(2)利用 nginx 反向代理，实现 linux3 和 linux4 的 tomcat 负载均衡，通过 https&#x2F;&#x2F;tomcat.skills.lan 加密访问 Tomcat</p>
+<h4 id="配置-nginx-conf-1"><a href="#配置-nginx-conf-1" class="headerlink" title="配置 nginx.conf"></a>配置 nginx.conf</h4><p>打开 Nginx 配置文件</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@linux2 ~]# vim /etc/nginx/nginx.conf</span><br></pre></td></tr></table></figure>
+
+<p>写入配置:<br><font color="red"><b>注意：编辑前请注释多余的配置，以下配置必须写在HTTP模块里.</b></font></p>
+<p>就是：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http&#123;</span><br><span class="line">    这里面！！！</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>添加配置：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 这个模块定义了一个名为 tomcat 的上游服务器组，用于负载均衡</span><br><span class="line">upstream tomcat &#123;</span><br><span class="line">    server linux3.skills.lan:80;</span><br><span class="line">    server linux4.skills.lan:80;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"># 监听443端口的服务器，并将所有请求代理到上面定义的tomcat服务器组</span><br><span class="line">server &#123;</span><br><span class="line">    listen 443 ssl http2;</span><br><span class="line">    server_name tomcat.skills.lan;</span><br><span class="line">    ssl_certificate &quot;/etc/ssl/skills.crt&quot;;</span><br><span class="line">    ssl_certificate_key &quot;/etc/ssl/skills.key&quot;;</span><br><span class="line">    location / &#123;</span><br><span class="line">        proxy_pass http://tomcat;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>全部配置：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 这个模块定义了一个名为 tomcat 的上游服务器组，用于负载均衡</span><br><span class="line">upstream tomcat &#123;</span><br><span class="line">    server linux3.skills.lan:80;</span><br><span class="line">    server linux4.skills.lan:80;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"># 拒绝 80端口 使用 IP 地址访问</span><br><span class="line">server &#123;</span><br><span class="line">    listen 80 default_server;</span><br><span class="line">    server_name _;</span><br><span class="line">    return 403;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"># 拒绝 443端口 使用 IP 地址访问</span><br><span class="line">server &#123;</span><br><span class="line">        listen 443 default_server;</span><br><span class="line">        server_name _;</span><br><span class="line">        ssl_certificate &quot;/etc/ssl/skills.crt&quot;;</span><br><span class="line">        ssl_certificate_key &quot;/etc/ssl/skills.key&quot;;</span><br><span class="line">        return 403;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"># HTTP 访问自动跳转到 HTTPS</span><br><span class="line">server &#123;</span><br><span class="line">    listen 80;</span><br><span class="line">    server_name linux2.skills.lan;</span><br><span class="line">    return 301 https://$server_name$request_uri;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"># 监听443端口的服务器，并将所有请求代理到上面定义的tomcat服务器组</span><br><span class="line">server &#123;</span><br><span class="line">    listen 443 ssl http2;</span><br><span class="line">    server_name tomcat.skills.lan;</span><br><span class="line">    ssl_certificate &quot;/etc/ssl/skills.crt&quot;;</span><br><span class="line">    ssl_certificate_key &quot;/etc/ssl/skills.key&quot;;</span><br><span class="line">    location / &#123;</span><br><span class="line">        proxy_pass http://tomcat;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"># 配置 linux2.skills.com 的 HTTPS 服务</span><br><span class="line">server &#123;</span><br><span class="line">        listen 443 ssl;</span><br><span class="line">        server_name linux2.skills.lan;</span><br><span class="line">        ssl_certificate /etc/ssl/skills.crt;</span><br><span class="line">        ssl_certificate_key /etc/ssl/skills.key;</span><br><span class="line">        root /usr/share/nginx/html;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>详细解释：</p>
+<ol>
+<li>upstream tomcat: 这个模块定义了一个名为tomcat的服务器组，包含两台服务器linux3.skills.lan和linux4.skills.lan，它们都监听80端口。这通常用于负载均衡。</li>
+<li>server (第一个): 这个服务器块设置了一个默认的监听80端口的服务器。任何没有匹配特定server_name的请求都会被这个服务器捕获，并返回403禁止访问错误。</li>
+<li>server (第二个): 类似于第一个server块，但这个是针对HTTPS请求（监听443端口）。它使用指定的证书和密钥来加密通信，并返回403禁止访问错误。</li>
+<li>server (第三个): 这个服务器块监听80端口，并将所有发送到linux2.skills.lan的HTTP请求重定向到相同的服务器地址，但使用HTTPS协议。</li>
+<li>server (第四个): 这个服务器块设置了一个监听443端口的服务器，用于处理发送到tomcat.skills.lan的HTTPS请求。它配置了SSL证书，并将所有请求代理到上面定义的tomcat服务器组。</li>
+<li>server (第五个): 这个服务器块也监听443端口，并处理发送到linux2.skills.lan的HTTPS请求。它设置了一个根目录&#x2F;usr&#x2F;share&#x2F;nginx&#x2F;html，这是静态文件存放的位置。</li>
+</ol>
+<hr>
+<p>配置参考：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># For more information on configuration, see:</span><br><span class="line">#   * Official English Documentation: http://nginx.org/en/docs/</span><br><span class="line">#   * Official Russian Documentation: http://nginx.org/ru/docs/</span><br><span class="line"></span><br><span class="line">user nginx;</span><br><span class="line">worker_processes auto;</span><br><span class="line">error_log /var/log/nginx/error.log;</span><br><span class="line">pid /run/nginx.pid;</span><br><span class="line"></span><br><span class="line"># Load dynamic modules. See /usr/share/doc/nginx/README.dynamic.</span><br><span class="line">include /usr/share/nginx/modules/*.conf;</span><br><span class="line"></span><br><span class="line">events &#123;</span><br><span class="line">    worker_connections 1024;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">http &#123;      # 注意配置必须写在这个模块的大括号里面！！！！！</span><br><span class="line">    log_format  main  &#x27;$remote_addr - $remote_user [$time_local] &quot;$request&quot; &#x27;</span><br><span class="line">                      &#x27;$status $body_bytes_sent &quot;$http_referer&quot; &#x27;</span><br><span class="line">                      &#x27;&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;&#x27;;</span><br><span class="line"></span><br><span class="line">    access_log  /var/log/nginx/access.log  main;</span><br><span class="line"></span><br><span class="line">    sendfile            on;</span><br><span class="line">    tcp_nopush          on;</span><br><span class="line">    tcp_nodelay         on;</span><br><span class="line">    keepalive_timeout   65;</span><br><span class="line">    types_hash_max_size 4096;</span><br><span class="line"></span><br><span class="line">    include             /etc/nginx/mime.types;</span><br><span class="line">    default_type        application/octet-stream;</span><br><span class="line"></span><br><span class="line">    # Load modular configuration files from the /etc/nginx/conf.d directory.</span><br><span class="line">    # See http://nginx.org/en/docs/ngx_core_module.html#include</span><br><span class="line">    # for more information.</span><br><span class="line">    include /etc/nginx/conf.d/*.conf;</span><br><span class="line"></span><br><span class="line">    upstream tomcat &#123;</span><br><span class="line">         server linux3.skills.lan:80;</span><br><span class="line">         server linux4.skills.lan:80;</span><br><span class="line">         &#125;</span><br><span class="line"></span><br><span class="line">    server &#123;</span><br><span class="line">        listen       80 default_server;</span><br><span class="line">        listen       [::]:80;</span><br><span class="line">        server_name  _;</span><br><span class="line">	return 403;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">    server &#123;</span><br><span class="line">        listen       443 default_server;</span><br><span class="line">        listen       [::]:443;</span><br><span class="line">	ssl_certificate &quot;/etc/ssl/skills.crt&quot;;</span><br><span class="line">	ssl_certificate_key &quot;/etc/ssl/skills.key&quot;;</span><br><span class="line">        server_name  _;</span><br><span class="line">        return 403;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    server &#123;</span><br><span class="line">        listen       80;</span><br><span class="line">        listen       [::]:80;</span><br><span class="line">        server_name  linux2.skills.lan;</span><br><span class="line">        return 301 https://\$server_name\$request_uri;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">     server &#123;</span><br><span class="line">        listen 443 ssl;</span><br><span class="line">        server_name linux2.skills.lan;</span><br><span class="line">        ssl_certificate /etc/ssl/skills.crt;</span><br><span class="line">        ssl_certificate_key /etc/ssl/skills.key;</span><br><span class="line">        root /usr/share/nginx/html;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    server &#123;</span><br><span class="line">        listen       443 ssl http2;</span><br><span class="line">        server_name  tomcat.skills.lan;</span><br><span class="line">        ssl_certificate &quot;/etc/ssl/skills.crt&quot;;</span><br><span class="line">        ssl_certificate_key &quot;/etc/ssl/skills.key&quot;;</span><br><span class="line">        location / &#123;</span><br><span class="line">            proxy_pass http://tomcat;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">#        root         /usr/share/nginx/html;</span><br><span class="line">#</span><br><span class="line">#        # Load configuration files for the default server block.</span><br><span class="line">#        include /etc/nginx/default.d/*.conf;</span><br><span class="line">#</span><br><span class="line">#        error_page 404 /404.html;</span><br><span class="line">#        location = /404.html &#123;</span><br><span class="line">#        &#125;</span><br><span class="line">#</span><br><span class="line">#        error_page 500 502 503 504 /50x.html;</span><br><span class="line">#        location = /50x.html &#123;</span><br><span class="line">#        &#125;</span><br><span class="line">#    &#125;</span><br><span class="line">#</span><br><span class="line"># Settings for a TLS enabled server.</span><br><span class="line">#</span><br><span class="line">#    server &#123;</span><br><span class="line">#        listen       443 ssl http2;</span><br><span class="line">#        listen       [::]:443 ssl http2;</span><br><span class="line">#        server_name  _;</span><br><span class="line">#        root         /usr/share/nginx/html;</span><br><span class="line">#        ssl_certificate &quot;/etc/ssl/skills.crt&quot;;</span><br><span class="line">#        ssl_certificate_key &quot;/etc/ssl/skills.key&quot;;</span><br><span class="line">#       	&#125;</span><br><span class="line">#        ssl_session_cache shared:SSL:1m;</span><br><span class="line">#        ssl_session_timeout  10m;</span><br><span class="line">#        ssl_ciphers PROFILE=SYSTEM;</span><br><span class="line">#        ssl_prefer_server_ciphers on;</span><br><span class="line">#</span><br><span class="line">#        # Load configuration files for the default server block.</span><br><span class="line">#        include /etc/nginx/default.d/*.conf;</span><br><span class="line">#</span><br><span class="line">#        error_page 404 /404.html;</span><br><span class="line">#            location = /40x.html &#123;</span><br><span class="line">#        &#125;</span><br><span class="line">#</span><br><span class="line">#        error_page 500 502 503 504 /50x.html;</span><br><span class="line">#            location = /50x.html &#123;</span><br><span class="line">#        &#125;</span><br><span class="line">#    &#125;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="配置安全策略"><a href="#配置安全策略" class="headerlink" title="配置安全策略"></a>配置安全策略</h4><p>这条命令用于配置 SELinux（安全增强型 Linux），允许 Tomcat web 服务器（Tomcat）建立网络连接。默认情况下，SELinux 的策略可能会限制 httpd 进程只能访问与其服务相关的端口。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">setsebool -P httpd_can_network_connect 1             #这条指令可以配置SELinux允许Tomcat网络连接</span><br></pre></td></tr></table></figure>
+<p>设置开机执行并且立即启动</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">systemctl enable nginx --now</span><br></pre></td></tr></table></figure>
+
+<h4 id="添加DNS解析"><a href="#添加DNS解析" class="headerlink" title="添加DNS解析"></a>添加DNS解析</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vim /var/named/zxpy </span><br></pre></td></tr></table></figure>
+<p>加入：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">tomcat  A       10.10.220.102</span><br></pre></td></tr></table></figure>
+<p>重启DNS服务器</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">systemctl restart named</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="最后一部分"><a href="#最后一部分" class="headerlink" title="最后一部分"></a>最后一部分</h3><h4 id="测试-1"><a href="#测试-1" class="headerlink" title="测试"></a>测试</h4><p>使用 curl 命令 进行验证,如：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">curl https://tomcat.skills.lan</span><br></pre></td></tr></table></figure>
+<p>结果参考：<br>当用IP地址访问时应当被 403 拒绝<br><a href="https://imgse.com/i/pFXfiVS"><img src="https://s21.ax1x.com/2024/04/11/pFXfiVS.png" alt="pFXfiVS.png"></a><br>反复使用此命令，TomcatA和TomcatB 应当交替出现,这个效果为负载均衡<br><a href="https://imgse.com/i/pFX6y26"><img src="https://s21.ax1x.com/2024/04/11/pFX6y26.png" alt="pFX6y26.png"></a><br>使用此命令时应当出现Hello Nginx<br><a href="https://imgse.com/i/pFXRYFJ"><img src="https://s21.ax1x.com/2024/04/11/pFXRYFJ.png" alt="pFXRYFJ.png"></a></p>
+<p><font color="red"><b>提示：若无法连接请检查防火墙是否放行相应端口，DNS解析配置是否正常，配置完是否重启了DNS服务器,是否更改了SELinux安全策略</b></font></p>
+]]></content>
+      <categories>
+        <category>博客</category>
+        <category>职业技能大赛</category>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>博客</tag>
+        <tag>职业技能大赛</tag>
+        <tag>教程</tag>
       </tags>
   </entry>
   <entry>
@@ -4332,192 +4518,6 @@ alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a></p>
       </tags>
   </entry>
   <entry>
-    <title>Tomcat 服务</title>
-    <url>/2024/04/12/Tomcat/undefined/undefined.html</url>
-    <content><![CDATA[<center><font size="6"><b>Tomcat 服务</b></font></center>
-
-<hr>
-<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>3．tomcat 服务<br>任务描述：采用 Tomcat 搭建动态网站。</p>
-<p>(1)配置 linux2 为 nginx 服务器，默认文档 index.html 的内容为 “HelloNginx”；仅允许使用域名访问，http 访问自动跳转到 https。<br>(2)利用 nginx 反向代理，实现 linux3 和 linux4 的 tomcat 负载均衡，通过 https&#x2F;&#x2F;tomcat.skills.lan 加密访问 Tomcat<br>(3)配置 linux3 和 linux4 为 tomcat 服务器，网站默认首页内容分别为 “tomcatA” 和 “tomcatB”，仅使用域名访问 80 端口的 http 服务。</p>
-<hr>
-<h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><h3 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h3><p><font color="red"><b>需要先配置 Tomcat 服务器才能配置 Nginx 服务</b></font></p>
-<p>题目：<br>(3)配置 linux3 和 linux4 为 tomcat 服务器，网站默认首页内容分别为 “tomcatA” 和 “tomcatB”，仅使用域名访问 80 端口的 http 服务。</p>
-<hr>
-<h4 id="1-安装-Tomcat-服务器"><a href="#1-安装-Tomcat-服务器" class="headerlink" title="1.安装 Tomcat 服务器"></a>1.安装 Tomcat 服务器</h4><p>为 linux3 安装 Tomcat 并开放防火墙端口</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@linux3 ~]# yum install tomcat* -y</span><br><span class="line">[root@linux3 ~]# firewall-cmd --permanent --zone=public --add-port=&#123;80,8080,443&#125;/tcp </span><br><span class="line">[root@linux3 ~]# firewall-cmd --reload                      # 更新防火墙配置</span><br></pre></td></tr></table></figure>
-
-<p>为 linux4 安装 Tomcat 并开放防火墙端口</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@linux4 ~]# yum install tomcat* -y</span><br><span class="line">[root@linux4 ~]# firewall-cmd --permanent --zone=public --add-port=&#123;80,8080,443&#125;/tcp </span><br><span class="line">[root@linux4 ~]# firewall-cmd --reload                       # 更新防火墙配置</span><br></pre></td></tr></table></figure>
-
-
-<p>端口定义：<br>80      http服务<br>443     https服务 # 虽然好像用不上<br>8080    一般也是http之类的服务</p>
-<hr>
-<h4 id="配置-Tomcat-先让服务飞起来"><a href="#配置-Tomcat-先让服务飞起来" class="headerlink" title="配置 Tomcat [先让服务飞起来]"></a>配置 Tomcat [先让服务飞起来]</h4><p><font color="red"><b>Linux 3 配置：</b></font></p>
-<p>打开配置文件：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@linux3 ~]# vim /etc/tomcat/server.xml</span><br></pre></td></tr></table></figure>
-
-<p>大约：131行</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;Engine name=&quot;Catalina&quot; defaultHost=&quot;localhost&quot;&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>改为 ↓</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">&lt;Engine name=&quot;Catalina&quot; defaultHost=&quot;linux3.skills.lan&quot;&gt;</span><br></pre></td></tr></table></figure>
-<hr>
-<p>大约：151行</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;Host name=&quot;localhost&quot;  appBase=&quot;webapps&quot;</span><br><span class="line">      unpackWARs=&quot;true&quot; autoDeploy=&quot;true&quot;&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>改为 ↓</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">&lt;Host name=&quot;linux3.skills.lan&quot;  appBase=&quot;webapps&quot;</span><br><span class="line">      unpackWARs=&quot;true&quot; autoDeploy=&quot;true&quot;&gt;</span><br></pre></td></tr></table></figure>
-<hr>
-<p>设置开机自启，然后 –now 代表立即启动</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">systemctl enable tomcat --now </span><br></pre></td></tr></table></figure>
-<p>删除站点模板文件</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">rm -rf  /usr/share/tomcat/webapps/ROOT/*</span><br></pre></td></tr></table></figure>
-<p>创建index.html，并写入”TomcatA”</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">echo &quot;TomcatA&quot; &gt;  /usr/share/tomcat/webapps/ROOT/index.html</span><br></pre></td></tr></table></figure>
-<p>重启Tomcat服务</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">systemctl restart tomcat.service</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p><font color="red"><b>Linux 4 配置：</b></font></p>
-<p>打开配置文件：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@linux4 ~]# vim /etc/tomcat/server.xml</span><br></pre></td></tr></table></figure>
-
-<p>大约：131行</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;Engine name=&quot;Catalina&quot; defaultHost=&quot;localhost&quot;&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>改为 ↓</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">&lt;Engine name=&quot;Catalina&quot; defaultHost=&quot;linux4.skills.lan&quot;&gt;</span><br></pre></td></tr></table></figure>
-<hr>
-<p>大约：151行</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;Host name=&quot;localhost&quot;  appBase=&quot;webapps&quot;</span><br><span class="line">      unpackWARs=&quot;true&quot; autoDeploy=&quot;true&quot;&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>改为 ↓</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">&lt;Host name=&quot;linux4.skills.lan&quot;  appBase=&quot;webapps&quot;</span><br><span class="line">      unpackWARs=&quot;true&quot; autoDeploy=&quot;true&quot;&gt;</span><br></pre></td></tr></table></figure>
-<hr>
-<p>设置开机自启，然后立即启动。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">systemctl enable tomcat --now </span><br></pre></td></tr></table></figure>
-
-<p>删除模板文件</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">rm -rf  /usr/share/tomcat/webapps/ROOT/*</span><br></pre></td></tr></table></figure>
-<p>创建index.html，并写入”TomcatB”</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">echo &quot;TomcatB&quot; &gt;  /usr/share/tomcat/webapps/ROOT/index.html</span><br></pre></td></tr></table></figure>
-<p>重启服务</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">systemctl restart tomcat.service</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h4 id="测试-Tomcat"><a href="#测试-Tomcat" class="headerlink" title="测试 Tomcat"></a>测试 Tomcat</h4><p>使用 curl 命令 进行验证，如：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">curl linux3.skills.lan:8080</span><br></pre></td></tr></table></figure>
-<p>效果参考:<br><a href="https://imgse.com/i/pFXyRNn"><img src="https://s21.ax1x.com/2024/04/11/pFXyRNn.png" alt="pFXyRNn.png"></a><br><font color="red"><b>提示：若无法连接请检查防火墙是否放行相应端口，以及测试时是否输入端口号！如:8080端口</b></font></p>
-<hr>
-<h4 id="更改端口"><a href="#更改端口" class="headerlink" title="更改端口"></a>更改端口</h4><p>因为该服务默认没有使用root用户所以在使用高位端口（0~1024）的时候没有权限，会导致服务没法正常启动。</p>
-<p><font color="red"><b>注意：两台 Tomcat 服务器都要改</b></font></p>
-<p>改权限：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vim /usr/lib/systemd/system/tomcat.service</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">user=tomcat</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>改为 ↓</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">user=root</span><br></pre></td></tr></table></figure>
-
-<p>修改端口:</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vim /etc/tomcat/server.xml</span><br></pre></td></tr></table></figure>
-<p>大约在第69行：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;Connector port=&quot;8080&quot; protocol=&quot;HTTP/1.1&quot;</span><br><span class="line">           connectionTimeout=&quot;20000&quot;</span><br><span class="line">           redirectPort=&quot;8443&quot; /&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>改为 ↓</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">&lt;Connector port=&quot;80&quot; protocol=&quot;HTTP/1.1&quot;</span><br><span class="line">           connectionTimeout=&quot;20000&quot;</span><br><span class="line">           redirectPort=&quot;443&quot; /&gt;</span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">systemctl restart tomcat.service</span><br></pre></td></tr></table></figure>
-
-<h4 id="再次测试-Tomcat"><a href="#再次测试-Tomcat" class="headerlink" title="再次测试 Tomcat"></a>再次测试 Tomcat</h4><p>使用 curl 命令 进行验证，如：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">curl http://linux3.skills.lan</span><br></pre></td></tr></table></figure>
-<p>效果参考:<br><a href="https://imgse.com/i/pFXyRNn"><img src="https://s21.ax1x.com/2024/04/11/pFXyRNn.png" alt="pFXyRNn.png"></a><br><font color="red"><b>提示：若无法连接请检查防火墙是否放行相应端口，以及测试时是否输入端口号！如:80端口</b></font></p>
-<hr>
-<h3 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h3><p>题目：<br>(1)配置 linux2 为 nginx 服务器，默认文档 index.html 的内容为 “hellonginx”；仅允许使用域名访问，http 访问自动跳转到 https。</p>
-<hr>
-<h4 id="安装-Nginx"><a href="#安装-Nginx" class="headerlink" title="安装 Nginx"></a>安装 Nginx</h4><p>安装 Nginx 服务 并开放 Linux2 相应端口</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@linux2 ~]# yum install nginx* -y</span><br><span class="line">[root@linux2 ~]# firewall-cmd --permanent --zone=public --add-port=&#123;80,443&#125;/tcp </span><br><span class="line">[root@linux2 ~]# firewall-cmd --reload                      # 更新防火墙配置</span><br></pre></td></tr></table></figure>
-
-<h4 id="配置-nginx-conf"><a href="#配置-nginx-conf" class="headerlink" title="配置 nginx.conf"></a>配置 nginx.conf</h4><p>打开 Nginx 配置文件</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@linux2 ~]# vim /etc/nginx/nginx.conf</span><br></pre></td></tr></table></figure>
-
-<p>写入配置:<br><font color="red"><b>注意：编辑前请注释多余的配置，以下配置必须写在HTTP模块里.</b></font></p>
-<p>就是：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http&#123;</span><br><span class="line">    这里面！！！</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"># 拒绝 80端口 使用 IP 地址访问</span><br><span class="line">server &#123;</span><br><span class="line">    listen 80 default_server;</span><br><span class="line">    server_name _;</span><br><span class="line">    return 403;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"># 拒绝 443端口 使用 IP 地址访问</span><br><span class="line">server &#123;</span><br><span class="line">        listen 443 default_server;</span><br><span class="line">        server_name _;</span><br><span class="line">        ssl_certificate &quot;/etc/ssl/skills.crt&quot;;</span><br><span class="line">        ssl_certificate_key &quot;/etc/ssl/skills.key&quot;;</span><br><span class="line">        return 403;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"># HTTP 访问自动跳转到 HTTPS</span><br><span class="line">server &#123;</span><br><span class="line">    listen 80;</span><br><span class="line">    server_name linux2.skills.lan;</span><br><span class="line">    return 301 https://$server_name$request_uri;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 配置 linux2.skills.com 的 HTTPS 服务</span><br><span class="line">server &#123;</span><br><span class="line">        listen 443 ssl;</span><br><span class="line">        server_name linux2.skills.lan;</span><br><span class="line">        ssl_certificate /etc/ssl/skills.crt;</span><br><span class="line">        ssl_certificate_key /etc/ssl/skills.key;</span><br><span class="line">        root /usr/share/nginx/html;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>设置开机执行并且立即启动 # 启动服务</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">systemctl enable nginx --now</span><br></pre></td></tr></table></figure>
-
-<p>你可以使用此命令检查配置文件是否有语法错误</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">nginx -t</span><br></pre></td></tr></table></figure>
-
-<h4 id="编写HTML文件输出HelloNginx"><a href="#编写HTML文件输出HelloNginx" class="headerlink" title="编写HTML文件输出HelloNginx"></a>编写HTML文件输出HelloNginx</h4><p>先删除自带的模板文件</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">rm -rf /usr/share/nginx/html/*</span><br></pre></td></tr></table></figure>
-
-<p>创建HTML文件</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">echo &quot;HelloNginx&quot; /usr/share/nginx/html/index.html</span><br></pre></td></tr></table></figure>
-
-<p>重启服务</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">systemctl restart nginx</span><br></pre></td></tr></table></figure>
-
-<h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><p>使用 curl 命令 进行验证，如反复使用此命令：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">curl https://linux2.skills.lan</span><br></pre></td></tr></table></figure>
-<p>结果参考：<br><a href="https://imgse.com/i/pFXRYFJ"><img src="https://s21.ax1x.com/2024/04/11/pFXRYFJ.png" alt="pFXRYFJ.png"></a></p>
-<p><font color="red"><b>提示：若无法连接请检查防火墙是否放行相应端口，以及测试时是否输入端口号！如:443端口</b></font></p>
-<hr>
-<h3 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h3><p>题目：<br>(2)利用 nginx 反向代理，实现 linux3 和 linux4 的 tomcat 负载均衡，通过 https&#x2F;&#x2F;tomcat.skills.lan 加密访问 Tomcat</p>
-<h4 id="配置-nginx-conf-1"><a href="#配置-nginx-conf-1" class="headerlink" title="配置 nginx.conf"></a>配置 nginx.conf</h4><p>打开 Nginx 配置文件</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[root@linux2 ~]# vim /etc/nginx/nginx.conf</span><br></pre></td></tr></table></figure>
-
-<p>写入配置:<br><font color="red"><b>注意：编辑前请注释多余的配置，以下配置必须写在HTTP模块里.</b></font></p>
-<p>就是：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">http&#123;</span><br><span class="line">    这里面！！！</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>添加配置：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 这个模块定义了一个名为 tomcat 的上游服务器组，用于负载均衡</span><br><span class="line">upstream tomcat &#123;</span><br><span class="line">    server linux3.skills.lan:80;</span><br><span class="line">    server linux4.skills.lan:80;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"># 监听443端口的服务器，并将所有请求代理到上面定义的tomcat服务器组</span><br><span class="line">server &#123;</span><br><span class="line">    listen 443 ssl http2;</span><br><span class="line">    server_name tomcat.skills.lan;</span><br><span class="line">    ssl_certificate &quot;/etc/ssl/skills.crt&quot;;</span><br><span class="line">    ssl_certificate_key &quot;/etc/ssl/skills.key&quot;;</span><br><span class="line">    location / &#123;</span><br><span class="line">        proxy_pass http://tomcat;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>全部配置：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 这个模块定义了一个名为 tomcat 的上游服务器组，用于负载均衡</span><br><span class="line">upstream tomcat &#123;</span><br><span class="line">    server linux3.skills.lan:80;</span><br><span class="line">    server linux4.skills.lan:80;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"># 拒绝 80端口 使用 IP 地址访问</span><br><span class="line">server &#123;</span><br><span class="line">    listen 80 default_server;</span><br><span class="line">    server_name _;</span><br><span class="line">    return 403;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"># 拒绝 443端口 使用 IP 地址访问</span><br><span class="line">server &#123;</span><br><span class="line">        listen 443 default_server;</span><br><span class="line">        server_name _;</span><br><span class="line">        ssl_certificate &quot;/etc/ssl/skills.crt&quot;;</span><br><span class="line">        ssl_certificate_key &quot;/etc/ssl/skills.key&quot;;</span><br><span class="line">        return 403;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"># HTTP 访问自动跳转到 HTTPS</span><br><span class="line">server &#123;</span><br><span class="line">    listen 80;</span><br><span class="line">    server_name linux2.skills.lan;</span><br><span class="line">    return 301 https://$server_name$request_uri;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"># 监听443端口的服务器，并将所有请求代理到上面定义的tomcat服务器组</span><br><span class="line">server &#123;</span><br><span class="line">    listen 443 ssl http2;</span><br><span class="line">    server_name tomcat.skills.lan;</span><br><span class="line">    ssl_certificate &quot;/etc/ssl/skills.crt&quot;;</span><br><span class="line">    ssl_certificate_key &quot;/etc/ssl/skills.key&quot;;</span><br><span class="line">    location / &#123;</span><br><span class="line">        proxy_pass http://tomcat;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"># 配置 linux2.skills.com 的 HTTPS 服务</span><br><span class="line">server &#123;</span><br><span class="line">        listen 443 ssl;</span><br><span class="line">        server_name linux2.skills.lan;</span><br><span class="line">        ssl_certificate /etc/ssl/skills.crt;</span><br><span class="line">        ssl_certificate_key /etc/ssl/skills.key;</span><br><span class="line">        root /usr/share/nginx/html;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>详细解释：</p>
-<ol>
-<li>upstream tomcat: 这个模块定义了一个名为tomcat的服务器组，包含两台服务器linux3.skills.lan和linux4.skills.lan，它们都监听80端口。这通常用于负载均衡。</li>
-<li>server (第一个): 这个服务器块设置了一个默认的监听80端口的服务器。任何没有匹配特定server_name的请求都会被这个服务器捕获，并返回403禁止访问错误。</li>
-<li>server (第二个): 类似于第一个server块，但这个是针对HTTPS请求（监听443端口）。它使用指定的证书和密钥来加密通信，并返回403禁止访问错误。</li>
-<li>server (第三个): 这个服务器块监听80端口，并将所有发送到linux2.skills.lan的HTTP请求重定向到相同的服务器地址，但使用HTTPS协议。</li>
-<li>server (第四个): 这个服务器块设置了一个监听443端口的服务器，用于处理发送到tomcat.skills.lan的HTTPS请求。它配置了SSL证书，并将所有请求代理到上面定义的tomcat服务器组。</li>
-<li>server (第五个): 这个服务器块也监听443端口，并处理发送到linux2.skills.lan的HTTPS请求。它设置了一个根目录&#x2F;usr&#x2F;share&#x2F;nginx&#x2F;html，这是静态文件存放的位置。</li>
-</ol>
-<hr>
-<p>配置参考：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># For more information on configuration, see:</span><br><span class="line">#   * Official English Documentation: http://nginx.org/en/docs/</span><br><span class="line">#   * Official Russian Documentation: http://nginx.org/ru/docs/</span><br><span class="line"></span><br><span class="line">user nginx;</span><br><span class="line">worker_processes auto;</span><br><span class="line">error_log /var/log/nginx/error.log;</span><br><span class="line">pid /run/nginx.pid;</span><br><span class="line"></span><br><span class="line"># Load dynamic modules. See /usr/share/doc/nginx/README.dynamic.</span><br><span class="line">include /usr/share/nginx/modules/*.conf;</span><br><span class="line"></span><br><span class="line">events &#123;</span><br><span class="line">    worker_connections 1024;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">http &#123;      # 注意配置必须写在这个模块的大括号里面！！！！！</span><br><span class="line">    log_format  main  &#x27;$remote_addr - $remote_user [$time_local] &quot;$request&quot; &#x27;</span><br><span class="line">                      &#x27;$status $body_bytes_sent &quot;$http_referer&quot; &#x27;</span><br><span class="line">                      &#x27;&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;&#x27;;</span><br><span class="line"></span><br><span class="line">    access_log  /var/log/nginx/access.log  main;</span><br><span class="line"></span><br><span class="line">    sendfile            on;</span><br><span class="line">    tcp_nopush          on;</span><br><span class="line">    tcp_nodelay         on;</span><br><span class="line">    keepalive_timeout   65;</span><br><span class="line">    types_hash_max_size 4096;</span><br><span class="line"></span><br><span class="line">    include             /etc/nginx/mime.types;</span><br><span class="line">    default_type        application/octet-stream;</span><br><span class="line"></span><br><span class="line">    # Load modular configuration files from the /etc/nginx/conf.d directory.</span><br><span class="line">    # See http://nginx.org/en/docs/ngx_core_module.html#include</span><br><span class="line">    # for more information.</span><br><span class="line">    include /etc/nginx/conf.d/*.conf;</span><br><span class="line"></span><br><span class="line">    upstream tomcat &#123;</span><br><span class="line">         server linux3.skills.lan:80;</span><br><span class="line">         server linux4.skills.lan:80;</span><br><span class="line">         &#125;</span><br><span class="line"></span><br><span class="line">    server &#123;</span><br><span class="line">        listen       80 default_server;</span><br><span class="line">        listen       [::]:80;</span><br><span class="line">        server_name  _;</span><br><span class="line">	return 403;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">    server &#123;</span><br><span class="line">        listen       443 default_server;</span><br><span class="line">        listen       [::]:443;</span><br><span class="line">	ssl_certificate &quot;/etc/ssl/skills.crt&quot;;</span><br><span class="line">	ssl_certificate_key &quot;/etc/ssl/skills.key&quot;;</span><br><span class="line">        server_name  _;</span><br><span class="line">        return 403;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    server &#123;</span><br><span class="line">        listen       80;</span><br><span class="line">        listen       [::]:80;</span><br><span class="line">        server_name  linux2.skills.lan;</span><br><span class="line">        return 301 https://\$server_name\$request_uri;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">     server &#123;</span><br><span class="line">        listen 443 ssl;</span><br><span class="line">        server_name linux2.skills.lan;</span><br><span class="line">        ssl_certificate /etc/ssl/skills.crt;</span><br><span class="line">        ssl_certificate_key /etc/ssl/skills.key;</span><br><span class="line">        root /usr/share/nginx/html;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    server &#123;</span><br><span class="line">        listen       443 ssl http2;</span><br><span class="line">        server_name  tomcat.skills.lan;</span><br><span class="line">        ssl_certificate &quot;/etc/ssl/skills.crt&quot;;</span><br><span class="line">        ssl_certificate_key &quot;/etc/ssl/skills.key&quot;;</span><br><span class="line">        location / &#123;</span><br><span class="line">            proxy_pass http://tomcat;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">#        root         /usr/share/nginx/html;</span><br><span class="line">#</span><br><span class="line">#        # Load configuration files for the default server block.</span><br><span class="line">#        include /etc/nginx/default.d/*.conf;</span><br><span class="line">#</span><br><span class="line">#        error_page 404 /404.html;</span><br><span class="line">#        location = /404.html &#123;</span><br><span class="line">#        &#125;</span><br><span class="line">#</span><br><span class="line">#        error_page 500 502 503 504 /50x.html;</span><br><span class="line">#        location = /50x.html &#123;</span><br><span class="line">#        &#125;</span><br><span class="line">#    &#125;</span><br><span class="line">#</span><br><span class="line"># Settings for a TLS enabled server.</span><br><span class="line">#</span><br><span class="line">#    server &#123;</span><br><span class="line">#        listen       443 ssl http2;</span><br><span class="line">#        listen       [::]:443 ssl http2;</span><br><span class="line">#        server_name  _;</span><br><span class="line">#        root         /usr/share/nginx/html;</span><br><span class="line">#        ssl_certificate &quot;/etc/ssl/skills.crt&quot;;</span><br><span class="line">#        ssl_certificate_key &quot;/etc/ssl/skills.key&quot;;</span><br><span class="line">#       	&#125;</span><br><span class="line">#        ssl_session_cache shared:SSL:1m;</span><br><span class="line">#        ssl_session_timeout  10m;</span><br><span class="line">#        ssl_ciphers PROFILE=SYSTEM;</span><br><span class="line">#        ssl_prefer_server_ciphers on;</span><br><span class="line">#</span><br><span class="line">#        # Load configuration files for the default server block.</span><br><span class="line">#        include /etc/nginx/default.d/*.conf;</span><br><span class="line">#</span><br><span class="line">#        error_page 404 /404.html;</span><br><span class="line">#            location = /40x.html &#123;</span><br><span class="line">#        &#125;</span><br><span class="line">#</span><br><span class="line">#        error_page 500 502 503 504 /50x.html;</span><br><span class="line">#            location = /50x.html &#123;</span><br><span class="line">#        &#125;</span><br><span class="line">#    &#125;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h4 id="配置安全策略"><a href="#配置安全策略" class="headerlink" title="配置安全策略"></a>配置安全策略</h4><p>这条命令用于配置 SELinux（安全增强型 Linux），允许 Tomcat web 服务器（Tomcat）建立网络连接。默认情况下，SELinux 的策略可能会限制 httpd 进程只能访问与其服务相关的端口。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">setsebool -P httpd_can_network_connect 1             #这条指令可以配置SELinux允许Tomcat网络连接</span><br></pre></td></tr></table></figure>
-<p>设置开机执行并且立即启动</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">systemctl enable nginx --now</span><br></pre></td></tr></table></figure>
-
-<h4 id="添加DNS解析"><a href="#添加DNS解析" class="headerlink" title="添加DNS解析"></a>添加DNS解析</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vim /var/named/zxpy </span><br></pre></td></tr></table></figure>
-<p>加入：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">tomcat  A       10.10.220.102</span><br></pre></td></tr></table></figure>
-<p>重启DNS服务器</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">systemctl restart named</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="最后一部分"><a href="#最后一部分" class="headerlink" title="最后一部分"></a>最后一部分</h3><h4 id="测试-1"><a href="#测试-1" class="headerlink" title="测试"></a>测试</h4><p>使用 curl 命令 进行验证</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">curl https://tomcat.skills.lan</span><br></pre></td></tr></table></figure>
-<p>结果参考：<br>当用IP地址访问时应当被 403 拒绝<br><a href="https://imgse.com/i/pFXfiVS"><img src="https://s21.ax1x.com/2024/04/11/pFXfiVS.png" alt="pFXfiVS.png"></a><br>反复使用此命令，TomcatA和TomcatB 应当交替出现,这个效果为负载均衡<br><a href="https://imgse.com/i/pFX6y26"><img src="https://s21.ax1x.com/2024/04/11/pFX6y26.png" alt="pFX6y26.png"></a><br>使用此命令时应当出现Hello Nginx<br><a href="https://imgse.com/i/pFXRYFJ"><img src="https://s21.ax1x.com/2024/04/11/pFXRYFJ.png" alt="pFXRYFJ.png"></a></p>
-<p><font color="red"><b>提示：若无法连接请检查防火墙是否放行相应端口，DNS解析配置是否正常，配置完是否重启了DNS服务器,是否更改了SELinux安全策略</b></font></p>
-]]></content>
-      <categories>
-        <category>博客</category>
-        <category>职业技能大赛</category>
-        <category>教程</category>
-      </categories>
-      <tags>
-        <tag>博客</tag>
-        <tag>职业技能大赛</tag>
-        <tag>教程</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>高职院校单独考试招生面试问题</title>
     <url>/2024/03/02/%E5%8D%95%E6%8B%9B%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E9%9B%86%E5%90%88/undefined/undefined.html</url>
     <content><![CDATA[<center><font size="6"><b>单招面试问题</b></font></center>
@@ -4598,86 +4598,6 @@ alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a></p>
         <tag>单独考试</tag>
         <tag>面试题目</tag>
         <tag>单招面试</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>自定义侧边栏</title>
-    <url>/2020/12/31/%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BE%A7%E8%BE%B9%E6%A0%8F/undefined/ea33ab97.html</url>
-    <content><![CDATA[<div class="note info flat"><p>适用于 &gt;&#x3D; 3.8.0</p>
-</div>
-
-<p>侧边栏现在支持自定义了，可以添加自己喜欢的 widget。</p>
-<p>可添加自己的 widget，也可以对现有的 widget 进行排序（<code>博客资料</code>和 <code>公告</code>这两个固定，其它的能排序）</p>
-<h2 id="widget-排序"><a href="#widget-排序" class="headerlink" title="widget 排序"></a>widget 排序</h2><p>只需要配置 <code>sort_order</code>就行。（使用了 <code>Flex</code> 佈局的 <code>order</code> 属性，具体可查看 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Ordering_Flex_Items">mozilla 文档</a>。简单来讲，就是配置<strong>数字</strong>来实现排序，如果不配置，则默认为 0。数字越小，排序越靠前。</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">aside:</span></span><br><span class="line"> <span class="string">...</span></span><br><span class="line">  <span class="attr">card_recent_post:</span></span><br><span class="line">    <span class="attr">sort_order:</span> <span class="comment"># Don&#x27;t modify the setting unless you know how it works</span></span><br><span class="line">  <span class="attr">card_categories:</span></span><br><span class="line">    <span class="attr">sort_order:</span> <span class="comment"># Don&#x27;t modify the setting unless you know how it works</span></span><br><span class="line">  <span class="attr">card_tags:</span></span><br><span class="line">    <span class="attr">sort_order:</span> <span class="comment"># Don&#x27;t modify the setting unless you know how it works</span></span><br><span class="line">  <span class="attr">card_archives:</span></span><br><span class="line">    <span class="attr">sort_order:</span> <span class="comment"># Don&#x27;t modify the setting unless you know how it works</span></span><br><span class="line">  <span class="attr">card_webinfo:</span></span><br><span class="line">    <span class="attr">sort_order:</span> <span class="comment"># Don&#x27;t modify the setting unless you know how it works</span></span><br><span class="line"></span><br><span class="line"><span class="attr">newest_comments:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">sort_order:</span> <span class="comment"># Don&#x27;t modify the setting unless you know how it works</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="自定义-widget"><a href="#自定义-widget" class="headerlink" title="自定义 widget"></a>自定义 widget</h2><p>如果你想添加自己的内容到侧边栏去，你可以自定义。</p>
-<h3 id="创建-widget-yml"><a href="#创建-widget-yml" class="headerlink" title="创建 widget.yml"></a>创建 widget.yml</h3><p>在Hexo博客目录中的<code>source/_data</code>（如果没有 _data 文件夹，请自行创建），创建一个文件 <code>widget.yml</code></p>
-<h3 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">top:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">class_name:</span></span><br><span class="line">    <span class="attr">id_name:</span></span><br><span class="line">    <span class="attr">name:</span></span><br><span class="line">    <span class="attr">icon:</span></span><br><span class="line">    <span class="attr">html:</span></span><br><span class="line"></span><br><span class="line"><span class="attr">bottom:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">class_name:</span></span><br><span class="line">    <span class="attr">id_name:</span></span><br><span class="line">    <span class="attr">name:</span></span><br><span class="line">    <span class="attr">icon:</span></span><br><span class="line">    <span class="attr">order:</span></span><br><span class="line">    <span class="attr">html:</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>参数详解</p>
-</blockquote>
-<p><strong>top</strong>:  创建的 widget 会出现在非 sticky 区域（即所有页面都会显示)</p>
-<p><strong>bottom</strong>:  创建的 widget 会出现在 sticky 区域（除了文章页都会显示)</p>
-<table>
-<thead>
-<tr>
-<th>参数</th>
-<th>解释</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>class_name</td>
-<td>所创建的 widget  父类 class 名 （可选）</td>
-</tr>
-<tr>
-<td>id_name</td>
-<td>所创建的 widget  父类 id 名（可选）</td>
-</tr>
-<tr>
-<td>name</td>
-<td>所创建的 widget 标题</td>
-</tr>
-<tr>
-<td>icon</td>
-<td>所创建的 widget 图标</td>
-</tr>
-<tr>
-<td>order</td>
-<td>所创建的 widget 排序 （可选）</td>
-</tr>
-<tr>
-<td>html</td>
-<td>所创建的 widget 相关代码</td>
-</tr>
-</tbody></table>
-<p><img src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/adside-diy-parameter.png" alt="image-20201230223506507"></p>
-<p>生成的 代码 为</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card-widget 所写的 class_name&quot;</span> <span class="attr">id</span>=<span class="string">&quot;所写的 id_name&quot;</span> <span class="attr">style</span>=<span class="string">&quot;order: 所写的 order&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item-headline&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&quot;所写的 icon&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span>所写的 name<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item-content&quot;</span>&gt;</span></span><br><span class="line">        所写的 html</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>如果你需要对添加的 widget 进行 UI 调整，请自行添加 css 到 inject 去。</p>
-<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><p>以  <a href="https://clustrmaps.com/profile/1b7ep/widget/code/globe">访客地图</a> 为例子</p>
-<ol>
-<li><p>获取访客地图的 html 代码</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">id</span>=<span class="string">&quot;clstr_globe&quot;</span> <span class="attr">src</span>=<span class="string">&quot;//clustrmaps.com/globe.js?d=5V2tOKp8qAdRM-i8eu7ETTO9ugt5uKbbG-U7Yj8uMl8&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>创建 widget.yml</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">bottom:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">class_name:</span> <span class="string">user-map</span></span><br><span class="line">      <span class="attr">id_name:</span> <span class="string">user-map</span></span><br><span class="line">      <span class="attr">name:</span> <span class="string">访客地图</span></span><br><span class="line">      <span class="attr">icon:</span> <span class="string">fas</span> <span class="string">fa-heartbeat</span></span><br><span class="line">      <span class="attr">order:</span></span><br><span class="line">      <span class="attr">html:</span> <span class="string">&#x27;&lt;script type=&quot;text/javascript&quot; id=&quot;clstr_globe&quot; src=&quot;//clustrmaps.com/globe.js?d=5V2tOKp8qAdRM-i8eu7ETTO9ugt5uKbbG-U7Yj8uMl8&quot;&gt;&lt;/script&gt;&#x27;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>运行 hexo</p>
-<p><img src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/aside-diy-sample.png" alt="image-20201230224442356"></p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>进阶教程</category>
-      </categories>
-      <tags>
-        <tag>教程</tag>
-        <tag>Hexo</tag>
-        <tag>butterfly</tag>
-        <tag>主题</tag>
       </tags>
   </entry>
   <entry>
@@ -5131,6 +5051,86 @@ alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a></p>
         <tag>Hexo</tag>
         <tag>主題</tag>
         <tag>butterfly</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>自定义侧边栏</title>
+    <url>/2020/12/31/%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BE%A7%E8%BE%B9%E6%A0%8F/undefined/ea33ab97.html</url>
+    <content><![CDATA[<div class="note info flat"><p>适用于 &gt;&#x3D; 3.8.0</p>
+</div>
+
+<p>侧边栏现在支持自定义了，可以添加自己喜欢的 widget。</p>
+<p>可添加自己的 widget，也可以对现有的 widget 进行排序（<code>博客资料</code>和 <code>公告</code>这两个固定，其它的能排序）</p>
+<h2 id="widget-排序"><a href="#widget-排序" class="headerlink" title="widget 排序"></a>widget 排序</h2><p>只需要配置 <code>sort_order</code>就行。（使用了 <code>Flex</code> 佈局的 <code>order</code> 属性，具体可查看 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Ordering_Flex_Items">mozilla 文档</a>。简单来讲，就是配置<strong>数字</strong>来实现排序，如果不配置，则默认为 0。数字越小，排序越靠前。</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">aside:</span></span><br><span class="line"> <span class="string">...</span></span><br><span class="line">  <span class="attr">card_recent_post:</span></span><br><span class="line">    <span class="attr">sort_order:</span> <span class="comment"># Don&#x27;t modify the setting unless you know how it works</span></span><br><span class="line">  <span class="attr">card_categories:</span></span><br><span class="line">    <span class="attr">sort_order:</span> <span class="comment"># Don&#x27;t modify the setting unless you know how it works</span></span><br><span class="line">  <span class="attr">card_tags:</span></span><br><span class="line">    <span class="attr">sort_order:</span> <span class="comment"># Don&#x27;t modify the setting unless you know how it works</span></span><br><span class="line">  <span class="attr">card_archives:</span></span><br><span class="line">    <span class="attr">sort_order:</span> <span class="comment"># Don&#x27;t modify the setting unless you know how it works</span></span><br><span class="line">  <span class="attr">card_webinfo:</span></span><br><span class="line">    <span class="attr">sort_order:</span> <span class="comment"># Don&#x27;t modify the setting unless you know how it works</span></span><br><span class="line"></span><br><span class="line"><span class="attr">newest_comments:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">sort_order:</span> <span class="comment"># Don&#x27;t modify the setting unless you know how it works</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="自定义-widget"><a href="#自定义-widget" class="headerlink" title="自定义 widget"></a>自定义 widget</h2><p>如果你想添加自己的内容到侧边栏去，你可以自定义。</p>
+<h3 id="创建-widget-yml"><a href="#创建-widget-yml" class="headerlink" title="创建 widget.yml"></a>创建 widget.yml</h3><p>在Hexo博客目录中的<code>source/_data</code>（如果没有 _data 文件夹，请自行创建），创建一个文件 <code>widget.yml</code></p>
+<h3 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h3><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">top:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">class_name:</span></span><br><span class="line">    <span class="attr">id_name:</span></span><br><span class="line">    <span class="attr">name:</span></span><br><span class="line">    <span class="attr">icon:</span></span><br><span class="line">    <span class="attr">html:</span></span><br><span class="line"></span><br><span class="line"><span class="attr">bottom:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">class_name:</span></span><br><span class="line">    <span class="attr">id_name:</span></span><br><span class="line">    <span class="attr">name:</span></span><br><span class="line">    <span class="attr">icon:</span></span><br><span class="line">    <span class="attr">order:</span></span><br><span class="line">    <span class="attr">html:</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>参数详解</p>
+</blockquote>
+<p><strong>top</strong>:  创建的 widget 会出现在非 sticky 区域（即所有页面都会显示)</p>
+<p><strong>bottom</strong>:  创建的 widget 会出现在 sticky 区域（除了文章页都会显示)</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>class_name</td>
+<td>所创建的 widget  父类 class 名 （可选）</td>
+</tr>
+<tr>
+<td>id_name</td>
+<td>所创建的 widget  父类 id 名（可选）</td>
+</tr>
+<tr>
+<td>name</td>
+<td>所创建的 widget 标题</td>
+</tr>
+<tr>
+<td>icon</td>
+<td>所创建的 widget 图标</td>
+</tr>
+<tr>
+<td>order</td>
+<td>所创建的 widget 排序 （可选）</td>
+</tr>
+<tr>
+<td>html</td>
+<td>所创建的 widget 相关代码</td>
+</tr>
+</tbody></table>
+<p><img src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/adside-diy-parameter.png" alt="image-20201230223506507"></p>
+<p>生成的 代码 为</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card-widget 所写的 class_name&quot;</span> <span class="attr">id</span>=<span class="string">&quot;所写的 id_name&quot;</span> <span class="attr">style</span>=<span class="string">&quot;order: 所写的 order&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item-headline&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&quot;所写的 icon&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span>所写的 name<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;item-content&quot;</span>&gt;</span></span><br><span class="line">        所写的 html</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>如果你需要对添加的 widget 进行 UI 调整，请自行添加 css 到 inject 去。</p>
+<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><p>以  <a href="https://clustrmaps.com/profile/1b7ep/widget/code/globe">访客地图</a> 为例子</p>
+<ol>
+<li><p>获取访客地图的 html 代码</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">id</span>=<span class="string">&quot;clstr_globe&quot;</span> <span class="attr">src</span>=<span class="string">&quot;//clustrmaps.com/globe.js?d=5V2tOKp8qAdRM-i8eu7ETTO9ugt5uKbbG-U7Yj8uMl8&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建 widget.yml</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">bottom:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">class_name:</span> <span class="string">user-map</span></span><br><span class="line">      <span class="attr">id_name:</span> <span class="string">user-map</span></span><br><span class="line">      <span class="attr">name:</span> <span class="string">访客地图</span></span><br><span class="line">      <span class="attr">icon:</span> <span class="string">fas</span> <span class="string">fa-heartbeat</span></span><br><span class="line">      <span class="attr">order:</span></span><br><span class="line">      <span class="attr">html:</span> <span class="string">&#x27;&lt;script type=&quot;text/javascript&quot; id=&quot;clstr_globe&quot; src=&quot;//clustrmaps.com/globe.js?d=5V2tOKp8qAdRM-i8eu7ETTO9ugt5uKbbG-U7Yj8uMl8&quot;&gt;&lt;/script&gt;&#x27;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>运行 hexo</p>
+<p><img src="https://jsd.012700.xyz/gh/jerryc127/CDN/img/aside-diy-sample.png" alt="image-20201230224442356"></p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>进阶教程</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+        <tag>Hexo</tag>
+        <tag>butterfly</tag>
+        <tag>主题</tag>
       </tags>
   </entry>
 </search>
