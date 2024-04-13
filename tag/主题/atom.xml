@@ -1,0 +1,253 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://blog.tianjiaji.dedyn.io</id>
+    <title>没用的博客 • Posts by &#34;主题&#34; tag</title>
+    <link href="https://blog.tianjiaji.dedyn.io" />
+    <updated>2020-12-30T21:48:10.000Z</updated>
+    <category term="博客" />
+    <category term="职业技能大赛" />
+    <category term="题目" />
+    <category term="教程" />
+    <category term="工具" />
+    <category term="开源" />
+    <category term="生成器" />
+    <category term="统计" />
+    <category term="github" />
+    <category term="Hexo" />
+    <category term="主題" />
+    <category term="butterfly" />
+    <category term="主题" />
+    <category term="Aplayer" />
+    <category term="demo" />
+    <category term="top_img" />
+    <category term="highlight" />
+    <category term="Bar" />
+    <category term="单独考试" />
+    <category term="面试题目" />
+    <category term="单招面试" />
+    <category term="标籤外挂" />
+    <entry>
+        <id>https://blog.tianjiaji.dedyn.io/2020/12/31/%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BE%A7%E8%BE%B9%E6%A0%8F/undefined/ea33ab97.html</id>
+        <title>自定义侧边栏</title>
+        <link rel="alternate" href="https://blog.tianjiaji.dedyn.io/2020/12/31/%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BE%A7%E8%BE%B9%E6%A0%8F/undefined/ea33ab97.html"/>
+        <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;div class=&#34;note info flat&#34;&gt;&lt;p&gt;适用于 &amp;gt;&amp;#x3D; 3.8.0&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;侧边栏现在支持自定义了，可以添加自己喜欢的 widget。&lt;/p&gt;
+&lt;p&gt;可添加自己的 widget，也可以对现有的 widget 进行排序（&lt;code&gt;博客资料&lt;/code&gt;和 &lt;code&gt;公告&lt;/code&gt;这两个固定，其它的能排序）&lt;/p&gt;
+&lt;h2 id=&#34;widget-排序&#34;&gt;&lt;a href=&#34;#widget-排序&#34; class=&#34;headerlink&#34; title=&#34;widget 排序&#34;&gt;&lt;/a&gt;widget 排序&lt;/h2&gt;&lt;p&gt;只需要配置 &lt;code&gt;sort_order&lt;/code&gt;就行。（使用了 &lt;code&gt;Flex&lt;/code&gt; 佈局的 &lt;code&gt;order&lt;/code&gt; 属性，具体可查看 &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Ordering_Flex_Items&#34;&gt;mozilla 文档&lt;/a&gt;。简单来讲，就是配置&lt;strong&gt;数字&lt;/strong&gt;来实现排序，如果不配置，则默认为 0。数字越小，排序越靠前。&lt;/p&gt;
+&lt;figure class=&#34;highlight yaml&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;attr&#34;&gt;aside:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;span class=&#34;string&#34;&gt;...&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;attr&#34;&gt;card_recent_post:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;attr&#34;&gt;sort_order:&lt;/span&gt; &lt;span class=&#34;comment&#34;&gt;# Don&amp;#x27;t modify the setting unless you know how it works&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;attr&#34;&gt;card_categories:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;attr&#34;&gt;sort_order:&lt;/span&gt; &lt;span class=&#34;comment&#34;&gt;# Don&amp;#x27;t modify the setting unless you know how it works&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;attr&#34;&gt;card_tags:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;attr&#34;&gt;sort_order:&lt;/span&gt; &lt;span class=&#34;comment&#34;&gt;# Don&amp;#x27;t modify the setting unless you know how it works&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;attr&#34;&gt;card_archives:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;attr&#34;&gt;sort_order:&lt;/span&gt; &lt;span class=&#34;comment&#34;&gt;# Don&amp;#x27;t modify the setting unless you know how it works&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;attr&#34;&gt;card_webinfo:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;attr&#34;&gt;sort_order:&lt;/span&gt; &lt;span class=&#34;comment&#34;&gt;# Don&amp;#x27;t modify the setting unless you know how it works&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;attr&#34;&gt;newest_comments:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;attr&#34;&gt;enable:&lt;/span&gt; &lt;span class=&#34;literal&#34;&gt;true&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;attr&#34;&gt;sort_order:&lt;/span&gt; &lt;span class=&#34;comment&#34;&gt;# Don&amp;#x27;t modify the setting unless you know how it works&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h2 id=&#34;自定义-widget&#34;&gt;&lt;a href=&#34;#自定义-widget&#34; class=&#34;headerlink&#34; title=&#34;自定义 widget&#34;&gt;&lt;/a&gt;自定义 widget&lt;/h2&gt;&lt;p&gt;如果你想添加自己的内容到侧边栏去，你可以自定义。&lt;/p&gt;
+&lt;h3 id=&#34;创建-widget-yml&#34;&gt;&lt;a href=&#34;#创建-widget-yml&#34; class=&#34;headerlink&#34; title=&#34;创建 widget.yml&#34;&gt;&lt;/a&gt;创建 widget.yml&lt;/h3&gt;&lt;p&gt;在Hexo博客目录中的&lt;code&gt;source/_data&lt;/code&gt;（如果没有 _data 文件夹，请自行创建），创建一个文件 &lt;code&gt;widget.yml&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;格式&#34;&gt;&lt;a href=&#34;#格式&#34; class=&#34;headerlink&#34; title=&#34;格式&#34;&gt;&lt;/a&gt;格式&lt;/h3&gt;&lt;figure class=&#34;highlight yaml&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;attr&#34;&gt;top:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;bullet&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;class_name:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;attr&#34;&gt;id_name:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;attr&#34;&gt;name:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;attr&#34;&gt;icon:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;attr&#34;&gt;html:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;attr&#34;&gt;bottom:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;bullet&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;class_name:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;attr&#34;&gt;id_name:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;attr&#34;&gt;name:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;attr&#34;&gt;icon:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;attr&#34;&gt;order:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;attr&#34;&gt;html:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;参数详解&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;top&lt;/strong&gt;:  创建的 widget 会出现在非 sticky 区域（即所有页面都会显示)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;bottom&lt;/strong&gt;:  创建的 widget 会出现在 sticky 区域（除了文章页都会显示)&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;参数&lt;/th&gt;
+&lt;th&gt;解释&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;class_name&lt;/td&gt;
+&lt;td&gt;所创建的 widget  父类 class 名 （可选）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;id_name&lt;/td&gt;
+&lt;td&gt;所创建的 widget  父类 id 名（可选）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;name&lt;/td&gt;
+&lt;td&gt;所创建的 widget 标题&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;icon&lt;/td&gt;
+&lt;td&gt;所创建的 widget 图标&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;order&lt;/td&gt;
+&lt;td&gt;所创建的 widget 排序 （可选）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;html&lt;/td&gt;
+&lt;td&gt;所创建的 widget 相关代码&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;p&gt;&lt;img src=&#34;https://jsd.012700.xyz/gh/jerryc127/CDN/img/adside-diy-parameter.png&#34; alt=&#34;image-20201230223506507&#34;&gt;&lt;/p&gt;
+&lt;p&gt;生成的 代码 为&lt;/p&gt;
+&lt;figure class=&#34;highlight html&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;div&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;class&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;card-widget 所写的 class_name&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;id&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;所写的 id_name&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;style&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;order: 所写的 order&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;div&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;class&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;item-headline&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;class&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;所写的 icon&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;i&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;span&lt;/span&gt;&amp;gt;&lt;/span&gt;所写的 name&lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;span&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;div&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;class&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;item-content&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        所写的 html&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;如果你需要对添加的 widget 进行 UI 调整，请自行添加 css 到 inject 去。&lt;/p&gt;
+&lt;h3 id=&#34;例子&#34;&gt;&lt;a href=&#34;#例子&#34; class=&#34;headerlink&#34; title=&#34;例子&#34;&gt;&lt;/a&gt;例子&lt;/h3&gt;&lt;p&gt;以  &lt;a href=&#34;https://clustrmaps.com/profile/1b7ep/widget/code/globe&#34;&gt;访客地图&lt;/a&gt; 为例子&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;获取访客地图的 html 代码&lt;/p&gt;
+&lt;figure class=&#34;highlight html&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;script&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;type&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;text/javascript&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;id&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;clstr_globe&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;src&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;//clustrmaps.com/globe.js?d=5V2tOKp8qAdRM-i8eu7ETTO9ugt5uKbbG-U7Yj8uMl8&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;创建 widget.yml&lt;/p&gt;
+&lt;figure class=&#34;highlight yaml&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;attr&#34;&gt;bottom:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;bullet&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;class_name:&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;user-map&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      &lt;span class=&#34;attr&#34;&gt;id_name:&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;user-map&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      &lt;span class=&#34;attr&#34;&gt;name:&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;访客地图&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      &lt;span class=&#34;attr&#34;&gt;icon:&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;fas&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;fa-heartbeat&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      &lt;span class=&#34;attr&#34;&gt;order:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;      &lt;span class=&#34;attr&#34;&gt;html:&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;#x27;&amp;lt;script type=&amp;quot;text/javascript&amp;quot; id=&amp;quot;clstr_globe&amp;quot; src=&amp;quot;//clustrmaps.com/globe.js?d=5V2tOKp8qAdRM-i8eu7ETTO9ugt5uKbbG-U7Yj8uMl8&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;&amp;#x27;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;运行 hexo&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://jsd.012700.xyz/gh/jerryc127/CDN/img/aside-diy-sample.png&#34; alt=&#34;image-20201230224442356&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+        <category term="教程" />
+        <category term="Hexo" />
+        <category term="butterfly" />
+        <category term="主题" />
+        <updated>2020-12-30T21:48:10.000Z</updated>
+    </entry>
+    <entry>
+        <id>https://blog.tianjiaji.dedyn.io/2020/08/01/Butterfly%E6%B7%BB%E5%8A%A0Aplayer%E6%95%99%E7%A8%8B/undefined/507c070f.html</id>
+        <title>Butterfly添加全局吸底Aplayer教程</title>
+        <link rel="alternate" href="https://blog.tianjiaji.dedyn.io/2020/08/01/Butterfly%E6%B7%BB%E5%8A%A0Aplayer%E6%95%99%E7%A8%8B/undefined/507c070f.html"/>
+        <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;div class=&#34;note info flat&#34;&gt;&lt;p&gt;以下文章只是教程&lt;/p&gt;
+&lt;p&gt;如果部署之后，并没有出现 aplayer , 请确认是否跟足步骤操作或者更换音乐源，多试试。&lt;/p&gt;
+&lt;p&gt;如果遇到使用问题，请仔细查看插件文档，或者到插件那里反馈。&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;前言&#34;&gt;&lt;a href=&#34;#前言&#34; class=&#34;headerlink&#34; title=&#34;前言&#34;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;如果你想使用 aplayer，很多人都会推荐安装 &lt;a href=&#34;https://github.com/MoePlayer/hexo-tag-aplayer&#34;&gt;hexo-tag-aplayer&lt;/a&gt; 这款插件。这款插件通过 Hexo 独有的标籤外挂，我们可以很方便的写入一些参数，插件就会帮我们生成对应的 html。如果你只是使用一些简单的功能，其实无需使用到这个插件，只需以 html 格式书写就行，不用插件去转换。&lt;/p&gt;
+&lt;p&gt;例如：&lt;/p&gt;
+&lt;p&gt;如果使用插件，在 markdown 中要这样写&lt;/p&gt;
+&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&amp;#123;% meting &amp;quot;000PeZCQ1i4XVs&amp;quot; &amp;quot;tencent&amp;quot; &amp;quot;artist&amp;quot; &amp;quot;theme:#3F51B5&amp;quot; &amp;quot;mutex:true&amp;quot; &amp;quot;preload:auto&amp;quot; %&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;其会被插件渲染为&lt;/p&gt;
+&lt;figure class=&#34;highlight html&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;div&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;id&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;aplayer-uxAIfEUs&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;class&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;aplayer aplayer-tag-marker meting-tag-marker&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;data-id&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;000PeZCQ1i4XVs&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;data-server&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;tencent&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;data-type&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;artist&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;data-mode&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;circulation&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;data-autoplay&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;false&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;data-mutex&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;true&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;data-listmaxheight&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;340px&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;data-preload&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;auto&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;data-theme&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;#3F51B5&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;如果我们不想使用插件，就需要在markdown中用html的格式书写，同时把主题配置文件中的&lt;code&gt;aplayerInject&lt;/code&gt;开启&lt;/p&gt;
+&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;language-xml&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;div&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;class&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;aplayer&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;data-id&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;000PeZCQ1i4XVs&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;data-server&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;tencent&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;data-type&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;artist&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;data-mutex&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;true&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;data-preload&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;auto&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;data-theme&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;#3F51B5&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;language-xml&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;这样我们就可以不用使用多一个插件，当然这种东西见仁见智，选自己喜欢的就行。&lt;/p&gt;
+&lt;p&gt;回到正题，这篇文章将教大家如何在Butterfly上使用全局吸底 Aplayer&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://jsd.012700.xyz/gh/jerryc127/CDN/img/butterfly-aplayer-xidi.gif&#34; alt=&#34;aplayer&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;关闭-asset-inject&#34;&gt;&lt;a href=&#34;#关闭-asset-inject&#34; class=&#34;headerlink&#34; title=&#34;关闭 asset_inject&#34;&gt;&lt;/a&gt;关闭 &lt;code&gt;asset_inject&lt;/code&gt;&lt;/h2&gt;&lt;div class=&#34;note info flat&#34;&gt;&lt;p&gt;此步骤适用于安装了 &lt;code&gt;hexo-tag-aplayer&lt;/code&gt; 插件的人&lt;/p&gt;
+&lt;/div&gt;
+
+
+
+&lt;p&gt;由于需要全局都插入 aplayer 和 meting 资源，为了防止插入重复的资源，需要把 asset_inject 设为 &lt;code&gt;false&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;在 Hexo 的配置文件中&lt;/p&gt;
+&lt;figure class=&#34;highlight yaml&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;attr&#34;&gt;aplayer:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;attr&#34;&gt;meting:&lt;/span&gt; &lt;span class=&#34;literal&#34;&gt;true&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;attr&#34;&gt;asset_inject:&lt;/span&gt; &lt;span class=&#34;literal&#34;&gt;false&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h2 id=&#34;开启主题的-aplayerInject&#34;&gt;&lt;a href=&#34;#开启主题的-aplayerInject&#34; class=&#34;headerlink&#34; title=&#34;开启主题的 aplayerInject&#34;&gt;&lt;/a&gt;开启主题的 &lt;code&gt;aplayerInject&lt;/code&gt;&lt;/h2&gt;&lt;p&gt;在主题的配置文件中，&lt;code&gt;enable&lt;/code&gt; 设为 &lt;code&gt;true&lt;/code&gt; 和 &lt;code&gt;per_page&lt;/code&gt; 设为 &lt;code&gt;true&lt;/code&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight yaml&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# Inject the css and script (aplayer/meting)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;attr&#34;&gt;aplayerInject:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;attr&#34;&gt;enable:&lt;/span&gt; &lt;span class=&#34;literal&#34;&gt;true&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;attr&#34;&gt;per_page:&lt;/span&gt; &lt;span class=&#34;literal&#34;&gt;true&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h2 id=&#34;插入-Aplayer-html&#34;&gt;&lt;a href=&#34;#插入-Aplayer-html&#34; class=&#34;headerlink&#34; title=&#34;插入 Aplayer html&#34;&gt;&lt;/a&gt;插入 Aplayer html&lt;/h2&gt;&lt;p&gt;为了适配 hexo-tag-aplayer，主题内置的 Meting js 仍为 1.2 版本，并非最新的 2.x 版本。&lt;/p&gt;
+&lt;p&gt;Aplayer html 例子：&lt;/p&gt;
+&lt;figure class=&#34;highlight markdown&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;language-xml&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;div&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;class&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;aplayer no-destroy&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;data-id&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;60198&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;data-server&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;netease&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;data-type&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;playlist&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;data-fixed&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;true&amp;quot;&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;data-autoplay&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;true&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;language-xml&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;参数解释&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;option&lt;/th&gt;
+&lt;th&gt;default&lt;/th&gt;
+&lt;th&gt;description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;data-id&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;require&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;song id &amp;#x2F; playlist id &amp;#x2F; album id &amp;#x2F; search keyword&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;data-server&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;require&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;music platform: &lt;code&gt;netease&lt;/code&gt;, &lt;code&gt;tencent&lt;/code&gt;, &lt;code&gt;kugou&lt;/code&gt;, &lt;code&gt;xiami&lt;/code&gt;, &lt;code&gt;baidu&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;data-type&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;require&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;song&lt;/code&gt;, &lt;code&gt;playlist&lt;/code&gt;, &lt;code&gt;album&lt;/code&gt;, &lt;code&gt;search&lt;/code&gt;, &lt;code&gt;artist&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;data-fixed&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enable fixed mode&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;data-mini&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;enable mini mode&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;data-autoplay&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;audio autoplay&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;data-theme&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;#2980b9&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;main color&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;data-loop&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;all&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;player loop play, values: ‘all’, ‘one’, ‘none’&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;data-order&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;list&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;player play order, values: ‘list’, ‘random’&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;data-preload&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;auto&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;values: ‘none’, ‘metadata’, ‘auto’&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;data-volume&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;0.7&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;default volume, notice that player will remember user setting, default volume will not work after user set volume themselves&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;data-mutex&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;prevent to play multiple player at the same time, pause other players when this player start play&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;data-lrctype&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;0&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;lyric type&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;data-listfolded&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;false&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;indicate whether list should folded at first&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;data-listmaxheight&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;340px&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;list max height&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;data-storagename&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;metingjs&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;localStorage key that store player setting&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;div class=&#34;note info flat&#34;&gt;&lt;p&gt;&lt;code&gt;require&lt;/code&gt; 代表着这些参数是必须要使用的，其它的参数则可以根据自己需要配置。&lt;/p&gt;
+&lt;p&gt;配置全局吸底，&lt;code&gt;data-fixed&lt;/code&gt; 和 &lt;code&gt;data-mini&lt;/code&gt; 也必须配置，配置为 &lt;code&gt;true&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;如果使用 Pjax，则在 class 里需添加 &lt;code&gt;no-destroy&lt;/code&gt;，这样防止切换页面时 Aplayer 被销毁&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;把  &lt;code&gt;aplayer代码&lt;/code&gt;  插入到主题配置文件的  &lt;code&gt;inject.bottom&lt;/code&gt; 去&lt;/p&gt;
+&lt;figure class=&#34;highlight yaml&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;attr&#34;&gt;inject:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;attr&#34;&gt;head:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;attr&#34;&gt;bottom:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;bullet&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;class=&amp;quot;aplayer&lt;/span&gt; &lt;span class=&#34;literal&#34;&gt;no&lt;/span&gt;&lt;span class=&#34;string&#34;&gt;-destroy&amp;quot;&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;data-id=&amp;quot;60198&amp;quot;&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;data-server=&amp;quot;netease&amp;quot;&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;data-type=&amp;quot;playlist&amp;quot;&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;data-fixed=&amp;quot;true&amp;quot;&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;data-autoplay=&amp;quot;true&amp;quot;&amp;gt;&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;运行 Hexo 就可以看到网页左下角出现了 Aplayer&lt;/p&gt;
+&lt;p&gt;最后，如果你想切换页面时，音乐不会中断。请把主题配置文件的 &lt;code&gt;pjax&lt;/code&gt; 设为 &lt;code&gt;true&lt;/code&gt;&lt;/p&gt;
+</content>
+        <category term="教程" />
+        <category term="Hexo" />
+        <category term="butterfly" />
+        <category term="主题" />
+        <category term="Aplayer" />
+        <updated>2020-07-31T19:02:28.000Z</updated>
+    </entry>
+</feed>
