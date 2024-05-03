@@ -6,21 +6,21 @@
     <updated>2024-04-14T14:38:28.000Z</updated>
     <category term="博客" />
     <category term="职业技能大赛" />
-    <category term="教程" />
     <category term="题目" />
+    <category term="教程" />
     <category term="工具" />
     <category term="开源" />
+    <category term="生成器" />
     <category term="统计" />
     <category term="github" />
-    <category term="生成器" />
     <category term="Hexo" />
     <category term="主題" />
     <category term="butterfly" />
     <category term="主题" />
     <category term="Aplayer" />
-    <category term="demo" />
     <category term="highlight" />
     <category term="Bar" />
+    <category term="demo" />
     <category term="top_img" />
     <category term="单独考试" />
     <category term="面试题目" />
@@ -516,7 +516,7 @@
 &lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;curl linux4.skills.lan:8080&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;效果参考:&lt;br&gt;&lt;a href=&#34;https://imgse.com/i/pFXyRNn&#34;&gt;&lt;img src=&#34;https://s21.ax1x.com/2024/04/11/pFXyRNn.png&#34; alt=&#34;pFXyRNn.png&#34;&gt;&lt;/a&gt;&lt;br&gt;&lt;font color=&#34;red&#34;&gt;&lt;b&gt;提示：若无法连接请检查防火墙是否放行相应端口，以及测试时是否输入端口号！如:8080端口&lt;/b&gt;&lt;/font&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;h4 id=&#34;更改端口&#34;&gt;&lt;a href=&#34;#更改端口&#34; class=&#34;headerlink&#34; title=&#34;更改端口&#34;&gt;&lt;/a&gt;更改端口&lt;/h4&gt;&lt;p&gt;因为该服务默认没有使用root用户所以在使用高位端口（0~1024）的时候没有权限，会导致服务没法正常启动。&lt;/p&gt;
+&lt;h4 id=&#34;更改端口&#34;&gt;&lt;a href=&#34;#更改端口&#34; class=&#34;headerlink&#34; title=&#34;更改端口&#34;&gt;&lt;/a&gt;更改端口&lt;/h4&gt;&lt;p&gt;因为该服务默认没有使用root用户所以在使用低位端口（0~1024）的时候没有权限，会导致服务没法正常启动。&lt;/p&gt;
 &lt;p&gt;&lt;font color=&#34;red&#34;&gt;&lt;b&gt;注意：两台 Tomcat 服务器都要改&lt;/b&gt;&lt;/font&gt;&lt;/p&gt;
 &lt;p&gt;改权限：&lt;/p&gt;
 &lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;vim /usr/lib/systemd/system/tomcat.service&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;

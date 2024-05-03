@@ -9,21 +9,21 @@
         <lastBuildDate>Sun, 14 Apr 2024 22:38:28 +0800</lastBuildDate>
         <category>博客</category>
         <category>职业技能大赛</category>
-        <category>教程</category>
         <category>题目</category>
+        <category>教程</category>
         <category>工具</category>
         <category>开源</category>
+        <category>生成器</category>
         <category>统计</category>
         <category>github</category>
-        <category>生成器</category>
         <category>Hexo</category>
         <category>主題</category>
         <category>butterfly</category>
         <category>主题</category>
         <category>Aplayer</category>
-        <category>demo</category>
         <category>highlight</category>
         <category>Bar</category>
+        <category>demo</category>
         <category>top_img</category>
         <category>单独考试</category>
         <category>面试题目</category>
@@ -523,7 +523,7 @@
 &lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;curl linux4.skills.lan:8080&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;效果参考:&lt;br&gt;&lt;a href=&#34;https://imgse.com/i/pFXyRNn&#34;&gt;&lt;img src=&#34;https://s21.ax1x.com/2024/04/11/pFXyRNn.png&#34; alt=&#34;pFXyRNn.png&#34;&gt;&lt;/a&gt;&lt;br&gt;&lt;font color=&#34;red&#34;&gt;&lt;b&gt;提示：若无法连接请检查防火墙是否放行相应端口，以及测试时是否输入端口号！如:8080端口&lt;/b&gt;&lt;/font&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;h4 id=&#34;更改端口&#34;&gt;&lt;a href=&#34;#更改端口&#34; class=&#34;headerlink&#34; title=&#34;更改端口&#34;&gt;&lt;/a&gt;更改端口&lt;/h4&gt;&lt;p&gt;因为该服务默认没有使用root用户所以在使用高位端口（0~1024）的时候没有权限，会导致服务没法正常启动。&lt;/p&gt;
+&lt;h4 id=&#34;更改端口&#34;&gt;&lt;a href=&#34;#更改端口&#34; class=&#34;headerlink&#34; title=&#34;更改端口&#34;&gt;&lt;/a&gt;更改端口&lt;/h4&gt;&lt;p&gt;因为该服务默认没有使用root用户所以在使用低位端口（0~1024）的时候没有权限，会导致服务没法正常启动。&lt;/p&gt;
 &lt;p&gt;&lt;font color=&#34;red&#34;&gt;&lt;b&gt;注意：两台 Tomcat 服务器都要改&lt;/b&gt;&lt;/font&gt;&lt;/p&gt;
 &lt;p&gt;改权限：&lt;/p&gt;
 &lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;vim /usr/lib/systemd/system/tomcat.service&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -1574,7 +1574,7 @@
 &lt;h3 id=&#34;9-mail-服务&#34;&gt;&lt;a href=&#34;#9-mail-服务&#34; class=&#34;headerlink&#34; title=&#34;9. mail 服务&#34;&gt;&lt;/a&gt;9. mail 服务&lt;/h3&gt;&lt;p&gt;任务描述：请采用 postfix 邮件服务器，实现安全的邮件服务。&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;配置 linux5 为 mail 服务器，安装 postfix 和 dovecot。&lt;/li&gt;
-&lt;li&gt;仅支持 smtps 和 pop3s 连接。 3.创建用户 mail1 和 mail2，向 &lt;a href=&#34;mailto:&amp;#97;&amp;#108;&amp;#108;&amp;#64;&amp;#115;&amp;#107;&amp;#105;&amp;#108;&amp;#x6c;&amp;#115;&amp;#x2e;&amp;#x63;&amp;#x6f;&amp;#109;&#34;&gt;&amp;#97;&amp;#108;&amp;#108;&amp;#64;&amp;#115;&amp;#107;&amp;#105;&amp;#108;&amp;#x6c;&amp;#115;&amp;#x2e;&amp;#x63;&amp;#x6f;&amp;#109;&lt;/a&gt; 发送的邮件，每个用户都 会收到。&lt;/li&gt;
+&lt;li&gt;仅支持 smtps 和 pop3s 连接。 3.创建用户 mail1 和 mail2，向 &lt;a href=&#34;mailto:&amp;#97;&amp;#x6c;&amp;#108;&amp;#64;&amp;#x73;&amp;#107;&amp;#105;&amp;#108;&amp;#108;&amp;#115;&amp;#x2e;&amp;#99;&amp;#x6f;&amp;#109;&#34;&gt;&amp;#97;&amp;#x6c;&amp;#108;&amp;#64;&amp;#x73;&amp;#107;&amp;#105;&amp;#108;&amp;#108;&amp;#115;&amp;#x2e;&amp;#99;&amp;#x6f;&amp;#109;&lt;/a&gt; 发送的邮件，每个用户都 会收到。&lt;/li&gt;
 &lt;li&gt;使用本机测试。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;10．shell-脚本&#34;&gt;&lt;a href=&#34;#10．shell-脚本&#34; class=&#34;headerlink&#34; title=&#34;10．shell 脚本&#34;&gt;&lt;/a&gt;10．shell 脚本&lt;/h3&gt;&lt;p&gt;任务描述：请采用 shell 脚本,实现快速批量的操作。&lt;/p&gt;
