@@ -10,24 +10,24 @@
         <category>博客</category>
         <category>职业技能大赛</category>
         <category>题目</category>
-        <category>教程</category>
         <category>工具</category>
         <category>开源</category>
         <category>生成器</category>
+        <category>统计</category>
+        <category>github</category>
+        <category>教程</category>
         <category>Hexo</category>
         <category>主題</category>
         <category>butterfly</category>
-        <category>统计</category>
-        <category>github</category>
         <category>主题</category>
         <category>Aplayer</category>
         <category>highlight</category>
         <category>Bar</category>
-        <category>demo</category>
         <category>top_img</category>
         <category>单独考试</category>
         <category>面试题目</category>
         <category>单招面试</category>
+        <category>demo</category>
         <category>标籤外挂</category>
         <item>
             <guid isPermalink="true">https://blog.tianjiaji.dedyn.io/2024/04/14/Apache/undefined/undefined.html</guid>
@@ -368,6 +368,11 @@
 &lt;hr&gt;
 &lt;h2 id=&#34;主DNS服务器&#34;&gt;&lt;a href=&#34;#主DNS服务器&#34; class=&#34;headerlink&#34; title=&#34;主DNS服务器&#34;&gt;&lt;/a&gt;主DNS服务器&lt;/h2&gt;&lt;h3 id=&#34;1-为-Linux1-安装-bind&#34;&gt;&lt;a href=&#34;#1-为-Linux1-安装-bind&#34; class=&#34;headerlink&#34; title=&#34;1. 为 Linux1 安装 bind&#34;&gt;&lt;/a&gt;1. 为 Linux1 安装 bind&lt;/h3&gt;&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;[root@linux1 ~]# yum install bind* -y&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
+&lt;p&gt;&lt;font color=&#34;red&#34;&gt;&lt;b&gt;注意：在做此题之前请确认所有主机都已经配置了主机名！&lt;/b&gt;&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;如果没有配置主机名，请先配置主机名！&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;nmcli g hostname Linux$ # 配置主机名,注意：$ 代表1,2,3,4....台主机 改成对应的数字即可，如：linux1,linux2...&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;font color=&#34;red&#34;&gt;&lt;b&gt;配置完请重启所有主机！&lt;/b&gt;&lt;/font&gt;&lt;/p&gt;
 &lt;h3 id=&#34;2-配置-Linux1-的named-conf文件&#34;&gt;&lt;a href=&#34;#2-配置-Linux1-的named-conf文件&#34; class=&#34;headerlink&#34; title=&#34;2. 配置 Linux1 的named.conf文件&#34;&gt;&lt;/a&gt;2. 配置 Linux1 的named.conf文件&lt;/h3&gt;&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;vim /etc/named.conf     # DNS主配置文件&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;31&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;//&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;// named.conf&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;//&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;// Provided by Red Hat bind package to configure the ISC BIND named(8) DNS&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;// server as a caching only nameserver (as a localhost DNS resolver only).&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;//&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;// See /usr/share/doc/bind*/sample/ for example named configuration files.&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;//&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;options &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        listen-on port 53 &amp;#123; 127.0.0.1; &amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        listen-on-v6 port 53 &amp;#123; ::1; &amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        directory       &amp;quot;/var/named&amp;quot;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        dump-file       &amp;quot;/var/named/data/cache_dump.db&amp;quot;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        statistics-file &amp;quot;/var/named/data/named_stats.txt&amp;quot;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        memstatistics-file &amp;quot;/var/named/data/named_mem_stats.txt&amp;quot;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        secroots-file   &amp;quot;/var/named/data/named.secroots&amp;quot;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        recursing-file  &amp;quot;/var/named/data/named.recursing&amp;quot;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        allow-query     &amp;#123; localhost; &amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        /* &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;         - If you are building an AUTHORITATIVE DNS server, do NOT enable recursion.&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;         - If you are building a RECURSIVE (caching) DNS server, you need to enable &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;           recursion. &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;         - If your recursive DNS server has a public IP address, you MUST enable access &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;           control to limit queries to your legitimate users. Failing to do so will&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;           cause your server to become part of large scale DNS amplification &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;           attacks. Implementing BCP38 within your network would greatly&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;           reduce such attack surface &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        */&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        recursion yes;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -1678,7 +1683,7 @@ function myFunction2() {
 &lt;h3 id=&#34;9-mail-服务&#34;&gt;&lt;a href=&#34;#9-mail-服务&#34; class=&#34;headerlink&#34; title=&#34;9. mail 服务&#34;&gt;&lt;/a&gt;9. mail 服务&lt;/h3&gt;&lt;p&gt;任务描述：请采用 postfix 邮件服务器，实现安全的邮件服务。&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;配置 linux5 为 mail 服务器，安装 postfix 和 dovecot。&lt;/li&gt;
-&lt;li&gt;仅支持 smtps 和 pop3s 连接。 3.创建用户 mail1 和 mail2，向 &lt;a href=&#34;mailto:&amp;#97;&amp;#108;&amp;#108;&amp;#64;&amp;#x73;&amp;#x6b;&amp;#105;&amp;#108;&amp;#108;&amp;#x73;&amp;#46;&amp;#x63;&amp;#111;&amp;#x6d;&#34;&gt;&amp;#97;&amp;#108;&amp;#108;&amp;#64;&amp;#x73;&amp;#x6b;&amp;#105;&amp;#108;&amp;#108;&amp;#x73;&amp;#46;&amp;#x63;&amp;#111;&amp;#x6d;&lt;/a&gt; 发送的邮件，每个用户都 会收到。&lt;/li&gt;
+&lt;li&gt;仅支持 smtps 和 pop3s 连接。 3.创建用户 mail1 和 mail2，向 &lt;a href=&#34;mailto:&amp;#97;&amp;#x6c;&amp;#108;&amp;#x40;&amp;#115;&amp;#x6b;&amp;#105;&amp;#108;&amp;#108;&amp;#115;&amp;#x2e;&amp;#99;&amp;#111;&amp;#x6d;&#34;&gt;&amp;#97;&amp;#x6c;&amp;#108;&amp;#x40;&amp;#115;&amp;#x6b;&amp;#105;&amp;#108;&amp;#108;&amp;#115;&amp;#x2e;&amp;#99;&amp;#111;&amp;#x6d;&lt;/a&gt; 发送的邮件，每个用户都 会收到。&lt;/li&gt;
 &lt;li&gt;使用本机测试。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;10．shell-脚本&#34;&gt;&lt;a href=&#34;#10．shell-脚本&#34; class=&#34;headerlink&#34; title=&#34;10．shell 脚本&#34;&gt;&lt;/a&gt;10．shell 脚本&lt;/h3&gt;&lt;p&gt;任务描述：请采用 shell 脚本,实现快速批量的操作。&lt;/p&gt;
@@ -2145,7 +2150,7 @@ function myFunction2() {
 &lt;p&gt;&lt;img src=&#34;https://jsd.012700.xyz/gh/jerryc127/CDN/img/73515338-e6874d80-442f-11ea-9d07-725d37002985.png&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;cheerio版本錯誤，請安裝0.22.0版本&lt;/p&gt;
-&lt;p&gt;npm install &lt;a href=&#34;mailto:&amp;#99;&amp;#104;&amp;#x65;&amp;#101;&amp;#114;&amp;#x69;&amp;#111;&amp;#x40;&amp;#x30;&amp;#46;&amp;#x32;&amp;#x32;&amp;#46;&amp;#x30;&#34;&gt;&amp;#99;&amp;#104;&amp;#x65;&amp;#101;&amp;#114;&amp;#x69;&amp;#111;&amp;#x40;&amp;#x30;&amp;#46;&amp;#x32;&amp;#x32;&amp;#46;&amp;#x30;&lt;/a&gt; –save&lt;/p&gt;
+&lt;p&gt;npm install &lt;a href=&#34;mailto:&amp;#99;&amp;#x68;&amp;#x65;&amp;#101;&amp;#x72;&amp;#105;&amp;#111;&amp;#x40;&amp;#48;&amp;#46;&amp;#50;&amp;#x32;&amp;#46;&amp;#x30;&#34;&gt;&amp;#99;&amp;#x68;&amp;#x65;&amp;#101;&amp;#x72;&amp;#105;&amp;#111;&amp;#x40;&amp;#48;&amp;#46;&amp;#50;&amp;#x32;&amp;#46;&amp;#x30;&lt;/a&gt; –save&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;搜索欄在底部&#34;&gt;&lt;a href=&#34;#搜索欄在底部&#34; class=&#34;headerlink&#34; title=&#34;搜索欄在底部&#34;&gt;&lt;/a&gt;搜索欄在底部&lt;/h3&gt;&lt;p&gt;hexo deploy後搜索欄在頁面底部&lt;/p&gt;
 &lt;blockquote&gt;
