@@ -5,36 +5,63 @@
         <link>https://blog.tianjiaji.dedyn.io</link>
         <description>没有一点用处的博客!😎😴😪</description>
         <language>zh-CN</language>
-        <pubDate>Sun, 14 Apr 2024 22:38:28 +0800</pubDate>
-        <lastBuildDate>Sun, 14 Apr 2024 22:38:28 +0800</lastBuildDate>
-        <category>博客</category>
-        <category>职业技能大赛</category>
+        <pubDate>Tue, 25 Jun 2024 03:50:51 +0800</pubDate>
+        <lastBuildDate>Tue, 25 Jun 2024 03:50:51 +0800</lastBuildDate>
         <category>题目</category>
+        <category>职业技能大赛</category>
+        <category>博客</category>
         <category>工具</category>
         <category>开源</category>
+        <category>生成器</category>
         <category>统计</category>
         <category>github</category>
-        <category>生成器</category>
         <category>教程</category>
         <category>Hexo</category>
         <category>主題</category>
         <category>butterfly</category>
         <category>主题</category>
         <category>Aplayer</category>
-        <category>top_img</category>
-        <category>demo</category>
         <category>highlight</category>
         <category>Bar</category>
+        <category>top_img</category>
+        <category>demo</category>
         <category>单独考试</category>
         <category>面试题目</category>
         <category>单招面试</category>
         <category>标籤外挂</category>
         <item>
+            <guid isPermalink="true">https://blog.tianjiaji.dedyn.io/2024/06/25/image/undefined/undefined.html</guid>
+            <title>Docker hub镜像加速 教程</title>
+            <link>https://blog.tianjiaji.dedyn.io/2024/06/25/image/undefined/undefined.html</link>
+            <category>博客</category>
+            <category>教程</category>
+            <pubDate>Tue, 25 Jun 2024 03:50:51 +0800</pubDate>
+            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;h1 id=&#34;DockerHub-国内使用方法&#34;&gt;&lt;a href=&#34;#DockerHub-国内使用方法&#34; class=&#34;headerlink&#34; title=&#34;DockerHub 国内使用方法&#34;&gt;&lt;/a&gt;DockerHub 国内使用方法&lt;/h1&gt;&lt;p&gt;Docker Hub 是 Docker 提供的一项服务，是世界上最大的容器映像存储库，其中包含一系列内容源，包括容器社区开发人员\开源项目和独立软件供应商（ISV），都会在容器中构建和分发其代码。2024年6月起，国内所有公开的 dockerhub 加速源陆续下架（实际是转为校内或企业内专用），官方源全部 sni 阻断。本文简要说明国内使用 dockerhub 的方法，希望对确有 docker 服务需求的小伙伴能有所帮助。未来，如果 github、node、golang 等众多非开发人员也需要用到的工具&amp;#x2F;网站也出现类似情况时，照葫芦画瓢糊一个代理就是。搭建专属 docker 代理加速站点,项目地址&lt;a href=&#34;https://github.com/ciiiii/cloudflare-docker-proxy&#34;&gt;cloudflare-docker-proxy&lt;/a&gt;感兴趣的可以去看看,如果觉得有帮助可以给原作者点一个Star。&lt;/p&gt;
+&lt;h2 id=&#34;目前可用的个人公益dockerhub镜像源&#34;&gt;&lt;a href=&#34;#目前可用的个人公益dockerhub镜像源&#34; class=&#34;headerlink&#34; title=&#34;目前可用的个人公益dockerhub镜像源&#34;&gt;&lt;/a&gt;目前可用的个人公益dockerhub镜像源&lt;/h2&gt;&lt;p&gt;以下无限制要求（注册、验证等）的 dockerhub 镜像源，均为个人搭建提供的国内可使用加速镜像，感谢的同时需要提醒，随时有可能关闭或失效&lt;/p&gt;
+&lt;figure class=&#34;highlight text&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;41&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;Docker镜像加速&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;https://hub.uuuadc.top/docker.1panel.live&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;https://docker.1panel.live&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;https://hub.rat.dev&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;DockerHub 镜像加速代理&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;https://docker.anyhub.us.kg&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;https://docker.chenby.cn&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;https://dockerhub.jobcher.com&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;DockerhubICU&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;https://dockerhub.icu&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Docker镜像加速站&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;https://docker.ckyl.me&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Docker镜像&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;https://docker.awsl9527.cn&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;https://docker.hpcloud.cloud&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Atomhub（只包含336个基础镜像）&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;https://atomhub.openatom.cn&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Daocloud镜像&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;https://docker.m.daocloud.io&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;本站自用镜像&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;https://docker.laoex.link&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;Dockerhub 代理加速镜像，可以通过两种方法使用：&lt;/p&gt;
+&lt;h3 id=&#34;1-添加、设置-registry-mirror&#34;&gt;&lt;a href=&#34;#1-添加、设置-registry-mirror&#34; class=&#34;headerlink&#34; title=&#34;1.添加、设置 registry mirror&#34;&gt;&lt;/a&gt;1.添加、设置 registry mirror&lt;/h3&gt;&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;tee /etc/docker/daemon.json &amp;lt;&amp;lt;EOF&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;quot;registry-mirrors&amp;quot;: [&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &amp;quot;https://hub.uuuadc.top&amp;quot;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &amp;quot;https://docker.anyhub.us.kg&amp;quot;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &amp;quot;https://dockerhub.jobcher.com&amp;quot;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &amp;quot;https://dockerhub.icu&amp;quot;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &amp;quot;https://docker.ckyl.me&amp;quot;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &amp;quot;https://docker.awsl9527.cn&amp;quot;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &amp;quot;https://docker.m.daocloud.io&amp;quot;,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &amp;quot;https://docker.laoex.link&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    ]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;EOF&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;重新加载系统服务配置&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;systemctl daemon-reload&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;重启Docker服务&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;systemctl restart docker&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h3 id=&#34;2-手动指定-Dockerhub-Proxy&#34;&gt;&lt;a href=&#34;#2-手动指定-Dockerhub-Proxy&#34; class=&#34;headerlink&#34; title=&#34;2.手动指定 Dockerhub Proxy&#34;&gt;&lt;/a&gt;2.手动指定 Dockerhub Proxy&lt;/h3&gt;&lt;p&gt;在拉取镜像时手动指定代理加速 url，将以下命令中示意的 proxy-url 替换为任意可用的加速 url 即可。&lt;/p&gt;
+&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;docker pull &amp;#123;proxy-url&amp;#125;/pytorch/pytorch&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+
+
+ ]]></description>
+        </item>
+        <item>
             <guid isPermalink="true">https://blog.tianjiaji.dedyn.io/2024/04/14/Apache/undefined/undefined.html</guid>
             <title>Apache</title>
             <link>https://blog.tianjiaji.dedyn.io/2024/04/14/Apache/undefined/undefined.html</link>
-            <category>博客</category>
             <category>职业技能大赛</category>
+            <category>博客</category>
             <category>教程</category>
             <pubDate>Sun, 14 Apr 2024 22:38:28 +0800</pubDate>
             <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;center&gt;&lt;font size=&#34;6&#34;&gt;&lt;b&gt;DNS 服务&lt;/b&gt;&lt;/font&gt;&lt;/center&gt;
@@ -276,8 +303,8 @@
             <guid isPermalink="true">https://blog.tianjiaji.dedyn.io/2024/04/13/DNS/undefined/undefined.html</guid>
             <title>DNS 服务</title>
             <link>https://blog.tianjiaji.dedyn.io/2024/04/13/DNS/undefined/undefined.html</link>
-            <category>博客</category>
             <category>职业技能大赛</category>
+            <category>博客</category>
             <category>教程</category>
             <pubDate>Sat, 13 Apr 2024 03:29:25 +0800</pubDate>
             <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;center&gt;&lt;font size=&#34;6&#34;&gt;&lt;b&gt;DNS 服务&lt;/b&gt;&lt;/font&gt;&lt;/center&gt;
@@ -448,8 +475,8 @@
             <guid isPermalink="true">https://blog.tianjiaji.dedyn.io/2024/04/12/Tomcat/undefined/undefined.html</guid>
             <title>Tomcat 服务</title>
             <link>https://blog.tianjiaji.dedyn.io/2024/04/12/Tomcat/undefined/undefined.html</link>
-            <category>博客</category>
             <category>职业技能大赛</category>
+            <category>博客</category>
             <category>教程</category>
             <pubDate>Fri, 12 Apr 2024 04:11:11 +0800</pubDate>
             <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;center&gt;&lt;font size=&#34;6&#34;&gt;&lt;b&gt;Tomcat 服务&lt;/b&gt;&lt;/font&gt;&lt;/center&gt;
@@ -633,8 +660,8 @@
             <guid isPermalink="true">https://blog.tianjiaji.dedyn.io/2024/03/03/yum%E6%BA%90%E9%85%8D%E7%BD%AE/undefined/undefined.html</guid>
             <title>yum源配置</title>
             <link>https://blog.tianjiaji.dedyn.io/2024/03/03/yum%E6%BA%90%E9%85%8D%E7%BD%AE/undefined/undefined.html</link>
-            <category>博客</category>
             <category>职业技能大赛</category>
+            <category>博客</category>
             <category>教程</category>
             <pubDate>Sun, 03 Mar 2024 00:29:24 +0800</pubDate>
             <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;center&gt;&lt;font size=&#34;6&#34;&gt;&lt;b&gt;yum源配置&lt;/b&gt;&lt;/font&gt;&lt;/center&gt;
@@ -1127,7 +1154,7 @@
 &lt;p&gt;&lt;img src=&#34;https://jsd.012700.xyz/gh/jerryc127/CDN/img/73515338-e6874d80-442f-11ea-9d07-725d37002985.png&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;cheerio版本錯誤，請安裝0.22.0版本&lt;/p&gt;
-&lt;p&gt;npm install &lt;a href=&#34;mailto:&amp;#x63;&amp;#x68;&amp;#101;&amp;#x65;&amp;#114;&amp;#105;&amp;#x6f;&amp;#64;&amp;#x30;&amp;#46;&amp;#x32;&amp;#x32;&amp;#x2e;&amp;#x30;&#34;&gt;&amp;#x63;&amp;#x68;&amp;#101;&amp;#x65;&amp;#114;&amp;#105;&amp;#x6f;&amp;#64;&amp;#x30;&amp;#46;&amp;#x32;&amp;#x32;&amp;#x2e;&amp;#x30;&lt;/a&gt; –save&lt;/p&gt;
+&lt;p&gt;npm install &lt;a href=&#34;mailto:&amp;#99;&amp;#104;&amp;#x65;&amp;#x65;&amp;#114;&amp;#105;&amp;#x6f;&amp;#64;&amp;#48;&amp;#x2e;&amp;#50;&amp;#50;&amp;#x2e;&amp;#x30;&#34;&gt;&amp;#99;&amp;#104;&amp;#x65;&amp;#x65;&amp;#114;&amp;#105;&amp;#x6f;&amp;#64;&amp;#48;&amp;#x2e;&amp;#50;&amp;#50;&amp;#x2e;&amp;#x30;&lt;/a&gt; –save&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;搜索欄在底部&#34;&gt;&lt;a href=&#34;#搜索欄在底部&#34; class=&#34;headerlink&#34; title=&#34;搜索欄在底部&#34;&gt;&lt;/a&gt;搜索欄在底部&lt;/h3&gt;&lt;p&gt;hexo deploy後搜索欄在頁面底部&lt;/p&gt;
 &lt;blockquote&gt;
