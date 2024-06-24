@@ -8,14 +8,14 @@
         <pubDate>Fri, 29 May 2020 06:39:25 +0800</pubDate>
         <lastBuildDate>Fri, 29 May 2020 06:39:25 +0800</lastBuildDate>
         <category>博客</category>
+        <category>教程</category>
         <category>职业技能大赛</category>
         <category>题目</category>
-        <category>教程</category>
         <category>工具</category>
         <category>开源</category>
-        <category>生成器</category>
         <category>统计</category>
         <category>github</category>
+        <category>生成器</category>
         <category>Hexo</category>
         <category>主題</category>
         <category>butterfly</category>
@@ -25,10 +25,10 @@
         <category>Bar</category>
         <category>demo</category>
         <category>top_img</category>
+        <category>标籤外挂</category>
         <category>单独考试</category>
         <category>面试题目</category>
         <category>单招面试</category>
-        <category>标籤外挂</category>
         <item>
             <guid isPermalink="true">https://blog.tianjiaji.dedyn.io/2020/05/29/Butterfly-%E5%AE%89%E8%A3%9D%E6%96%87%E6%AA%94-%E5%85%AD-%E9%80%B2%E9%9A%8E%E6%95%99%E7%A8%8B/undefined/4073eda.html</guid>
             <title>Butterfly 安裝文檔(六) 進階教程</title>
@@ -197,7 +197,7 @@
 &lt;p&gt;&lt;img src=&#34;https://jsd.012700.xyz/gh/jerryc127/CDN/img/73515338-e6874d80-442f-11ea-9d07-725d37002985.png&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;cheerio版本錯誤，請安裝0.22.0版本&lt;/p&gt;
-&lt;p&gt;npm install &lt;a href=&#34;mailto:&amp;#x63;&amp;#x68;&amp;#101;&amp;#101;&amp;#x72;&amp;#105;&amp;#111;&amp;#64;&amp;#x30;&amp;#x2e;&amp;#x32;&amp;#50;&amp;#46;&amp;#x30;&#34;&gt;&amp;#x63;&amp;#x68;&amp;#101;&amp;#101;&amp;#x72;&amp;#105;&amp;#111;&amp;#64;&amp;#x30;&amp;#x2e;&amp;#x32;&amp;#50;&amp;#46;&amp;#x30;&lt;/a&gt; –save&lt;/p&gt;
+&lt;p&gt;npm install &lt;a href=&#34;mailto:&amp;#x63;&amp;#x68;&amp;#x65;&amp;#101;&amp;#x72;&amp;#105;&amp;#x6f;&amp;#x40;&amp;#48;&amp;#x2e;&amp;#50;&amp;#50;&amp;#46;&amp;#x30;&#34;&gt;&amp;#x63;&amp;#x68;&amp;#x65;&amp;#101;&amp;#x72;&amp;#105;&amp;#x6f;&amp;#x40;&amp;#48;&amp;#x2e;&amp;#50;&amp;#50;&amp;#46;&amp;#x30;&lt;/a&gt; –save&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;搜索欄在底部&#34;&gt;&lt;a href=&#34;#搜索欄在底部&#34; class=&#34;headerlink&#34; title=&#34;搜索欄在底部&#34;&gt;&lt;/a&gt;搜索欄在底部&lt;/h3&gt;&lt;p&gt;hexo deploy後搜索欄在頁面底部&lt;/p&gt;
 &lt;blockquote&gt;

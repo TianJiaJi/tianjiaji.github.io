@@ -8,14 +8,14 @@
         <pubDate>Wed, 28 Oct 2020 22:15:34 +0800</pubDate>
         <lastBuildDate>Wed, 28 Oct 2020 22:15:34 +0800</lastBuildDate>
         <category>博客</category>
+        <category>教程</category>
         <category>职业技能大赛</category>
         <category>题目</category>
-        <category>教程</category>
         <category>工具</category>
         <category>开源</category>
-        <category>生成器</category>
         <category>统计</category>
         <category>github</category>
+        <category>生成器</category>
         <category>Hexo</category>
         <category>主題</category>
         <category>butterfly</category>
@@ -25,10 +25,10 @@
         <category>Bar</category>
         <category>demo</category>
         <category>top_img</category>
+        <category>标籤外挂</category>
         <category>单独考试</category>
         <category>面试题目</category>
         <category>单招面试</category>
-        <category>标籤外挂</category>
         <item>
             <guid isPermalink="true">https://blog.tianjiaji.dedyn.io/2020/10/28/when-set-the-top-img-to-false/undefined/c9711c19.html</guid>
             <title>當設置 top_img 為 false 時</title>
