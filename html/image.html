@@ -88,7 +88,7 @@
 </head>
 <body>
 <div class="container">
-<center><h2><a href="https://blog.tianjiaji.cloudns.biz/" target="_blank">自用</a>  Hub 镜像加速</h2></center>
+<center><h2> Hub 镜像加速</h2></center>
 <h3>为了加速 Docker 镜像拉取，使用以下命令设置<b>registry mirror</b></h3>
 <pre><code>
 mkdir -p /etc/</code><button class="copy-button" onclick="copyCode(this)">复制代码</button></pre>
@@ -105,22 +105,26 @@ systemctl restart </code><button class="copy-button" onclick="copyCode(this)">�
 <p><h3>不用设置环境也可以直接使用，用法示例：</h3></p>
 <pre><code>
  pull docker.tianjiaji.cloudns.org/library/mysql:8.0</code><button class="copy-button" onclick="copyCode(this)">复制代码</button></pre>
-<p>说明：library是一个特殊的命名空间，它代表的是官方镜像。</p>
-
-<code>
+<p>说明：library是一个特殊的命名空间，它代表的是官方镜像。</p></pre>
+</div>
+<br>
+<div class="container">
     <h2>自用 Hub 镜像站点</h2>
 <pre><code>
-    <a href="https://docker.additive.cloudns.org/" target="_blank">docker.additive.cloudns.org </a>          # dockerhub
-    <a href="https://docker.tianjiaji.cloudns.org/" target="_blank">docker.tianjiaji.cloudns.org </a>         # dockerhub
-    <a href="https://quay.tianjiaji.cloudns.org/" target="_blank">quay.tianjiaji.cloudns.org </a>           # quay
-    <a href="https://gcr.tianjiaji.cloudns.org/" target="_blank">gcr.tianjiaji.cloudns.org </a>            # gcr
-    <a href="https://k8s-gcr.tianjiaji.cloudns.org/" target="_blank">k8s-gcr.tianjiaji.cloudns.org </a>        # k8s-gcr       
-    <a href="https://k8s.tianjiaji.cloudns.org/" target="_blank">k8s.tianjiaji.cloudns.org </a>            # k8s
-    <a href="https://ghcr.tianjiaji.cloudns.org/" target="_blank">ghcr.tianjiaji.cloudns.org </a>           # ghcr
-    <a href="https://cloudsmith.tianjiaji.cloudns.org/" target="_blank">cloudsmith.tianjiaji.cloudns.org </a>     # cloudsmith
+    docker.additive.cloudns.org           # dockerhub
+    docker.tianjiaji.cloudns.org          # dockerhub
+    quay.tianjiaji.cloudns.org            # quay
+    gcr.tianjiaji.cloudns.org             # gcr
+    k8s-gcr.tianjiaji.cloudns.org         # k8s-gcr       
+    k8s.tianjiaji.cloudns.org             # k8s
+    ghcr.tianjiaji.cloudns.org            # ghcr
+    cloudsmith.tianjiaji.cloudns.org      # cloudsmith
     
 
-
+</code></pre>
+</div>
+<br>
+<div class="container">
 <h2>目前可用的个人公益 DockeHub 镜像源</h2>
 <p>以下无限制要求（注册、验证等）的 dockerhub 镜像源，均为个人搭建提供的国内可使用加速镜像，感谢的同时需要提醒，随时有可能关闭或失效。</p>
 <pre><code>
@@ -161,6 +165,36 @@ systemctl restart </code><button class="copy-button" onclick="copyCode(this)">�
             本站自用镜像
 
             https://docker.laoex.link
+
+</code></pre>
+
+</div>
+<br>
+<div class="container">
+<h2>可以一次性导入多个 DockeHub 镜像源</h2>
+<p>以下包含无限制要求（注册、验证等）的 dockerhub 镜像源，均为个人搭建提供的国内可使用加速镜像，感谢的同时需要提醒，随时有可能关闭或失效。</p>
+<pre><code>
+    tee /etc/docker/daemon.json &lt;&lt;EOF
+    {
+        "registry-mirrors": [
+            "https://hub.uuuadc.top",
+            "https://docker.anyhub.us.kg",
+            "https://dockerhub.jobcher.com",
+            "https://dockerhub.icu",
+            "https://docker.ckyl.me",
+            "https://docker.awsl9527.cn",
+            "https://docker.m.daocloud.io",
+            "https://docker.laoex.link"
+            "https://docker.additive.cloudns.org"
+            "https://docker.tianjiaji.cloudns.org"
+        ]
+    }
+    EOF
+</code><button class="copy-button" onclick="copyCode(this)">复制代码</button></pre>
+<pre><code>
+systemctl daemon-reload</code><button class="copy-button" onclick="copyCode(this)">复制代码</button></pre>
+<pre><code>
+systemctl restart </code><button class="copy-button" onclick="copyCode(this)">复制代码</button></pre>
 
 </div>
 <div class="footer">
