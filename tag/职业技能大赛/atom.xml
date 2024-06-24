@@ -9,19 +9,19 @@
     <category term="题目" />
     <category term="工具" />
     <category term="开源" />
-    <category term="生成器" />
-    <category term="教程" />
     <category term="统计" />
     <category term="github" />
+    <category term="生成器" />
+    <category term="教程" />
     <category term="Hexo" />
     <category term="主題" />
     <category term="butterfly" />
     <category term="主题" />
     <category term="Aplayer" />
+    <category term="top_img" />
     <category term="demo" />
     <category term="highlight" />
     <category term="Bar" />
-    <category term="top_img" />
     <category term="单独考试" />
     <category term="面试题目" />
     <category term="单招面试" />
@@ -1109,6 +1109,104 @@
         <updated>2024-03-02T16:29:24.000Z</updated>
     </entry>
     <entry>
+        <id>https://blog.tianjiaji.dedyn.io/2024/01/21/2024-01-21-Competition-sample-questions-Shell/undefined/undefined.html</id>
+        <title>Shell 脚本 教程</title>
+        <link rel="alternate" href="https://blog.tianjiaji.dedyn.io/2024/01/21/2024-01-21-Competition-sample-questions-Shell/undefined/undefined.html"/>
+        <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;hr&gt;
+&lt;h2 id=&#34;Shell脚本&#34;&gt;&lt;a href=&#34;#Shell脚本&#34; class=&#34;headerlink&#34; title=&#34;Shell脚本&#34;&gt;&lt;/a&gt;Shell脚本&lt;/h2&gt;&lt;hr&gt;
+&lt;h2 id=&#34;题目&#34;&gt;&lt;a href=&#34;#题目&#34; class=&#34;headerlink&#34; title=&#34;题目&#34;&gt;&lt;/a&gt;题目&lt;/h2&gt;&lt;p&gt;任务描述：请采用 shell 脚本,实现快速批量的操作。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在 linux4 上编写&amp;#x2F;root&amp;#x2F;createfile.sh的shell脚本，创建20个文件&amp;#x2F;root&amp;#x2F;shell&amp;#x2F;file00至&amp;#x2F;root&amp;#x2F;shell&amp;#x2F;file19，如果文件存在，则删除再创建； 每个文件的内容同文件名， 如file00文件的内容为“file00”。&lt;/li&gt;
+&lt;li&gt;用&amp;#x2F;root&amp;#x2F;createfile.sh命令测试。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;教程&#34;&gt;&lt;a href=&#34;#教程&#34; class=&#34;headerlink&#34; title=&#34;教程&#34;&gt;&lt;/a&gt;教程&lt;/h2&gt;&lt;hr&gt;
+&lt;h3 id=&#34;第一小题&#34;&gt;&lt;a href=&#34;#第一小题&#34; class=&#34;headerlink&#34; title=&#34;第一小题&#34;&gt;&lt;/a&gt;第一小题&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;在 linux4 上编写&amp;#x2F;root&amp;#x2F;createfile.sh的shell脚本，创建20个文件&amp;#x2F;root&amp;#x2F;shell&amp;#x2F;file00至&amp;#x2F;root&amp;#x2F;shell&amp;#x2F;file19，如果文件存在，则删除再创建； 每个文件的内容同文件名， 如file00文件的内容为“file00”。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;1-创建createfile-sh脚本文件&#34;&gt;&lt;a href=&#34;#1-创建createfile-sh脚本文件&#34; class=&#34;headerlink&#34; title=&#34;1.创建createfile.sh脚本文件&#34;&gt;&lt;/a&gt;1.创建createfile.sh脚本文件&lt;/h4&gt;&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;vim /root/createfile.sh&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h4 id=&#34;2-写入脚本代码&#34;&gt;&lt;a href=&#34;#2-写入脚本代码&#34; class=&#34;headerlink&#34; title=&#34;2.写入脚本代码&#34;&gt;&lt;/a&gt;2.写入脚本代码&lt;/h4&gt;&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta prompt_&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;language-bash&#34;&gt;!/bin/bash&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta prompt_&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta prompt_&#34;&gt;# &lt;/span&gt;&lt;span class=&#34;language-bash&#34;&gt;创建目录&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;mkdir -p /root/shell&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta prompt_&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta prompt_&#34;&gt;# &lt;/span&gt;&lt;span class=&#34;language-bash&#34;&gt;创建文件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;for i in $(seq -f &amp;quot;%02g&amp;quot; 0 19)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;do&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    file=&amp;quot;/root/shell/file$i&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    # 如果文件存在，则删除&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    if [ -e $file ]; then&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        rm $file&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    fi&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    # 创建文件并设置内容&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    echo &amp;quot;file$i&amp;quot; &amp;gt; $file&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;done&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;hr&gt;
+&lt;h3 id=&#34;第二小题&#34;&gt;&lt;a href=&#34;#第二小题&#34; class=&#34;headerlink&#34; title=&#34;第二小题&#34;&gt;&lt;/a&gt;第二小题&lt;/h3&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;用&amp;#x2F;root&amp;#x2F;createfile.sh命令测试。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;3-运行脚本&#34;&gt;&lt;a href=&#34;#3-运行脚本&#34; class=&#34;headerlink&#34; title=&#34;3.运行脚本&#34;&gt;&lt;/a&gt;3.运行脚本&lt;/h4&gt;&lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sh /root/createfile.sh&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;font color=&#34;red&#34;&gt;&lt;b&gt;提示：如果运行失败，请检查该文件是否有可执行权限，如果没有权限就用命令添加可执行权限&lt;/b&gt;&lt;/font&gt;&lt;/p&gt;
+&lt;h4 id=&#34;4-修改权限&#34;&gt;&lt;a href=&#34;#4-修改权限&#34; class=&#34;headerlink&#34; title=&#34;4.修改权限&#34;&gt;&lt;/a&gt;4.修改权限&lt;/h4&gt;&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;chmod +x /root/createfile.sh&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;+x &amp;#x3D; 给予该文件可执行权限&lt;/p&gt;
+&lt;p&gt;权限编号说明：&lt;/p&gt;
+&lt;p&gt;drwxr-xr-x  	root	root	&lt;a href=&#34;http://xxxxxxx.sh/&#34;&gt;XXXXXXX.sh&lt;/a&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;drwx&lt;/th&gt;
+&lt;th&gt;r-x&lt;/th&gt;
+&lt;th&gt;r-x&lt;/th&gt;
+&lt;th&gt;root&lt;/th&gt;
+&lt;th&gt;root&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;所属用户&lt;/td&gt;
+&lt;td&gt;所属组&lt;/td&gt;
+&lt;td&gt;其他用户和组&lt;/td&gt;
+&lt;td&gt;所属用户&lt;/td&gt;
+&lt;td&gt;所属组&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;d&lt;/td&gt;
+&lt;td&gt;表示这是目录&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;r&lt;/td&gt;
+&lt;td&gt;写&lt;/td&gt;
+&lt;td&gt;权限编号 4&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;w&lt;/td&gt;
+&lt;td&gt;读&lt;/td&gt;
+&lt;td&gt;权限编号 2&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;x&lt;/td&gt;
+&lt;td&gt;执行&lt;/td&gt;
+&lt;td&gt;权限编号 1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+</content>
+        <category term="博客" />
+        <category term="职业技能大赛" />
+        <category term="题目" />
+        <updated>2024-01-21T12:00:00.000Z</updated>
+    </entry>
+    <entry>
         <id>https://blog.tianjiaji.dedyn.io/2024/01/18/2024-01-21-Competition-sample-questions/undefined/undefined.html</id>
         <title>中等院校职业技能大赛-竞赛样题(网络搭建与应用)</title>
         <link rel="alternate" href="https://blog.tianjiaji.dedyn.io/2024/01/18/2024-01-21-Competition-sample-questions/undefined/undefined.html"/>
@@ -1392,7 +1490,7 @@
 &lt;h3 id=&#34;9-mail-服务&#34;&gt;&lt;a href=&#34;#9-mail-服务&#34; class=&#34;headerlink&#34; title=&#34;9. mail 服务&#34;&gt;&lt;/a&gt;9. mail 服务&lt;/h3&gt;&lt;p&gt;任务描述：请采用 postfix 邮件服务器，实现安全的邮件服务。&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;配置 linux5 为 mail 服务器，安装 postfix 和 dovecot。&lt;/li&gt;
-&lt;li&gt;仅支持 smtps 和 pop3s 连接。 3.创建用户 mail1 和 mail2，向 &lt;a href=&#34;mailto:&amp;#x61;&amp;#x6c;&amp;#x6c;&amp;#64;&amp;#115;&amp;#x6b;&amp;#x69;&amp;#108;&amp;#108;&amp;#x73;&amp;#x2e;&amp;#x63;&amp;#111;&amp;#109;&#34;&gt;&amp;#x61;&amp;#x6c;&amp;#x6c;&amp;#64;&amp;#115;&amp;#x6b;&amp;#x69;&amp;#108;&amp;#108;&amp;#x73;&amp;#x2e;&amp;#x63;&amp;#111;&amp;#109;&lt;/a&gt; 发送的邮件，每个用户都 会收到。&lt;/li&gt;
+&lt;li&gt;仅支持 smtps 和 pop3s 连接。 3.创建用户 mail1 和 mail2，向 &lt;a href=&#34;mailto:&amp;#97;&amp;#108;&amp;#x6c;&amp;#x40;&amp;#115;&amp;#x6b;&amp;#105;&amp;#108;&amp;#x6c;&amp;#x73;&amp;#46;&amp;#99;&amp;#x6f;&amp;#109;&#34;&gt;&amp;#97;&amp;#108;&amp;#x6c;&amp;#x40;&amp;#115;&amp;#x6b;&amp;#105;&amp;#108;&amp;#x6c;&amp;#x73;&amp;#46;&amp;#99;&amp;#x6f;&amp;#109;&lt;/a&gt; 发送的邮件，每个用户都 会收到。&lt;/li&gt;
 &lt;li&gt;使用本机测试。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;10．shell-脚本&#34;&gt;&lt;a href=&#34;#10．shell-脚本&#34; class=&#34;headerlink&#34; title=&#34;10．shell 脚本&#34;&gt;&lt;/a&gt;10．shell 脚本&lt;/h3&gt;&lt;p&gt;任务描述：请采用 shell 脚本,实现快速批量的操作。&lt;/p&gt;

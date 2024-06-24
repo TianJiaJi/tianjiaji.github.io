@@ -12,19 +12,19 @@
         <category>题目</category>
         <category>工具</category>
         <category>开源</category>
-        <category>生成器</category>
-        <category>教程</category>
         <category>统计</category>
         <category>github</category>
+        <category>生成器</category>
+        <category>教程</category>
         <category>Hexo</category>
         <category>主題</category>
         <category>butterfly</category>
         <category>主题</category>
         <category>Aplayer</category>
+        <category>top_img</category>
         <category>demo</category>
         <category>highlight</category>
         <category>Bar</category>
-        <category>top_img</category>
         <category>单独考试</category>
         <category>面试题目</category>
         <category>单招面试</category>
@@ -1116,7 +1116,8 @@
             <title>Shell 脚本 教程</title>
             <link>https://blog.tianjiaji.dedyn.io/2024/01/21/2024-01-21-Competition-sample-questions-Shell/undefined/undefined.html</link>
             <category>博客</category>
-            <category>教程</category>
+            <category>职业技能大赛</category>
+            <category>题目</category>
             <pubDate>Sun, 21 Jan 2024 20:00:00 +0800</pubDate>
             <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;hr&gt;
 &lt;h2 id=&#34;Shell脚本&#34;&gt;&lt;a href=&#34;#Shell脚本&#34; class=&#34;headerlink&#34; title=&#34;Shell脚本&#34;&gt;&lt;/a&gt;Shell脚本&lt;/h2&gt;&lt;hr&gt;
