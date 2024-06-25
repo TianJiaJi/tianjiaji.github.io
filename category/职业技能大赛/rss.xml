@@ -13,15 +13,14 @@
         <category>工具</category>
         <category>开源</category>
         <category>生成器</category>
-        <category>教程</category>
         <category>统计</category>
         <category>github</category>
+        <category>教程</category>
         <category>Hexo</category>
         <category>主題</category>
         <category>butterfly</category>
         <category>主题</category>
         <category>Aplayer</category>
-        <category>demo</category>
         <category>highlight</category>
         <category>Bar</category>
         <category>top_img</category>
@@ -29,6 +28,7 @@
         <category>面试题目</category>
         <category>单招面试</category>
         <category>标籤外挂</category>
+        <category>demo</category>
         <item>
             <guid isPermalink="true">https://blog.tianjiaji.dedyn.io/2024/04/14/Apache/undefined/undefined.html</guid>
             <title>Apache</title>
@@ -1496,7 +1496,7 @@
 &lt;h3 id=&#34;9-mail-服务&#34;&gt;&lt;a href=&#34;#9-mail-服务&#34; class=&#34;headerlink&#34; title=&#34;9. mail 服务&#34;&gt;&lt;/a&gt;9. mail 服务&lt;/h3&gt;&lt;p&gt;任务描述：请采用 postfix 邮件服务器，实现安全的邮件服务。&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;配置 linux5 为 mail 服务器，安装 postfix 和 dovecot。&lt;/li&gt;
-&lt;li&gt;仅支持 smtps 和 pop3s 连接。 3.创建用户 mail1 和 mail2，向 &lt;a href=&#34;mailto:&amp;#x61;&amp;#108;&amp;#108;&amp;#x40;&amp;#115;&amp;#x6b;&amp;#x69;&amp;#108;&amp;#x6c;&amp;#115;&amp;#46;&amp;#99;&amp;#111;&amp;#x6d;&#34;&gt;&amp;#x61;&amp;#108;&amp;#108;&amp;#x40;&amp;#115;&amp;#x6b;&amp;#x69;&amp;#108;&amp;#x6c;&amp;#115;&amp;#46;&amp;#99;&amp;#111;&amp;#x6d;&lt;/a&gt; 发送的邮件，每个用户都 会收到。&lt;/li&gt;
+&lt;li&gt;仅支持 smtps 和 pop3s 连接。 3.创建用户 mail1 和 mail2，向 &lt;a href=&#34;mailto:&amp;#97;&amp;#108;&amp;#x6c;&amp;#x40;&amp;#x73;&amp;#107;&amp;#x69;&amp;#108;&amp;#x6c;&amp;#115;&amp;#46;&amp;#99;&amp;#111;&amp;#109;&#34;&gt;&amp;#97;&amp;#108;&amp;#x6c;&amp;#x40;&amp;#x73;&amp;#107;&amp;#x69;&amp;#108;&amp;#x6c;&amp;#115;&amp;#46;&amp;#99;&amp;#111;&amp;#109;&lt;/a&gt; 发送的邮件，每个用户都 会收到。&lt;/li&gt;
 &lt;li&gt;使用本机测试。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;10．shell-脚本&#34;&gt;&lt;a href=&#34;#10．shell-脚本&#34; class=&#34;headerlink&#34; title=&#34;10．shell 脚本&#34;&gt;&lt;/a&gt;10．shell 脚本&lt;/h3&gt;&lt;p&gt;任务描述：请采用 shell 脚本,实现快速批量的操作。&lt;/p&gt;
