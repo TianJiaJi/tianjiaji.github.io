@@ -4,12 +4,12 @@
     <title>没用的博客 • Posts by &#34;highlight&#34; tag</title>
     <link href="https://blog.tianjiaji.dedyn.io" />
     <updated>2018-07-24T23:31:06.000Z</updated>
-    <category term="博客" />
-    <category term="职业技能大赛" />
     <category term="题目" />
+    <category term="职业技能大赛" />
     <category term="工具" />
     <category term="开源" />
     <category term="生成器" />
+    <category term="博客" />
     <category term="统计" />
     <category term="github" />
     <category term="教程" />
@@ -21,11 +21,11 @@
     <category term="highlight" />
     <category term="Bar" />
     <category term="top_img" />
+    <category term="demo" />
     <category term="单独考试" />
     <category term="面试题目" />
     <category term="单招面试" />
     <category term="标籤外挂" />
-    <category term="demo" />
     <entry>
         <id>https://blog.tianjiaji.dedyn.io/2018/07/25/markdown/undefined/89757140.html</id>
         <title>Markdown Style test</title>

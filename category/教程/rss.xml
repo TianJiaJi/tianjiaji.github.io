@@ -7,12 +7,12 @@
         <language>zh-CN</language>
         <pubDate>Tue, 25 Jun 2024 03:50:51 +0800</pubDate>
         <lastBuildDate>Tue, 25 Jun 2024 03:50:51 +0800</lastBuildDate>
-        <category>博客</category>
-        <category>职业技能大赛</category>
         <category>题目</category>
+        <category>职业技能大赛</category>
         <category>工具</category>
         <category>开源</category>
         <category>生成器</category>
+        <category>博客</category>
         <category>统计</category>
         <category>github</category>
         <category>教程</category>
@@ -24,11 +24,11 @@
         <category>highlight</category>
         <category>Bar</category>
         <category>top_img</category>
+        <category>demo</category>
         <category>单独考试</category>
         <category>面试题目</category>
         <category>单招面试</category>
         <category>标籤外挂</category>
-        <category>demo</category>
         <item>
             <guid isPermalink="true">https://blog.tianjiaji.dedyn.io/2024/06/25/image/undefined/undefined.html</guid>
             <title>Docker hub镜像加速 教程</title>
@@ -60,8 +60,8 @@
             <guid isPermalink="true">https://blog.tianjiaji.dedyn.io/2024/04/14/Apache/undefined/undefined.html</guid>
             <title>Apache</title>
             <link>https://blog.tianjiaji.dedyn.io/2024/04/14/Apache/undefined/undefined.html</link>
-            <category>博客</category>
             <category>职业技能大赛</category>
+            <category>博客</category>
             <category>教程</category>
             <pubDate>Sun, 14 Apr 2024 22:38:28 +0800</pubDate>
             <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;center&gt;&lt;font size=&#34;6&#34;&gt;&lt;b&gt;DNS 服务&lt;/b&gt;&lt;/font&gt;&lt;/center&gt;
@@ -303,8 +303,8 @@
             <guid isPermalink="true">https://blog.tianjiaji.dedyn.io/2024/04/13/DNS/undefined/undefined.html</guid>
             <title>DNS 服务</title>
             <link>https://blog.tianjiaji.dedyn.io/2024/04/13/DNS/undefined/undefined.html</link>
-            <category>博客</category>
             <category>职业技能大赛</category>
+            <category>博客</category>
             <category>教程</category>
             <pubDate>Sat, 13 Apr 2024 03:29:25 +0800</pubDate>
             <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;center&gt;&lt;font size=&#34;6&#34;&gt;&lt;b&gt;DNS 服务&lt;/b&gt;&lt;/font&gt;&lt;/center&gt;
@@ -475,8 +475,8 @@
             <guid isPermalink="true">https://blog.tianjiaji.dedyn.io/2024/04/12/Tomcat/undefined/undefined.html</guid>
             <title>Tomcat 服务</title>
             <link>https://blog.tianjiaji.dedyn.io/2024/04/12/Tomcat/undefined/undefined.html</link>
-            <category>博客</category>
             <category>职业技能大赛</category>
+            <category>博客</category>
             <category>教程</category>
             <pubDate>Fri, 12 Apr 2024 04:11:11 +0800</pubDate>
             <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;center&gt;&lt;font size=&#34;6&#34;&gt;&lt;b&gt;Tomcat 服务&lt;/b&gt;&lt;/font&gt;&lt;/center&gt;
@@ -660,8 +660,8 @@
             <guid isPermalink="true">https://blog.tianjiaji.dedyn.io/2024/03/03/yum%E6%BA%90%E9%85%8D%E7%BD%AE/undefined/undefined.html</guid>
             <title>yum源配置</title>
             <link>https://blog.tianjiaji.dedyn.io/2024/03/03/yum%E6%BA%90%E9%85%8D%E7%BD%AE/undefined/undefined.html</link>
-            <category>博客</category>
             <category>职业技能大赛</category>
+            <category>博客</category>
             <category>教程</category>
             <pubDate>Sun, 03 Mar 2024 00:29:24 +0800</pubDate>
             <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;center&gt;&lt;font size=&#34;6&#34;&gt;&lt;b&gt;yum源配置&lt;/b&gt;&lt;/font&gt;&lt;/center&gt;
