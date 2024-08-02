@@ -4,9 +4,9 @@
     <title>没用的博客</title>
     <link href="https://blog.tianjiaji.dedyn.io" />
     <updated>2024-06-24T19:50:51.000Z</updated>
-    <category term="博客" />
-    <category term="职业技能大赛" />
     <category term="题目" />
+    <category term="职业技能大赛" />
+    <category term="博客" />
     <category term="工具" />
     <category term="开源" />
     <category term="生成器" />
@@ -20,11 +20,11 @@
     <category term="Aplayer" />
     <category term="highlight" />
     <category term="Bar" />
+    <category term="top_img" />
     <category term="demo" />
     <category term="单独考试" />
     <category term="面试题目" />
     <category term="单招面试" />
-    <category term="top_img" />
     <category term="标籤外挂" />
     <entry>
         <id>https://blog.tianjiaji.dedyn.io/2024/06/25/image/undefined/undefined.html</id>
@@ -291,8 +291,8 @@
 
 
 </content>
-        <category term="博客" />
         <category term="职业技能大赛" />
+        <category term="博客" />
         <category term="教程" />
         <updated>2024-04-14T14:38:28.000Z</updated>
     </entry>
@@ -463,8 +463,8 @@
 &lt;li&gt;确认你的主DNS服务器和副DNS服务器的配置文件是否正确，配置文件有：&lt;br&gt;&amp;#x2F;etc&amp;#x2F;named.conf             # DNS主配置文件&lt;br&gt;&amp;#x2F;etc&amp;#x2F;named.rfc1912.zones    # DNS区域配置文件&lt;br&gt;&amp;#x2F;var&amp;#x2F;named&amp;#x2F;zxpy             # DNS正向解析文件&lt;br&gt;&amp;#x2F;var&amp;#x2F;named&amp;#x2F;fxpy             # DNS反向解析文件&lt;br&gt;&amp;#x2F;var&amp;#x2F;named&amp;#x2F;slaves&amp;#x2F;*         # 副DNS服务器从主DNS拉取的文件&lt;/li&gt;
 &lt;/ol&gt;
 </content>
-        <category term="博客" />
         <category term="职业技能大赛" />
+        <category term="博客" />
         <category term="教程" />
         <updated>2024-04-12T19:29:25.000Z</updated>
     </entry>
@@ -648,8 +648,8 @@
 &lt;p&gt;如果你对 Nginx 的配置文件还是不熟悉推荐你去哔哩哔哩上看&lt;a href=&#34;https://space.bilibili.com/327247876/&#34;&gt;@技术蛋老师&lt;/a&gt;的这个视频：&lt;a href=&#34;https://www.bilibili.com/video/BV1TZ421b7SD/&#34;&gt;Nginx入门必须懂3大功能配置 - Web服务器&amp;#x2F;反向代理&amp;#x2F;负载均衡&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;恭喜你，你已经成功配置了 Nginx 作为反向代理服务器，并成功将 Tomcat 集群部署到服务器上，并成功实现负载均衡！！&lt;/p&gt;
 </content>
-        <category term="博客" />
         <category term="职业技能大赛" />
+        <category term="博客" />
         <category term="教程" />
         <updated>2024-04-11T20:11:11.000Z</updated>
     </entry>
@@ -1076,9 +1076,9 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 </content>
-        <category term="博客" />
-        <category term="职业技能大赛" />
         <category term="题目" />
+        <category term="职业技能大赛" />
+        <category term="博客" />
         <updated>2024-03-28T12:00:00.000Z</updated>
     </entry>
     <entry>
@@ -1130,8 +1130,8 @@
 
 &lt;p&gt;如果出现报错,请检查系统镜像是否挂载,配置文件路径填写是否正确,等等。&lt;br&gt;或者可以尝试清理缓存后重试：&lt;/p&gt;
 &lt;figure class=&#34;highlight shell&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;yum clean all               # 清理缓存&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
-        <category term="博客" />
         <category term="职业技能大赛" />
+        <category term="博客" />
         <category term="教程" />
         <updated>2024-03-02T16:29:24.000Z</updated>
     </entry>
@@ -1416,9 +1416,9 @@ function myFunction2() {
 &lt;/tr&gt;
 &lt;/tbody&gt;&lt;/table&gt;
 </content>
-        <category term="博客" />
-        <category term="职业技能大赛" />
         <category term="题目" />
+        <category term="职业技能大赛" />
+        <category term="博客" />
         <updated>2024-01-21T12:00:00.000Z</updated>
     </entry>
     <entry>
@@ -1705,7 +1705,7 @@ function myFunction2() {
 &lt;h3 id=&#34;9-mail-服务&#34;&gt;&lt;a href=&#34;#9-mail-服务&#34; class=&#34;headerlink&#34; title=&#34;9. mail 服务&#34;&gt;&lt;/a&gt;9. mail 服务&lt;/h3&gt;&lt;p&gt;任务描述：请采用 postfix 邮件服务器，实现安全的邮件服务。&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;配置 linux5 为 mail 服务器，安装 postfix 和 dovecot。&lt;/li&gt;
-&lt;li&gt;仅支持 smtps 和 pop3s 连接。 3.创建用户 mail1 和 mail2，向 &lt;a href=&#34;mailto:&amp;#97;&amp;#108;&amp;#x6c;&amp;#64;&amp;#x73;&amp;#x6b;&amp;#x69;&amp;#108;&amp;#108;&amp;#115;&amp;#46;&amp;#x63;&amp;#x6f;&amp;#109;&#34;&gt;&amp;#97;&amp;#108;&amp;#x6c;&amp;#64;&amp;#x73;&amp;#x6b;&amp;#x69;&amp;#108;&amp;#108;&amp;#115;&amp;#46;&amp;#x63;&amp;#x6f;&amp;#109;&lt;/a&gt; 发送的邮件，每个用户都 会收到。&lt;/li&gt;
+&lt;li&gt;仅支持 smtps 和 pop3s 连接。 3.创建用户 mail1 和 mail2，向 &lt;a href=&#34;mailto:&amp;#97;&amp;#x6c;&amp;#108;&amp;#x40;&amp;#x73;&amp;#107;&amp;#105;&amp;#108;&amp;#108;&amp;#115;&amp;#46;&amp;#x63;&amp;#111;&amp;#x6d;&#34;&gt;&amp;#97;&amp;#x6c;&amp;#108;&amp;#x40;&amp;#x73;&amp;#107;&amp;#105;&amp;#108;&amp;#108;&amp;#115;&amp;#46;&amp;#x63;&amp;#111;&amp;#x6d;&lt;/a&gt; 发送的邮件，每个用户都 会收到。&lt;/li&gt;
 &lt;li&gt;使用本机测试。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;10．shell-脚本&#34;&gt;&lt;a href=&#34;#10．shell-脚本&#34; class=&#34;headerlink&#34; title=&#34;10．shell 脚本&#34;&gt;&lt;/a&gt;10．shell 脚本&lt;/h3&gt;&lt;p&gt;任务描述：请采用 shell 脚本,实现快速批量的操作。&lt;/p&gt;
@@ -1717,8 +1717,8 @@ function myFunction2() {
 &lt;h1 id=&#34;查看或下载&#34;&gt;&lt;a href=&#34;#查看或下载&#34; class=&#34;headerlink&#34; title=&#34;查看或下载&#34;&gt;&lt;/a&gt;查看或下载&lt;/h1&gt;&lt;p&gt;GitHub 地址：&lt;a target=&#34;_blank&#34; href=&#34;https://github.com/TianJiaJi/Blog-resources/raw/main/download/%E7%AC%AC%E4%B8%89%E9%83%A8%E5%88%86%EF%BC%9A%E6%9C%8D%E5%8A%A1%E6%90%AD%E5%BB%BA%E4%B8%8E%E8%BF%90%E7%BB%B4.docx&#34;&gt;题目文件&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;GitHub 镜像地址(容易失效！！)：&lt;a target=&#34;_blank&#34; href=&#34;https://raw.kkgithub.com/TianJiaJi/Blog-resources/main/download/%E7%AC%AC%E4%B8%89%E9%83%A8%E5%88%86%EF%BC%9A%E6%9C%8D%E5%8A%A1%E6%90%AD%E5%BB%BA%E4%B8%8E%E8%BF%90%E7%BB%B4.docx&#34;&gt;题目文件&lt;/a&gt;&lt;/p&gt;
 </content>
-        <category term="职业技能大赛" />
         <category term="题目" />
+        <category term="职业技能大赛" />
         <updated>2024-01-18T12:00:00.000Z</updated>
     </entry>
     <entry>
@@ -2170,7 +2170,7 @@ function myFunction2() {
 &lt;p&gt;&lt;img src=&#34;https://jsd.012700.xyz/gh/jerryc127/CDN/img/73515338-e6874d80-442f-11ea-9d07-725d37002985.png&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;cheerio版本錯誤，請安裝0.22.0版本&lt;/p&gt;
-&lt;p&gt;npm install &lt;a href=&#34;mailto:&amp;#99;&amp;#104;&amp;#101;&amp;#x65;&amp;#114;&amp;#x69;&amp;#x6f;&amp;#64;&amp;#48;&amp;#x2e;&amp;#50;&amp;#x32;&amp;#x2e;&amp;#48;&#34;&gt;&amp;#99;&amp;#104;&amp;#101;&amp;#x65;&amp;#114;&amp;#x69;&amp;#x6f;&amp;#64;&amp;#48;&amp;#x2e;&amp;#50;&amp;#x32;&amp;#x2e;&amp;#48;&lt;/a&gt; –save&lt;/p&gt;
+&lt;p&gt;npm install &lt;a href=&#34;mailto:&amp;#99;&amp;#104;&amp;#x65;&amp;#x65;&amp;#x72;&amp;#105;&amp;#x6f;&amp;#x40;&amp;#x30;&amp;#x2e;&amp;#x32;&amp;#50;&amp;#46;&amp;#x30;&#34;&gt;&amp;#99;&amp;#104;&amp;#x65;&amp;#x65;&amp;#x72;&amp;#105;&amp;#x6f;&amp;#x40;&amp;#x30;&amp;#x2e;&amp;#x32;&amp;#50;&amp;#46;&amp;#x30;&lt;/a&gt; –save&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;搜索欄在底部&#34;&gt;&lt;a href=&#34;#搜索欄在底部&#34; class=&#34;headerlink&#34; title=&#34;搜索欄在底部&#34;&gt;&lt;/a&gt;搜索欄在底部&lt;/h3&gt;&lt;p&gt;hexo deploy後搜索欄在頁面底部&lt;/p&gt;
 &lt;blockquote&gt;
